@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a28979e3-85b3-4e8a-a003-ead893f2e57e" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="d9h3r67ca39jah@ec2-54-247-103-43.eu-west-1.compute.amazonaws.com" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="d9h3r67ca39jah@ec2-54-247-103-43.eu-west-1.compute.amazonaws.com" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="d9h3r67ca39jah@ec2-54-247-103-43.eu-west-1.compute.amazonaws.com" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="d9h3r67ca39jah: database" type="162271b6:PgImplModel$Database" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="d9h3r67ca39jah@ec2-54-247-103-43.eu-west-1.compute.amazonaws.com" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="d9h3r67ca39jah: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="d9h3r67ca39jah@ec2-54-247-103-43.eu-west-1.compute.amazonaws.com" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="d9h3r67ca39jah: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="d9h3r67ca39jah@ec2-54-247-103-43.eu-west-1.compute.amazonaws.com" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="d9h3r67ca39jah: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1jWFJFLtdPxwdkjEdc5jFVgcKv8" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="java.sql.Driver&#10;postgresql" />
+    <property name="JPA.DatabaseSchemaImportDialog" value="584484bd-1ed5-4c2f-99df-621f71c09dcb" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15125" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+  </component>
+  <component name="RecentsManager">
+    <key name="ImportMappingsDialog.RecentPackages">
+      <recent name="pl.project.entities" />
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Documents\quiz_server\src\main\resources\db\migration" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="QuizServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="quiz_server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.project.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="pl.project.QuizServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.QuizServerApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a28979e3-85b3-4e8a-a003-ead893f2e57e" name="Default Changelist" comment="" />
+      <created>1603911866352</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1603911866352</updated>
+      <workItem from="1603911869558" duration="2725000" />
+      <workItem from="1603914631980" duration="1725000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2610" y="-290" key="#Project_Structure" timestamp="1603912623779">
+      <screen x="1920" y="-546" width="2194" height="1194" />
+    </state>
+    <state x="2610" y="-290" key="#Project_Structure/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603912623779" />
+    <state x="2610" y="-290" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603915198153">
+      <screen x="1920" y="-546" width="2194" height="1194" />
+    </state>
+    <state x="2610" y="-290" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603915198153" />
+    <state x="2745" y="-146" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603912577622">
+      <screen x="1920" y="-546" width="2194" height="1194" />
+    </state>
+    <state x="2745" y="-146" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603912577622" />
+    <state x="2747" y="-173" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1603915375015">
+      <screen x="1920" y="-546" width="2194" height="1194" />
+    </state>
+    <state x="2747" y="-173" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603915375015" />
+    <state x="2647" y="-260" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1603913762131">
+      <screen x="1920" y="-546" width="2194" height="1194" />
+    </state>
+    <state x="2647" y="-260" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603913762131" />
+    <state x="2688" y="-410" key="#com.intellij.jpa.generation.ui.DatabaseSchemaImportDialog" timestamp="1603915662808">
+      <screen x="1920" y="-546" width="2194" height="1194" />
+    </state>
+    <state x="2688" y="-410" key="#com.intellij.jpa.generation.ui.DatabaseSchemaImportDialog/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603915662808" />
+    <state x="2551" y="-546" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603916161877">
+      <screen x="1920" y="-546" width="2194" height="1194" />
+    </state>
+    <state x="2551" y="-546" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603916161877" />
+    <state x="2951" y="-137" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603915730969">
+      <screen x="1920" y="-546" width="2194" height="1194" />
+    </state>
+    <state x="2951" y="-137" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603915730969" />
+    <state x="2798" y="-194" key="FileChooserDialogImpl" timestamp="1603915652984">
+      <screen x="1920" y="-546" width="2194" height="1194" />
+    </state>
+    <state x="2798" y="-194" key="FileChooserDialogImpl/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603915652984" />
+    <state width="2151" height="353" key="GridCell.Tab.0.bottom" timestamp="1603916316606">
+      <screen x="1920" y="-546" width="2194" height="1194" />
+    </state>
+    <state width="2151" height="353" key="GridCell.Tab.0.bottom/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603916316606" />
+    <state width="2151" height="353" key="GridCell.Tab.0.center" timestamp="1603916316605">
+      <screen x="1920" y="-546" width="2194" height="1194" />
+    </state>
+    <state width="2151" height="353" key="GridCell.Tab.0.center/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603916316605" />
+    <state width="2151" height="353" key="GridCell.Tab.0.left" timestamp="1603916316605">
+      <screen x="1920" y="-546" width="2194" height="1194" />
+    </state>
+    <state width="2151" height="353" key="GridCell.Tab.0.left/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603916316605" />
+    <state width="2151" height="353" key="GridCell.Tab.0.right" timestamp="1603916316605">
+      <screen x="1920" y="-546" width="2194" height="1194" />
+    </state>
+    <state width="2151" height="353" key="GridCell.Tab.0.right/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603916316605" />
+    <state width="2151" height="353" key="GridCell.Tab.1.bottom" timestamp="1603916316606">
+      <screen x="1920" y="-546" width="2194" height="1194" />
+    </state>
+    <state width="2151" height="353" key="GridCell.Tab.1.bottom/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603916316606" />
+    <state width="2151" height="353" key="GridCell.Tab.1.center" timestamp="1603916316606">
+      <screen x="1920" y="-546" width="2194" height="1194" />
+    </state>
+    <state width="2151" height="353" key="GridCell.Tab.1.center/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603916316606" />
+    <state width="2151" height="353" key="GridCell.Tab.1.left" timestamp="1603916316606">
+      <screen x="1920" y="-546" width="2194" height="1194" />
+    </state>
+    <state width="2151" height="353" key="GridCell.Tab.1.left/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603916316606" />
+    <state width="2151" height="353" key="GridCell.Tab.1.right" timestamp="1603916316606">
+      <screen x="1920" y="-546" width="2194" height="1194" />
+    </state>
+    <state width="2151" height="353" key="GridCell.Tab.1.right/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603916316606" />
+    <state x="2548" y="-294" key="Maven.ArtifactSearchDialog" timestamp="1603912825749">
+      <screen x="1920" y="-546" width="2194" height="1194" />
+    </state>
+    <state x="2548" y="-294" key="Maven.ArtifactSearchDialog/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603912825749" />
+    <state x="2789" y="-230" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1603912844105">
+      <screen x="1920" y="-546" width="2194" height="1194" />
+    </state>
+    <state x="2789" y="-230" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603912844105" />
+    <state x="2444" y="-386" key="new project wizard" timestamp="1603912676816">
+      <screen x="1920" y="-546" width="2194" height="1194" />
+    </state>
+    <state x="2444" y="-386" key="new project wizard/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603912676816" />
+  </component>
+</project>
