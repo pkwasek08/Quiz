@@ -1,8 +1,10 @@
 package pl.project.security.jwt;
 
+import io.jsonwebtoken.ExpiredJwtException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -40,12 +42,29 @@ public class AuthTokenFilter extends OncePerRequestFilter {
                         userDetails, null, userDetails.getAuthorities());
                 authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(httpServletRequest));
                 SecurityContextHolder.getContext().setAuthentication(authentication);
+            } else {
+                logger.error("Cannot set the Security Context");
             }
-        } catch (Exception e){
-            logger.error("Cannot set user authentication: {}", e);
+        } catch (ExpiredJwtException ex){
+            String isRefreshToken = httpServletRequest.getHeader("isRefreshToken");
+            String requestURL = httpServletRequest.getRequestURL().toString();
+            if(isRefreshToken != null && isRefreshToken.equals("true") && requestURL.contains("refreshtoken")) {
+                allowForRefreshToken(ex, httpServletRequest);
+            } else
+                httpServletRequest.setAttribute("exception", ex.getMessage());
+        } catch (BadCredentialsException ex){
+            httpServletRequest.setAttribute("exception", ex);
+        } catch (Exception ex){
+            logger.error(ex.toString());
         }
 
         filterChain.doFilter(httpServletRequest, httpServletResponse);
+    }
+
+    private void allowForRefreshToken(ExpiredJwtException ex, HttpServletRequest request){
+        UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(null, null, null);
+        SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
+        request.setAttribute("claims", ex.getClaims());
     }
 
     private String parseJwt(HttpServletRequest request){
