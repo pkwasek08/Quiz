@@ -2,21 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a28979e3-85b3-4e8a-a003-ead893f2e57e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/584484bd-1ed5-4c2f-99df-621f71c09dcb.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/584484bd-1ed5-4c2f-99df-621f71c09dcb.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/entities/Answer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/entities/Answer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/entities/ChosenAnswer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/entities/ChosenAnswer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/entities/GenerateTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/entities/GenerateTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/entities/GenerateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/entities/GenerateTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/entities/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/entities/Group.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/entities/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/entities/Result.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/entities/Subject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/entities/Subject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/entities/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/entities/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/entities/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/entities/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz_server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/quiz_server.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/entities/UserGroupSubject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/entities/UserGroupSubject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/entities/UserSubject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/entities/UserSubject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V1__create_database.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V1__create_database.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/repositories/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/quiz_server.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/db/migration/V1__create_database.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/db/migration/V1__create_database.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/entities/Answer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/project/entities/Answer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/entities/ChosenAnswer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/project/entities/ChosenAnswer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/entities/GenerateTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/project/entities/GenerateTask.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/entities/GenerateTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/project/entities/GenerateTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/entities/Group.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/project/entities/Group.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/entities/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/project/entities/Result.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/entities/Subject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/project/entities/Subject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/entities/Task.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/project/entities/Task.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/entities/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/project/entities/Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/project/entities/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/entities/UserGroupSubject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/project/entities/UserGroupSubject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/entities/UserSubject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/project/entities/UserSubject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/repositories/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/project/repositories/UserRepository.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,18 +103,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IgnoredFileRootStore">
-    <option name="generatedRoots">
-      <set>
-        <option value="E:\Documents\quiz_server\.idea" />
-      </set>
-    </option>
-  </component>
   <component name="ProjectId" id="1jWFJFLtdPxwdkjEdc5jFVgcKv8" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -124,7 +123,13 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/pl/project" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -133,6 +138,12 @@
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="pl.project.controllers" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Rafal\Desktop\Nowy folder (2)\Quiz\src\main\java\pl\project" />
+    </key>
     <key name="ImportMappingsDialog.RecentPackages">
       <recent name="pl.project.entities" />
       <recent name="" />
@@ -176,11 +187,12 @@
       <workItem from="1603917428821" duration="8386000" />
       <workItem from="1603963680980" duration="1499000" />
       <workItem from="1603969627100" duration="892000" />
+      <workItem from="1603971928511" duration="1919000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2610" y="-290" key="#Project_Structure" timestamp="1603912623779">
@@ -195,6 +207,10 @@
       <screen x="1920" y="-546" width="2194" height="1194" />
     </state>
     <state x="2745" y="-146" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603912577622" />
+    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser" timestamp="1603972363176">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser/-1920.4.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1603972363176" />
     <state x="2747" y="-173" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1603915375015">
       <screen x="1920" y="-546" width="2194" height="1194" />
     </state>
@@ -223,37 +239,45 @@
       <screen x="1920" y="-546" width="2194" height="1194" />
     </state>
     <state x="2798" y="-194" key="FileChooserDialogImpl/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603917597228" />
-    <state width="2151" height="538" key="GridCell.Tab.0.bottom" timestamp="1603965352621">
-      <screen x="1920" y="-546" width="2194" height="1194" />
+    <state width="1877" height="231" key="GridCell.Tab.0.bottom" timestamp="1603973498726">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="231" key="GridCell.Tab.0.bottom/-1920.4.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1603973498726" />
     <state width="2151" height="538" key="GridCell.Tab.0.bottom/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603965352621" />
-    <state width="2151" height="538" key="GridCell.Tab.0.center" timestamp="1603965352621">
-      <screen x="1920" y="-546" width="2194" height="1194" />
+    <state width="1877" height="231" key="GridCell.Tab.0.center" timestamp="1603973498726">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="231" key="GridCell.Tab.0.center/-1920.4.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1603973498726" />
     <state width="2151" height="538" key="GridCell.Tab.0.center/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603965352621" />
-    <state width="2151" height="538" key="GridCell.Tab.0.left" timestamp="1603965352621">
-      <screen x="1920" y="-546" width="2194" height="1194" />
+    <state width="1877" height="231" key="GridCell.Tab.0.left" timestamp="1603973498726">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="231" key="GridCell.Tab.0.left/-1920.4.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1603973498725" />
     <state width="2151" height="538" key="GridCell.Tab.0.left/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603965352621" />
-    <state width="2151" height="538" key="GridCell.Tab.0.right" timestamp="1603965352621">
-      <screen x="1920" y="-546" width="2194" height="1194" />
+    <state width="1877" height="231" key="GridCell.Tab.0.right" timestamp="1603973498726">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="231" key="GridCell.Tab.0.right/-1920.4.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1603973498726" />
     <state width="2151" height="538" key="GridCell.Tab.0.right/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603965352621" />
-    <state width="2151" height="538" key="GridCell.Tab.1.bottom" timestamp="1603965352621">
-      <screen x="1920" y="-546" width="2194" height="1194" />
+    <state width="1877" height="231" key="GridCell.Tab.1.bottom" timestamp="1603973498726">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="231" key="GridCell.Tab.1.bottom/-1920.4.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1603973498726" />
     <state width="2151" height="538" key="GridCell.Tab.1.bottom/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603965352621" />
-    <state width="2151" height="538" key="GridCell.Tab.1.center" timestamp="1603965352621">
-      <screen x="1920" y="-546" width="2194" height="1194" />
+    <state width="1877" height="231" key="GridCell.Tab.1.center" timestamp="1603973498726">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="231" key="GridCell.Tab.1.center/-1920.4.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1603973498726" />
     <state width="2151" height="538" key="GridCell.Tab.1.center/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603965352621" />
-    <state width="2151" height="538" key="GridCell.Tab.1.left" timestamp="1603965352621">
-      <screen x="1920" y="-546" width="2194" height="1194" />
+    <state width="1877" height="231" key="GridCell.Tab.1.left" timestamp="1603973498726">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="231" key="GridCell.Tab.1.left/-1920.4.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1603973498726" />
     <state width="2151" height="538" key="GridCell.Tab.1.left/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603965352621" />
-    <state width="2151" height="538" key="GridCell.Tab.1.right" timestamp="1603965352621">
-      <screen x="1920" y="-546" width="2194" height="1194" />
+    <state width="1877" height="231" key="GridCell.Tab.1.right" timestamp="1603973498726">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="231" key="GridCell.Tab.1.right/-1920.4.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1603973498726" />
     <state width="2151" height="538" key="GridCell.Tab.1.right/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603965352621" />
     <state x="2548" y="-294" key="Maven.ArtifactSearchDialog" timestamp="1603912825749">
       <screen x="1920" y="-546" width="2194" height="1194" />
