@@ -3,13 +3,14 @@ package pl.project.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "User_Subject", schema = "public", catalog = "d9h3r67ca39jah")
+@Table(name = "user_subject", schema = "public", catalog = "d9h3r67ca39jah")
 public class UserSubject {
     private int id;
     private Subject subjectBySubjectId;
     private User userByUserId;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     public int getId() {
         return id;

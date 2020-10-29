@@ -3,7 +3,7 @@ package pl.project.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Users", schema = "public", catalog = "d9h3r67ca39jah")
+@Table(name = "users", schema = "public", catalog = "d9h3r67ca39jah")
 public class User {
     private int id;
     private String name;
@@ -14,8 +14,11 @@ public class User {
     private String major;
     private Integer groupId;
     private String password;
+    private String login;
+    private String role;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     public int getId() {
         return id;
@@ -105,6 +108,26 @@ public class User {
         this.password = password;
     }
 
+    @Basic
+    @Column(name = "login", nullable = true, length = -1)
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    @Basic
+    @Column(name = "role", nullable = true, length = -1)
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -121,6 +144,8 @@ public class User {
         if (major != null ? !major.equals(that.major) : that.major != null) return false;
         if (groupId != null ? !groupId.equals(that.groupId) : that.groupId != null) return false;
         if (password != null ? !password.equals(that.password) : that.password != null) return false;
+        if (login != null ? !login.equals(that.login) : that.login != null) return false;
+        if (role != null ? !role.equals(that.role) : that.role != null) return false;
 
         return true;
     }
@@ -136,6 +161,8 @@ public class User {
         result = 31 * result + (major != null ? major.hashCode() : 0);
         result = 31 * result + (groupId != null ? groupId.hashCode() : 0);
         result = 31 * result + (password != null ? password.hashCode() : 0);
+        result = 31 * result + (login != null ? login.hashCode() : 0);
+        result = 31 * result + (role != null ? role.hashCode() : 0);
         return result;
     }
 }

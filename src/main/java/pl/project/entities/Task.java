@@ -3,7 +3,7 @@ package pl.project.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Tasks", schema = "public", catalog = "d9h3r67ca39jah")
+@Table(name = "tasks", schema = "public", catalog = "d9h3r67ca39jah")
 public class Task {
     private int id;
     private String question;
@@ -13,6 +13,7 @@ public class Task {
     private Test testByTestId;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     public int getId() {
         return id;

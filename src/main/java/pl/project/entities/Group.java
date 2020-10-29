@@ -3,12 +3,13 @@ package pl.project.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Groups", schema = "public", catalog = "d9h3r67ca39jah")
+@Table(name = "groups", schema = "public", catalog = "d9h3r67ca39jah")
 public class Group {
     private int id;
     private String name;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     public int getId() {
         return id;

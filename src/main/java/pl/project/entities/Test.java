@@ -5,7 +5,7 @@ import java.sql.Time;
 import java.sql.Timestamp;
 
 @Entity
-@Table(name = "Tests", schema = "public", catalog = "d9h3r67ca39jah")
+@Table(name = "tests", schema = "public", catalog = "d9h3r67ca39jah")
 public class Test {
     private int id;
     private String name;
@@ -15,6 +15,7 @@ public class Test {
     private Subject subjectBySubjectId;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     public int getId() {
         return id;

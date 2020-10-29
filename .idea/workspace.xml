@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a28979e3-85b3-4e8a-a003-ead893f2e57e" name="Default Changelist" comment="" />
+    <list default="true" id="a28979e3-85b3-4e8a-a003-ead893f2e57e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/584484bd-1ed5-4c2f-99df-621f71c09dcb.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/584484bd-1ed5-4c2f-99df-621f71c09dcb.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/entities/Answer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/entities/Answer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/entities/ChosenAnswer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/entities/ChosenAnswer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/entities/GenerateTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/entities/GenerateTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/entities/GenerateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/entities/GenerateTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/entities/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/entities/Group.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/entities/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/entities/Result.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/entities/Subject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/entities/Subject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/entities/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/entities/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/entities/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/entities/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/entities/UserGroupSubject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/entities/UserGroupSubject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/entities/UserSubject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/entities/UserSubject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V1__create_database.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V1__create_database.sql" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,17 +74,39 @@
         <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
         <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="d9h3r67ca39jah@ec2-54-247-103-43.eu-west-1.compute.amazonaws.com" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="d9h3r67ca39jah: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="users: table" type="69fad909:PgImplModel$LocalTable" />
+      </path>
     </expand>
     <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="E:\Documents\quiz_server\.idea" />
+      </set>
+    </option>
+  </component>
   <component name="ProjectId" id="1jWFJFLtdPxwdkjEdc5jFVgcKv8" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -82,6 +120,7 @@
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -133,7 +172,10 @@
       <option name="presentableId" value="Default" />
       <updated>1603911866352</updated>
       <workItem from="1603911869558" duration="2725000" />
-      <workItem from="1603914631980" duration="1725000" />
+      <workItem from="1603914631980" duration="2555000" />
+      <workItem from="1603917428821" duration="8386000" />
+      <workItem from="1603963680980" duration="1499000" />
+      <workItem from="1603969627100" duration="892000" />
     </task>
     <servers />
   </component>
@@ -165,6 +207,10 @@
       <screen x="1920" y="-546" width="2194" height="1194" />
     </state>
     <state x="2688" y="-410" key="#com.intellij.jpa.generation.ui.DatabaseSchemaImportDialog/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603915662808" />
+    <state x="2813" y="-89" width="407" height="287" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1603926684837">
+      <screen x="1920" y="-546" width="2194" height="1194" />
+    </state>
+    <state x="2813" y="-89" width="407" height="287" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603926684837" />
     <state x="2551" y="-546" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603916161877">
       <screen x="1920" y="-546" width="2194" height="1194" />
     </state>
@@ -173,46 +219,50 @@
       <screen x="1920" y="-546" width="2194" height="1194" />
     </state>
     <state x="2951" y="-137" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603915730969" />
-    <state x="2798" y="-194" key="FileChooserDialogImpl" timestamp="1603915652984">
+    <state x="2798" y="-194" key="FileChooserDialogImpl" timestamp="1603917597228">
       <screen x="1920" y="-546" width="2194" height="1194" />
     </state>
-    <state x="2798" y="-194" key="FileChooserDialogImpl/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603915652984" />
-    <state width="2151" height="353" key="GridCell.Tab.0.bottom" timestamp="1603916316606">
+    <state x="2798" y="-194" key="FileChooserDialogImpl/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603917597228" />
+    <state width="2151" height="538" key="GridCell.Tab.0.bottom" timestamp="1603965352621">
       <screen x="1920" y="-546" width="2194" height="1194" />
     </state>
-    <state width="2151" height="353" key="GridCell.Tab.0.bottom/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603916316606" />
-    <state width="2151" height="353" key="GridCell.Tab.0.center" timestamp="1603916316605">
+    <state width="2151" height="538" key="GridCell.Tab.0.bottom/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603965352621" />
+    <state width="2151" height="538" key="GridCell.Tab.0.center" timestamp="1603965352621">
       <screen x="1920" y="-546" width="2194" height="1194" />
     </state>
-    <state width="2151" height="353" key="GridCell.Tab.0.center/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603916316605" />
-    <state width="2151" height="353" key="GridCell.Tab.0.left" timestamp="1603916316605">
+    <state width="2151" height="538" key="GridCell.Tab.0.center/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603965352621" />
+    <state width="2151" height="538" key="GridCell.Tab.0.left" timestamp="1603965352621">
       <screen x="1920" y="-546" width="2194" height="1194" />
     </state>
-    <state width="2151" height="353" key="GridCell.Tab.0.left/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603916316605" />
-    <state width="2151" height="353" key="GridCell.Tab.0.right" timestamp="1603916316605">
+    <state width="2151" height="538" key="GridCell.Tab.0.left/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603965352621" />
+    <state width="2151" height="538" key="GridCell.Tab.0.right" timestamp="1603965352621">
       <screen x="1920" y="-546" width="2194" height="1194" />
     </state>
-    <state width="2151" height="353" key="GridCell.Tab.0.right/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603916316605" />
-    <state width="2151" height="353" key="GridCell.Tab.1.bottom" timestamp="1603916316606">
+    <state width="2151" height="538" key="GridCell.Tab.0.right/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603965352621" />
+    <state width="2151" height="538" key="GridCell.Tab.1.bottom" timestamp="1603965352621">
       <screen x="1920" y="-546" width="2194" height="1194" />
     </state>
-    <state width="2151" height="353" key="GridCell.Tab.1.bottom/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603916316606" />
-    <state width="2151" height="353" key="GridCell.Tab.1.center" timestamp="1603916316606">
+    <state width="2151" height="538" key="GridCell.Tab.1.bottom/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603965352621" />
+    <state width="2151" height="538" key="GridCell.Tab.1.center" timestamp="1603965352621">
       <screen x="1920" y="-546" width="2194" height="1194" />
     </state>
-    <state width="2151" height="353" key="GridCell.Tab.1.center/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603916316606" />
-    <state width="2151" height="353" key="GridCell.Tab.1.left" timestamp="1603916316606">
+    <state width="2151" height="538" key="GridCell.Tab.1.center/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603965352621" />
+    <state width="2151" height="538" key="GridCell.Tab.1.left" timestamp="1603965352621">
       <screen x="1920" y="-546" width="2194" height="1194" />
     </state>
-    <state width="2151" height="353" key="GridCell.Tab.1.left/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603916316606" />
-    <state width="2151" height="353" key="GridCell.Tab.1.right" timestamp="1603916316606">
+    <state width="2151" height="538" key="GridCell.Tab.1.left/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603965352621" />
+    <state width="2151" height="538" key="GridCell.Tab.1.right" timestamp="1603965352621">
       <screen x="1920" y="-546" width="2194" height="1194" />
     </state>
-    <state width="2151" height="353" key="GridCell.Tab.1.right/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603916316606" />
+    <state width="2151" height="538" key="GridCell.Tab.1.right/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603965352621" />
     <state x="2548" y="-294" key="Maven.ArtifactSearchDialog" timestamp="1603912825749">
       <screen x="1920" y="-546" width="2194" height="1194" />
     </state>
     <state x="2548" y="-294" key="Maven.ArtifactSearchDialog/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603912825749" />
+    <state x="2813" y="-144" width="407" height="377" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1603918237038">
+      <screen x="1920" y="-546" width="2194" height="1194" />
+    </state>
+    <state x="2813" y="-144" width="407" height="377" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603918237038" />
     <state x="2789" y="-230" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1603912844105">
       <screen x="1920" y="-546" width="2194" height="1194" />
     </state>

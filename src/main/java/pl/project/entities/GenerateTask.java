@@ -3,13 +3,14 @@ package pl.project.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Generate_Tasks", schema = "public", catalog = "d9h3r67ca39jah")
+@Table(name = "generate_tasks", schema = "public", catalog = "d9h3r67ca39jah")
 public class GenerateTask {
     private int id;
     private Task tasksByTaskId;
     private GenerateTest generateTestsByGenerateTest;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     public int getId() {
         return id;

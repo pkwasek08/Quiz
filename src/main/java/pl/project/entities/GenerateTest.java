@@ -3,12 +3,13 @@ package pl.project.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Generate_Tests", schema = "public", catalog = "d9h3r67ca39jah")
+@Table(name = "generate_tests", schema = "public", catalog = "d9h3r67ca39jah")
 public class GenerateTest {
     private int id;
     private Test testByTestId;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     public int getId() {
         return id;

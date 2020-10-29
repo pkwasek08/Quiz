@@ -3,7 +3,7 @@ package pl.project.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Chosen_Answers", schema = "public", catalog = "d9h3r67ca39jah")
+@Table(name = "chosen_answers", schema = "public", catalog = "d9h3r67ca39jah")
 public class ChosenAnswer {
     private int id;
     private String descriptedAnswer;
@@ -11,6 +11,7 @@ public class ChosenAnswer {
     private Answer answerByAnswerId;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     public int getId() {
         return id;
