@@ -17,6 +17,23 @@ public class User {
     private String login;
     private String role;
 
+    public User(int id, String name, String lastname, String degree, String email, String department, String major, Integer groupId, String password, String login, String role) {
+        this.id = id;
+        this.name = name;
+        this.lastname = lastname;
+        this.degree = degree;
+        this.email = email;
+        this.department = department;
+        this.major = major;
+        this.groupId = groupId;
+        this.password = password;
+        this.login = login;
+        this.role = role;
+    }
+
+    public User() {
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)

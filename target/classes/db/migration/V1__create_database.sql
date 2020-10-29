@@ -9,6 +9,7 @@ CREATE TABLE "users" (
   "major" varchar,
   "group_id" integer,
   "password" varchar,
+  "login" varchar,
   "role" varchar
 );
 
