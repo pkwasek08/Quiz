@@ -47,7 +47,7 @@ public class AuthController {
     JwtUtils jwtUtils;
 
     @PostMapping("signin")
-    public ResponseEntity<?> authenticateUser(@RequestBody LoginRequest loginRequest){
+    public JwtResponse authenticateUser(@RequestBody LoginRequest loginRequest){
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(loginRequest.getLogin(), loginRequest.getPassword()));
         System.out.println("---------" + authentication.isAuthenticated() + "-----------");
@@ -59,20 +59,20 @@ public class AuthController {
                 .map(GrantedAuthority::getAuthority)
                 .collect(Collectors.toList());
 
-        return ResponseEntity.ok(new JwtResponse(jwt,
+        return new JwtResponse(jwt,
                 myUserDetails.getId(),
                 myUserDetails.getUsername(),
                 myUserDetails.getEmail(),
                 roles
-        ));
+        );
     }
 
     @GetMapping("/refreshtoken")
-    public ResponseEntity<?> refreshToken(HttpServletRequest request) throws Exception {
+    public RefreshTokenResponse refreshToken(HttpServletRequest request) throws Exception {
         DefaultClaims claims = (io.jsonwebtoken.impl.DefaultClaims) request.getAttribute("claims");
         Map<String, Object> expectedMap = getMapFromIoJsonwebtokenClaims(claims);
         String token = jwtUtils.generateRefreshToken(expectedMap, expectedMap.get("sub").toString());
-        return ResponseEntity.ok(new RefreshTokenResponse(token));
+        return new RefreshTokenResponse(token);
     }
 
     public Map<String, Object> getMapFromIoJsonwebtokenClaims(DefaultClaims claims) {
