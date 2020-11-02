@@ -1,7 +1,10 @@
 package pl.project.services;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pl.project.dao.TestDao;
 import pl.project.entities.Subject;
 import pl.project.entities.Test;
 import pl.project.repositories.SubjectRepository;
@@ -13,12 +16,14 @@ import java.util.Optional;
 
 @Service
 public class TestService {
+    Logger log = LogManager.getLogger(this.getClass());
+
     @Autowired
     private TestRepository testRepository;
-
     @Autowired
     private SubjectRepository subjectRepository;
-
+    @Autowired
+    private TestDao testDao;
     public List<Test> getAllTest() {
         List<Test> testList = new ArrayList<>();
         testRepository.findAll().forEach(testList::add);
@@ -31,6 +36,10 @@ public class TestService {
         if(!subject.isPresent()) return null;
         testList = testRepository.findAllBySubjectBySubjectId(subject.get());
         return testList;
+    }
+
+    public List<Test> getAllTestBySubjectAndGroup(Integer subjectId, Integer groupId) {
+        return testDao.findAllTestsBySubjectIdAndGroupId(subjectId,groupId);
     }
 
     public Test getTest(Integer id) {
