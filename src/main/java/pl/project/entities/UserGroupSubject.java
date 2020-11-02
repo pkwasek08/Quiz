@@ -34,12 +34,23 @@ public class UserGroupSubject {
         return true;
     }
 
+    public UserGroupSubject() {
+    }
+
+    public UserGroupSubject(int id, User userByUserId, Group groupByGroupId, Subject subjectBySubjectId, User userByTeacherId) {
+        this.id = id;
+        this.userByUserId = userByUserId;
+        this.groupByGroupId = groupByGroupId;
+        this.subjectBySubjectId = subjectBySubjectId;
+        this.userByTeacherId = userByTeacherId;
+    }
+
     @Override
     public int hashCode() {
         return id;
     }
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     public User getUserByUserId() {
         return userByUserId;
@@ -49,7 +60,7 @@ public class UserGroupSubject {
         this.userByUserId = userByUserId;
     }
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(name = "group_id", referencedColumnName = "id")
     public Group getGroupByGroupId() {
         return groupByGroupId;
@@ -59,7 +70,7 @@ public class UserGroupSubject {
         this.groupByGroupId = groupByGroupId;
     }
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(name = "subject_id", referencedColumnName = "id")
     public Subject getSubjectBySubjectId() {
         return subjectBySubjectId;
@@ -69,7 +80,7 @@ public class UserGroupSubject {
         this.subjectBySubjectId = subjectBySubjectId;
     }
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(name = "teacher_id", referencedColumnName = "id")
     public User getUserByTeacherId() {
         return userByTeacherId;

@@ -1,6 +1,7 @@
 package pl.project.entities;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "users", schema = "public", catalog = "d9h3r67ca39jah")
@@ -12,12 +13,11 @@ public class User {
     private String email;
     private String department;
     private String major;
-    private Integer groupId;
     private String password;
     private String login;
     private String role;
 
-    public User(int id, String name, String lastname, String degree, String email, String department, String major, Integer groupId, String password, String login, String role) {
+    public User(int id, String name, String lastname, String degree, String email, String department, String major,  String password, String login, String role) {
         this.id = id;
         this.name = name;
         this.lastname = lastname;
@@ -25,7 +25,6 @@ public class User {
         this.email = email;
         this.department = department;
         this.major = major;
-        this.groupId = groupId;
         this.password = password;
         this.login = login;
         this.role = role;
@@ -106,16 +105,6 @@ public class User {
     }
 
     @Basic
-    @Column(name = "group_id", nullable = true)
-    public Integer getGroupId() {
-        return groupId;
-    }
-
-    public void setGroupId(Integer groupId) {
-        this.groupId = groupId;
-    }
-
-    @Basic
     @Column(name = "password", nullable = true, length = -1)
     public String getPassword() {
         return password;
@@ -159,7 +148,6 @@ public class User {
         if (email != null ? !email.equals(that.email) : that.email != null) return false;
         if (department != null ? !department.equals(that.department) : that.department != null) return false;
         if (major != null ? !major.equals(that.major) : that.major != null) return false;
-        if (groupId != null ? !groupId.equals(that.groupId) : that.groupId != null) return false;
         if (password != null ? !password.equals(that.password) : that.password != null) return false;
         if (login != null ? !login.equals(that.login) : that.login != null) return false;
         if (role != null ? !role.equals(that.role) : that.role != null) return false;
@@ -176,7 +164,6 @@ public class User {
         result = 31 * result + (email != null ? email.hashCode() : 0);
         result = 31 * result + (department != null ? department.hashCode() : 0);
         result = 31 * result + (major != null ? major.hashCode() : 0);
-        result = 31 * result + (groupId != null ? groupId.hashCode() : 0);
         result = 31 * result + (password != null ? password.hashCode() : 0);
         result = 31 * result + (login != null ? login.hashCode() : 0);
         result = 31 * result + (role != null ? role.hashCode() : 0);

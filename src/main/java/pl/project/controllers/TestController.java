@@ -22,6 +22,12 @@ public class TestController {
         return testService.getAllTest();
     }
 
+    @GetMapping("/subject/{id}")
+    @CrossOrigin(origins = "*")
+    public List<Test> getTestsBySubject(@PathVariable int id) {
+        return testService.getAllTestBySubject(id);
+    }
+
     @GetMapping("/{id}")
     @CrossOrigin(origins = "*")
     public Test getTest(@PathVariable Integer id) {

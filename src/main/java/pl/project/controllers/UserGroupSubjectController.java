@@ -45,4 +45,19 @@ public class UserGroupSubjectController {
     public void deleteUserGroupSubject(@PathVariable Integer id) {
         userGroupSubjectService.deleteUserGroupSubject(id);
     }
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

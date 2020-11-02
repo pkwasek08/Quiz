@@ -85,14 +85,61 @@ public class AuthController {
 
     @PostMapping("/signup")
     public ResponseEntity<?> registerUser(@RequestBody SignupRequest signupRequest){
+        if(signupRequest.getLogin() == null || signupRequest.getLogin().length() < 4){
+            return ResponseEntity
+                    .badRequest()
+                    .body(new MessageResponse("Error: Username's length should be at least 4"));
+        }
+        if(signupRequest.getEmail() == null || !signupRequest.getEmail().contains("@")){
+            return ResponseEntity
+                    .badRequest()
+                    .body(new MessageResponse("Error: Email is not valid"));
+        }
         if(userRepository.existsByLogin(signupRequest.getLogin())){
             return ResponseEntity
                     .badRequest()
                     .body(new MessageResponse("Error: Username is already taken"));
         }
+        if(userRepository.existsByEmail(signupRequest.getLogin())){
+            return ResponseEntity
+                    .badRequest()
+                    .body(new MessageResponse("Error: Email is already taken"));
+        }
+
+        if(signupRequest.getPassword() == null || signupRequest.getPassword().length() < 5){
+            return ResponseEntity
+                    .badRequest()
+                    .body(new MessageResponse("Error: Password's length should be at least 5"));
+        }
+
+        if(signupRequest.getLastname() == null){
+            return ResponseEntity
+                    .badRequest()
+                    .body(new MessageResponse("Error: Lastname cannot be null"));
+        }
+
+        if(signupRequest.getDegree() == null){
+            return ResponseEntity
+                    .badRequest()
+                    .body(new MessageResponse("Error: Degree cannot be null"));
+        }
+
+        if(signupRequest.getDepartment() == null){
+            return ResponseEntity
+                    .badRequest()
+                    .body(new MessageResponse("Error: Department cannot be null"));
+        }
+
+        if(signupRequest.getMajor() == null){
+            return ResponseEntity
+                    .badRequest()
+                    .body(new MessageResponse("Error: Major cannot be null"));
+        }
+
+
 
         User user = new User(0, signupRequest.getName(), signupRequest.getLastname(), signupRequest.getDegree(), signupRequest.getEmail(),
-                signupRequest.getDepartment(), signupRequest.getMajor(), null, encoder.encode(signupRequest.getPassword()), signupRequest.getLogin(), "ROLE_USER");
+                signupRequest.getDepartment(), signupRequest.getMajor(), encoder.encode(signupRequest.getPassword()), signupRequest.getLogin(), "ROLE_USER");
 
         userRepository.save(user);
 

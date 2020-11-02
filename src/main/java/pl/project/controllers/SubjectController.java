@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pl.project.entities.Subject;
 import pl.project.services.SubjectService;
+import pl.project.services.UserGroupSubjectService;
 
 import java.util.List;
 
@@ -15,6 +16,9 @@ public class SubjectController {
     Logger log = LogManager.getLogger(this.getClass());
     @Autowired
     private SubjectService subjectService;
+
+    @Autowired
+    private UserGroupSubjectService userGroupSubjectService;
 
     @GetMapping()
     @CrossOrigin(origins = "*")
@@ -44,5 +48,17 @@ public class SubjectController {
     @CrossOrigin(origins = "*")
     public void deleteSubject(@PathVariable Integer id) {
         subjectService.deleteSubject(id);
+    }
+
+    @GetMapping("/teacher/{id}")
+    @CrossOrigin(origins = "*")
+    public List<Subject> getTeacherSubject(@PathVariable Integer id) {
+        return userGroupSubjectService.getAllSubjectsByTeacherId(id);
+    }
+
+    @GetMapping("/student/{id}")
+    @CrossOrigin(origins = "*")
+    public List<Subject> getUserSubject(@PathVariable Integer id) {
+        return userGroupSubjectService.getAllSubjectsByUserId(id);
     }
 }

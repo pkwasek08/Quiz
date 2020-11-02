@@ -24,10 +24,10 @@ public class GroupService {
         return result;
     }
 
+
     public void addGroup(Group group) {
         groupRepository.save(group);
     }
-
 
     public void updateGroup(Integer id, Group group) {
         groupRepository.save(group);

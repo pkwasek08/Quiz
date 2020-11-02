@@ -28,6 +28,12 @@ public class GenerateTestController {
         return generateTestService.getGenerateTest(id);
     }
 
+    @GetMapping("/user/{id}")
+    @CrossOrigin(origins = "*")
+    public List<GenerateTest> getGenerateTestByUserId(@PathVariable Integer id) {
+        return generateTestService.getGenerateTestsByUserId(id);
+    }
+
     @PostMapping()
     @CrossOrigin(origins = "*")
     public void addGenerateTest(@RequestBody GenerateTest generateTest) {
