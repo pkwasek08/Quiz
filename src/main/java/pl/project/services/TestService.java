@@ -5,14 +5,10 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.project.dao.TestDao;
-import pl.project.entities.Subject;
 import pl.project.entities.Test;
-import pl.project.repositories.SubjectRepository;
 import pl.project.repositories.TestRepository;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class TestService {
@@ -21,8 +17,6 @@ public class TestService {
     @Autowired
     private TestRepository testRepository;
     @Autowired
-    private SubjectRepository subjectRepository;
-    @Autowired
     private TestDao testDao;
     public List<Test> getAllTest() {
         List<Test> testList = new ArrayList<>();
@@ -30,12 +24,8 @@ public class TestService {
         return testList;
     }
 
-    public List<Test> getAllTestBySubject(int subject_id) {
-        List<Test> testList;
-        Optional<Subject> subject = subjectRepository.findById(subject_id);
-        if(!subject.isPresent()) return null;
-        testList = testRepository.findAllBySubjectBySubjectId(subject.get());
-        return testList;
+    public List<Test> getAllTestBySubject(Integer subject_id) {
+        return testRepository.findAllBySubjectBySubjectId_Id(subject_id);
     }
 
     public List<Test> getAllTestBySubjectAndGroup(Integer subjectId, Integer groupId) {
@@ -43,8 +33,7 @@ public class TestService {
     }
 
     public Test getTest(Integer id) {
-        Test test = testRepository.findById(id).get();
-        return test;
+        return testRepository.findById(id).get();
     }
 
     public void addTest(Test test) {

@@ -24,11 +24,11 @@ public class TestController {
 
     @GetMapping("/subject/{id}")
     @CrossOrigin(origins = "*")
-    public List<Test> getTestsBySubject(@PathVariable int id) {
+    public List<Test> getTestsBySubject(@PathVariable Integer id) {
         return testService.getAllTestBySubject(id);
     }
 
-    @RequestMapping("/subjectAndGroup")
+    @GetMapping("/subjectAndGroup")
     @CrossOrigin(origins = "*")
     public List<Test> getTestsBySubjectAndGroup(@RequestParam Integer subjectId,@RequestParam  Integer groupId) {
         return testService.getAllTestBySubjectAndGroup(subjectId,groupId);
