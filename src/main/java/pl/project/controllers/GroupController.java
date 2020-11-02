@@ -50,7 +50,7 @@ public class GroupController {
         groupService.deleteGroup(id);
     }
 
-    @GetMapping("/teacher/id}")
+    @GetMapping("/teacher/{id}")
     @CrossOrigin(origins = "*")
     public List<Group> getTeacherGroup(@PathVariable Integer id) {
         return userGroupSubjectService.getAllGroupsByTeacherId(id);
