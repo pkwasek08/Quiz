@@ -24,9 +24,6 @@ public class UserGroupSubjectService {
     public List<Group> getAllGroupsByUserId(int id){
         List<Group> groups = new ArrayList<>();
         Optional<User> user = userRepository.findById(id);
-        if (!user.isPresent()){
-            return null;
-        }
         List<UserGroupSubject> userGroupSubjects = userGroupSubjectRepository.getAllByUserByUserId(user.get());
         if(userGroupSubjects.size() > 0)
             for (UserGroupSubject ugs:userGroupSubjects
@@ -39,9 +36,6 @@ public class UserGroupSubjectService {
     public List<Subject> getAllSubjectsByUserId(int id){
         List<Subject> subjects = new ArrayList<>();
         Optional<User> user = userRepository.findById(id);
-        if (!user.isPresent()){
-            return null;
-        }
         List<UserGroupSubject> userGroupSubjects = userGroupSubjectRepository.getAllByUserByUserId(user.get());
         if(userGroupSubjects.size() > 0)
             for (UserGroupSubject ugs:userGroupSubjects
@@ -54,9 +48,6 @@ public class UserGroupSubjectService {
     public List<Group> getAllGroupsByTeacherId(int id){
         List<Group> groups = new ArrayList<>();
         Optional<User> user = userRepository.findById(id);
-        if (!user.isPresent()){
-            return null;
-        }
         List<UserGroupSubject> userGroupSubjects = userGroupSubjectRepository.getAllByUserByTeacherId(user.get());
         if(userGroupSubjects.size() > 0)
             for (UserGroupSubject ugs:userGroupSubjects
@@ -69,9 +60,6 @@ public class UserGroupSubjectService {
     public List<Subject> getAllSubjectsByTeacherId(int id){
         List<Subject> subjects = new ArrayList<>();
         Optional<User> user = userRepository.findById(id);
-        if (!user.isPresent()){
-            return null;
-        }
         List<UserGroupSubject> userGroupSubjects = userGroupSubjectRepository.getAllByUserByTeacherId(user.get());
         if(userGroupSubjects.size() > 0)
             for (UserGroupSubject ugs:userGroupSubjects

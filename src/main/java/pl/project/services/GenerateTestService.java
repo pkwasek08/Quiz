@@ -37,7 +37,6 @@ public class GenerateTestService {
 
     public List<GenerateTest> getGenerateTestsByUserId(Integer id) {
         Optional<User> user =  userRepository.findById(id);
-        if(!user.isPresent()) return null;
         List<Result> results = resultRepository.findAllByUserByUserId(user.get());
         List<GenerateTest> generateTests = new ArrayList<>();
         for (Result result: results

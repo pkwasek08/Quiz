@@ -136,7 +136,20 @@ public class AuthController {
                     .body(new MessageResponse("Error: Major cannot be null"));
         }
 
+//        String roles = null;
+//        if(signupRequest.getEmail().contains("@stud.prz.edu.pl"))
+//            roles = "ROLE_STUDENT";
+//        else if(signupRequest.getEmail().contains("@prz.edu.pl"))
+//            roles = "ROLE_TEACHER";
+//
+//        if(roles == null){
+//            return ResponseEntity
+//                    .badRequest()
+//                    .body(new MessageResponse("Email should be @stud.prz.edu.pl or @prz.edu.pl"));
+//        }
 
+//        User user = new User(0, signupRequest.getName(), signupRequest.getLastname(), signupRequest.getDegree(), signupRequest.getEmail(),
+//                signupRequest.getDepartment(), signupRequest.getMajor(), encoder.encode(signupRequest.getPassword()), signupRequest.getLogin(), roles);
 
         User user = new User(0, signupRequest.getName(), signupRequest.getLastname(), signupRequest.getDegree(), signupRequest.getEmail(),
                 signupRequest.getDepartment(), signupRequest.getMajor(), encoder.encode(signupRequest.getPassword()), signupRequest.getLogin(), "ROLE_USER");
