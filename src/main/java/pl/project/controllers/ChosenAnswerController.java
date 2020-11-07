@@ -10,7 +10,7 @@ import pl.project.services.ChosenAnswerService;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/v")
+@RequestMapping(value = "/chosenAnswer")
 public class ChosenAnswerController {
     Logger log = LogManager.getLogger(this.getClass());
     @Autowired
