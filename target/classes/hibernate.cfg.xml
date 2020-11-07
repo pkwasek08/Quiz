@@ -4,9 +4,7 @@
     "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
   <session-factory>
-    <property name="connection.url">
-      jdbc:postgresql://ec2-54-247-103-43.eu-west-1.compute.amazonaws.com:5432/d9h3r67ca39jah
-    </property>
+    <property name="connection.url">jdbc:postgresql://ec2-54-247-103-43.eu-west-1.compute.amazonaws.com:5432/d9h3r67ca39jah</property>
     <property name="connection.driver_class">org.postgresql.Driver</property>
     <mapping class="pl.project.entities.Answer"/>
     <mapping class="pl.project.entities.ChosenAnswer"/>
@@ -20,6 +18,8 @@
     <mapping class="pl.project.entities.UserGroupSubject"/>
     <mapping class="pl.project.entities.UserSubject"/>
     <mapping class="pl.project.entities.User"/>
+      <mapping class="pl.project.entities.ConfirmationToken"/>
+    <mapping class="pl.project.entities.testUsers"/>
     <!-- <property name="connection.username"/> -->
     <!-- <property name="connection.password"/> -->
 
