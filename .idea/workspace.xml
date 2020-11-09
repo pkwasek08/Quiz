@@ -20,123 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a28979e3-85b3-4e8a-a003-ead893f2e57e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/584484bd-1ed5-4c2f-99df-621f71c09dcb.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/584484bd-1ed5-4c2f-99df-621f71c09dcb.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/584484bd-1ed5-4c2f-99df-621f71c09dcb/storage_v2/_src_/database/d9h3r67ca39jah.Gp6HnQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/584484bd-1ed5-4c2f-99df-621f71c09dcb/storage_v2/_src_/database/d9h3r67ca39jah.Gp6HnQ/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/controllers/AnswerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/Answer/AnswerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/payload/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/controllers/ChosenAnswerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/ChosenAnswer/ChosenAnswerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/controllers/ConfirmationTokenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/ConfirmationToken/ConfirmationTokenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/controllers/GenerateTaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/GenerateTask/GenerateTaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/controllers/GenerateTestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/GenerateTest/GenerateTestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/controllers/GroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/Group/GroupController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/controllers/ResultController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/Result/ResultController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/controllers/SubjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/Subject/SubjectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/controllers/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/Task/TaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/controllers/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/Test/TestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/User/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/controllers/UserGroupSubjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/UserGroupSubject/UserGroupSubjectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/controllers/UserSubjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/UserSubject/UserSubjectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/dao/TestDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/Test/TestDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/dto/ExpirationTimeDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/payload/dto/ExpirationTimeDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/entities/Answer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/Answer/Answer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/entities/ChosenAnswer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/ChosenAnswer/ChosenAnswer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/entities/ConfirmationToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/ConfirmationToken/ConfirmationToken.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/entities/GenerateTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/GenerateTask/GenerateTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/entities/GenerateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/GenerateTest/GenerateTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/entities/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/Group/Group.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/entities/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/Result/Result.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/entities/Subject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/Subject/Subject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/entities/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/Task/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/entities/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/Test/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/User/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/entities/UserGroupSubject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/UserGroupSubject/UserGroupSubject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/entities/UserSubject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/UserSubject/UserSubject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/repositories/AnswerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/Answer/AnswerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/repositories/ChosenAnswerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/ChosenAnswer/ChosenAnswerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/repositories/ConfirmationTokenRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/ConfirmationToken/ConfirmationTokenRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/repositories/GenerateTaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/GenerateTask/GenerateTaskRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/repositories/GenerateTestRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/GenerateTest/GenerateTestRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/repositories/GroupRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/Group/GroupRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/repositories/ResultRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/Result/ResultRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/repositories/SubjectRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/Subject/SubjectRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/repositories/TaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/Task/TaskRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/repositories/TestRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/Test/TestRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/repositories/UserGroupSubjectRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/UserGroupSubject/UserGroupSubjectRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/User/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/repositories/UserSubjectRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/UserSubject/UserSubjectRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/security/MyUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/security/MyUserDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/security/MyUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/security/MyUserDetailsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/services/AnswerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/Answer/AnswerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/services/ChosenAnswerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/ChosenAnswer/ChosenAnswerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/services/ConfirmationTokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/ConfirmationToken/ConfirmationTokenService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/services/GenerateTaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/GenerateTask/GenerateTaskService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/services/GenerateTestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/GenerateTest/GenerateTestService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/services/GroupService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/Group/GroupService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/services/ResultService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/Result/ResultService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/services/SubjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/Subject/SubjectService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/services/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/Task/TaskService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/services/TestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/Test/TestService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/services/UserGroupSubjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/UserGroupSubject/UserGroupSubjectService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/User/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/services/UserSubjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/UserSubject/UserSubjectService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/controllers/AnswerController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/controllers/AuthController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/controllers/ChosenAnswerController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/controllers/ConfirmationTokenController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/controllers/GenerateTaskController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/controllers/GenerateTestController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/controllers/GroupController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/controllers/ResultController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/controllers/SubjectController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/controllers/TaskController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/controllers/TestController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/controllers/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/controllers/UserGroupSubjectController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/controllers/UserSubjectController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/dao/TestDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/dto/ExpirationTimeDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/entities/Answer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/entities/ChosenAnswer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/entities/ConfirmationToken.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/entities/GenerateTask.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/entities/GenerateTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/entities/Group.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/entities/Result.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/entities/Subject.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/entities/Task.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/entities/Test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/entities/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/entities/UserGroupSubject.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/entities/UserSubject.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/repositories/AnswerRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/repositories/ChosenAnswerRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/repositories/ConfirmationTokenRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/repositories/GenerateTaskRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/repositories/GenerateTestRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/repositories/GroupRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/repositories/ResultRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/repositories/SubjectRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/repositories/TaskRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/repositories/TestRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/repositories/UserGroupSubjectRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/repositories/UserRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/repositories/UserSubjectRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/security/MyUserDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/project/security/MyUserDetails.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/security/MyUserDetailsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/project/security/MyUserDetailsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/services/AnswerService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/services/ChosenAnswerService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/services/ConfirmationTokenService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/services/GenerateTaskService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/services/GenerateTestService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/services/GroupService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/services/ResultService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/services/SubjectService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/services/TaskService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/services/TestService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/services/UserGroupSubjectService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/services/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/project/services/UserSubjectService.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,6 +79,16 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
         <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="d9h3r67ca39jah@ec2-54-247-103-43.eu-west-1.compute.amazonaws.com" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="d9h3r67ca39jah: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="flyway_schema_history: table" type="69fad909:PgImplModel$LocalTable" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
@@ -340,9 +236,10 @@
       <screen x="1920" y="-546" width="2194" height="1194" />
     </state>
     <state x="2610" y="-290" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603915198153" />
-    <state x="2745" y="-146" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603912577622">
-      <screen x="1920" y="-546" width="2194" height="1194" />
+    <state x="3825" y="-17" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604940364076">
+      <screen x="3000" y="-417" width="2194" height="1194" />
     </state>
+    <state x="3825" y="-17" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824/1920.-420.1080.1880/3000.-417.2194.1194@3000.-417.2194.1194" timestamp="1604940364076" />
     <state x="2745" y="-146" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603912577622" />
     <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser" timestamp="1604329089585">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -389,53 +286,53 @@
       <screen x="1920" y="-546" width="2194" height="1194" />
     </state>
     <state x="2798" y="-194" key="FileChooserDialogImpl/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603917597228" />
-    <state width="2151" height="292" key="GridCell.Tab.0.bottom" timestamp="1604784248624">
+    <state width="2151" height="292" key="GridCell.Tab.0.bottom" timestamp="1604940955222">
       <screen x="3000" y="-417" width="2194" height="1194" />
     </state>
     <state width="1877" height="253" key="GridCell.Tab.0.bottom/-1920.4.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1604330547939" />
-    <state width="2151" height="292" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.-420.1080.1880/3000.-417.2194.1194@3000.-417.2194.1194" timestamp="1604784248624" />
+    <state width="2151" height="292" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.-420.1080.1880/3000.-417.2194.1194@3000.-417.2194.1194" timestamp="1604940955222" />
     <state width="2151" height="538" key="GridCell.Tab.0.bottom/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603965352621" />
-    <state width="2151" height="292" key="GridCell.Tab.0.center" timestamp="1604784248623">
+    <state width="2151" height="292" key="GridCell.Tab.0.center" timestamp="1604940955222">
       <screen x="3000" y="-417" width="2194" height="1194" />
     </state>
     <state width="1877" height="253" key="GridCell.Tab.0.center/-1920.4.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1604330547938" />
-    <state width="2151" height="292" key="GridCell.Tab.0.center/0.0.1536.824/1920.-420.1080.1880/3000.-417.2194.1194@3000.-417.2194.1194" timestamp="1604784248623" />
+    <state width="2151" height="292" key="GridCell.Tab.0.center/0.0.1536.824/1920.-420.1080.1880/3000.-417.2194.1194@3000.-417.2194.1194" timestamp="1604940955222" />
     <state width="2151" height="538" key="GridCell.Tab.0.center/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603965352621" />
-    <state width="2151" height="292" key="GridCell.Tab.0.left" timestamp="1604784248622">
+    <state width="2151" height="292" key="GridCell.Tab.0.left" timestamp="1604940955222">
       <screen x="3000" y="-417" width="2194" height="1194" />
     </state>
     <state width="1877" height="253" key="GridCell.Tab.0.left/-1920.4.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1604330547938" />
-    <state width="2151" height="292" key="GridCell.Tab.0.left/0.0.1536.824/1920.-420.1080.1880/3000.-417.2194.1194@3000.-417.2194.1194" timestamp="1604784248622" />
+    <state width="2151" height="292" key="GridCell.Tab.0.left/0.0.1536.824/1920.-420.1080.1880/3000.-417.2194.1194@3000.-417.2194.1194" timestamp="1604940955222" />
     <state width="2151" height="538" key="GridCell.Tab.0.left/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603965352621" />
-    <state width="2151" height="292" key="GridCell.Tab.0.right" timestamp="1604784248623">
+    <state width="2151" height="292" key="GridCell.Tab.0.right" timestamp="1604940955222">
       <screen x="3000" y="-417" width="2194" height="1194" />
     </state>
     <state width="1877" height="253" key="GridCell.Tab.0.right/-1920.4.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1604330547939" />
-    <state width="2151" height="292" key="GridCell.Tab.0.right/0.0.1536.824/1920.-420.1080.1880/3000.-417.2194.1194@3000.-417.2194.1194" timestamp="1604784248623" />
+    <state width="2151" height="292" key="GridCell.Tab.0.right/0.0.1536.824/1920.-420.1080.1880/3000.-417.2194.1194@3000.-417.2194.1194" timestamp="1604940955222" />
     <state width="2151" height="538" key="GridCell.Tab.0.right/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603965352621" />
-    <state width="2151" height="292" key="GridCell.Tab.1.bottom" timestamp="1604784248624">
+    <state width="2151" height="292" key="GridCell.Tab.1.bottom" timestamp="1604940955222">
       <screen x="3000" y="-417" width="2194" height="1194" />
     </state>
     <state width="1877" height="253" key="GridCell.Tab.1.bottom/-1920.4.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1604330547940" />
-    <state width="2151" height="292" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.-420.1080.1880/3000.-417.2194.1194@3000.-417.2194.1194" timestamp="1604784248624" />
+    <state width="2151" height="292" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.-420.1080.1880/3000.-417.2194.1194@3000.-417.2194.1194" timestamp="1604940955222" />
     <state width="2151" height="538" key="GridCell.Tab.1.bottom/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603965352621" />
-    <state width="2151" height="292" key="GridCell.Tab.1.center" timestamp="1604784248624">
+    <state width="2151" height="292" key="GridCell.Tab.1.center" timestamp="1604940955222">
       <screen x="3000" y="-417" width="2194" height="1194" />
     </state>
     <state width="1877" height="253" key="GridCell.Tab.1.center/-1920.4.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1604330547940" />
-    <state width="2151" height="292" key="GridCell.Tab.1.center/0.0.1536.824/1920.-420.1080.1880/3000.-417.2194.1194@3000.-417.2194.1194" timestamp="1604784248624" />
+    <state width="2151" height="292" key="GridCell.Tab.1.center/0.0.1536.824/1920.-420.1080.1880/3000.-417.2194.1194@3000.-417.2194.1194" timestamp="1604940955222" />
     <state width="2151" height="538" key="GridCell.Tab.1.center/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603965352621" />
-    <state width="2151" height="292" key="GridCell.Tab.1.left" timestamp="1604784248624">
+    <state width="2151" height="292" key="GridCell.Tab.1.left" timestamp="1604940955222">
       <screen x="3000" y="-417" width="2194" height="1194" />
     </state>
     <state width="1877" height="253" key="GridCell.Tab.1.left/-1920.4.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1604330547939" />
-    <state width="2151" height="292" key="GridCell.Tab.1.left/0.0.1536.824/1920.-420.1080.1880/3000.-417.2194.1194@3000.-417.2194.1194" timestamp="1604784248624" />
+    <state width="2151" height="292" key="GridCell.Tab.1.left/0.0.1536.824/1920.-420.1080.1880/3000.-417.2194.1194@3000.-417.2194.1194" timestamp="1604940955222" />
     <state width="2151" height="538" key="GridCell.Tab.1.left/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603965352621" />
-    <state width="2151" height="292" key="GridCell.Tab.1.right" timestamp="1604784248624">
+    <state width="2151" height="292" key="GridCell.Tab.1.right" timestamp="1604940955222">
       <screen x="3000" y="-417" width="2194" height="1194" />
     </state>
     <state width="1877" height="253" key="GridCell.Tab.1.right/-1920.4.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1604330547940" />
-    <state width="2151" height="292" key="GridCell.Tab.1.right/0.0.1536.824/1920.-420.1080.1880/3000.-417.2194.1194@3000.-417.2194.1194" timestamp="1604784248624" />
+    <state width="2151" height="292" key="GridCell.Tab.1.right/0.0.1536.824/1920.-420.1080.1880/3000.-417.2194.1194@3000.-417.2194.1194" timestamp="1604940955222" />
     <state width="2151" height="538" key="GridCell.Tab.1.right/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603965352621" />
     <state width="1877" height="253" key="GridCell.Tab.2.bottom" timestamp="1604330547941">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -458,6 +355,10 @@
     </state>
     <state x="3628" y="-165" key="Maven.ArtifactSearchDialog/0.0.1536.824/1920.-420.1080.1880/3000.-417.2194.1194@3000.-417.2194.1194" timestamp="1604340125720" />
     <state x="2548" y="-294" key="Maven.ArtifactSearchDialog/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603912825749" />
+    <state x="3957" y="60" width="503" height="374" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1604940789423">
+      <screen x="3000" y="-417" width="2194" height="1194" />
+    </state>
+    <state x="3957" y="60" width="503" height="374" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1536.824/1920.-420.1080.1880/3000.-417.2194.1194@3000.-417.2194.1194" timestamp="1604940789423" />
     <state x="2813" y="-144" width="407" height="377" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1603918237038">
       <screen x="1920" y="-546" width="2194" height="1194" />
     </state>
