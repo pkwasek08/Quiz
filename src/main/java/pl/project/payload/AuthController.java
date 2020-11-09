@@ -177,7 +177,7 @@ public class AuthController {
         mailMessage.setSubject("Complete Registration!");
         mailMessage.setFrom("javaquiz123@gmail.com");
         mailMessage.setText("To confirm your account, please click here : "
-                +"https://dashboard.heroku.com/apps/quiz-server-prz/api/auth/confirm-account?token="+confirmationToken.getConfirmationToken());
+                +"https://quiz-server-prz.herokuapp.com//api/auth/confirm-account?token="+confirmationToken.getConfirmationToken());
 
         emailSenderService.sendEmail(mailMessage);
 
@@ -216,7 +216,7 @@ public class AuthController {
         mailMessage.setSubject("Complete Registration!");
         mailMessage.setFrom("javaquiz123@gmail.com");
         mailMessage.setText("To confirm your account, please click here : "
-                +"https://dashboard.heroku.com/apps/quiz-server-prz/api/auth/confirm-account?token="+confirmationToken.getConfirmationToken());
+                +"https://quiz-server-prz.herokuapp.com/api/auth/confirm-account?token="+confirmationToken.getConfirmationToken());
 
         emailSenderService.sendEmail(mailMessage);
         return ResponseEntity.ok(new MessageResponse("The mail was sent again"));
