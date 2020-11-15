@@ -1,6 +1,9 @@
 package pl.project.Task;
 
-import pl.project.Test.Test;
+import pl.project.Answer.Answer;
+import pl.project.Answer.AnswerDTO;
+
+import java.util.List;
 
 public class TaskDTO {
     private int id;
@@ -9,17 +12,19 @@ public class TaskDTO {
     private String image;
     private Integer points;
     private int testId;
+    private List<AnswerDTO> answerList;
 
     public TaskDTO() {
     }
 
-    public TaskDTO(int id, String question, String type, String image, Integer points, int testId) {
+    public TaskDTO(int id, String question, String type, String image, Integer points, int testId, List<AnswerDTO> answerList) {
         this.id = id;
         this.question = question;
         this.type = type;
         this.image = image;
         this.points = points;
         this.testId = testId;
+        this.answerList = answerList;
     }
 
     public int getId() {
@@ -68,5 +73,12 @@ public class TaskDTO {
 
     public void setTestId(int testId) {
         this.testId = testId;
+    }
+
+    public void setAnswerList(List<AnswerDTO> answerList){
+        this.answerList = answerList;
+    }
+    public List<AnswerDTO> getAnswerList(){
+        return this.answerList;
     }
 }

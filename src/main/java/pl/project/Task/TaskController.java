@@ -28,7 +28,7 @@ public class TaskController {
 
     @PostMapping()
     @CrossOrigin(origins = "*")
-    public void addTask(@RequestBody TaskDTO taskDTO) {
+    public void addTaskAndAnswers(@RequestBody TaskDTO taskDTO) {
         taskService.addTask(taskDTO);
     }
 
