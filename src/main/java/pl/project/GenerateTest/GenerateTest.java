@@ -10,6 +10,14 @@ public class GenerateTest {
     private int id;
     private Test testByTestId;
 
+    public GenerateTest() {
+    }
+
+    public GenerateTest(int id, Test testByTestId) {
+        this.id = id;
+        this.testByTestId = testByTestId;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)

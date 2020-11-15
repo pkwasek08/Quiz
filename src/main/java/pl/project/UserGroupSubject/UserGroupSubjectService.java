@@ -3,7 +3,9 @@ package pl.project.UserGroupSubject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.project.Group.Group;
+import pl.project.Group.GroupRepository;
 import pl.project.Subject.Subject;
+import pl.project.Subject.SubjectRepository;
 import pl.project.User.User;
 import pl.project.User.UserRepository;
 import java.util.ArrayList;
@@ -17,6 +19,12 @@ public class UserGroupSubjectService {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private GroupRepository groupRepository;
+
+    @Autowired
+    private SubjectRepository subjectRepository;
 
     public List<Group> getAllGroupsByUserId(int id){
         List<Group> groups = new ArrayList<>();
@@ -77,11 +85,17 @@ public class UserGroupSubjectService {
         return userGroupSubject;
     }
 
-    public void addUserGroupSubject(UserGroupSubject userGroupSubject) {
+    public void addUserGroupSubject(UserGroupSubjectDTO userGroupSubjectDTO) {
+        UserGroupSubject userGroupSubject = new UserGroupSubject(0, userRepository.findById(userGroupSubjectDTO.getUserId()).get(),
+                groupRepository.findById(userGroupSubjectDTO.getGroupId()).get(), subjectRepository.findById(userGroupSubjectDTO.getSubjectId()).get(),
+                userRepository.findById(userGroupSubjectDTO.getTeacherId()).get());
         userGroupSubjectRepository.save(userGroupSubject);
     }
 
-    public void updateUserGroupSubject(Integer id, UserGroupSubject userGroupSubject) {
+    public void updateUserGroupSubject(Integer id, UserGroupSubjectDTO userGroupSubjectDTO) {
+        UserGroupSubject userGroupSubject = new UserGroupSubject(userGroupSubjectDTO.getId(), userRepository.findById(userGroupSubjectDTO.getUserId()).get(),
+                groupRepository.findById(userGroupSubjectDTO.getGroupId()).get(), subjectRepository.findById(userGroupSubjectDTO.getSubjectId()).get(),
+                userRepository.findById(userGroupSubjectDTO.getTeacherId()).get());
         userGroupSubjectRepository.save(userGroupSubject);
     }
 

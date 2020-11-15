@@ -34,14 +34,14 @@ public class GenerateTestController {
 
     @PostMapping()
     @CrossOrigin(origins = "*")
-    public void addGenerateTest(@RequestBody GenerateTest generateTest) {
-        generateTestService.addGenerateTest(generateTest);
+    public void addGenerateTest(@RequestBody GenerateTestDTO generateTestDTO) {
+        generateTestService.addGenerateTest(generateTestDTO);
     }
 
     @PutMapping(value = "/{id}")
     @CrossOrigin(origins = "*")
-    public void updateGenerateTest(@RequestBody GenerateTest generateTest, @PathVariable Integer id) {
-        generateTestService.updateGenerateTest(id, generateTest);
+    public void updateGenerateTest(@RequestBody GenerateTestDTO generateTestDTO, @PathVariable Integer id) {
+        generateTestService.updateGenerateTest(id, generateTestDTO);
     }
 
     @DeleteMapping(value = "/{id}")

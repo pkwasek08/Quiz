@@ -41,7 +41,7 @@ CREATE TABLE "tests" (
   "subject_id" integer,
   "full_points" integer,
   "date" timestamp,
-  "time" time
+  "time" integer
 );
 
 DROP TABLE IF EXISTS "results" CASCADE;

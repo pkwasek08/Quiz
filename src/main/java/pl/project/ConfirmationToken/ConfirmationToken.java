@@ -3,17 +3,28 @@ package pl.project.ConfirmationToken;
 import pl.project.User.User;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
+import java.util.Date;
+import java.util.UUID;
 
 @Entity
 @Table(name = "confirmation_token", schema = "public", catalog = "d9h3r67ca39jah")
 public class ConfirmationToken {
     private int id;
     private String confirmationToken;
-    private Timestamp createdDate;
+    private Date createdDate;
     private User user;
 
+    public ConfirmationToken() {
+    }
+
+    public ConfirmationToken(User user) {
+        this.user = user;
+        this.createdDate = new Date();
+        this.confirmationToken = UUID.randomUUID().toString();
+    }
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     public int getId() {
         return id;
@@ -35,11 +46,11 @@ public class ConfirmationToken {
 
     @Basic
     @Column(name = "created_date", nullable = true)
-    public Timestamp getCreatedDate() {
+    public Date getCreatedDate() {
         return createdDate;
     }
 
-    public void setCreatedDate(Timestamp createdDate) {
+    public void setCreatedDate(Date createdDate) {
         this.createdDate = createdDate;
     }
 
@@ -54,6 +65,7 @@ public class ConfirmationToken {
         if (confirmationToken != null ? !confirmationToken.equals(that.confirmationToken) : that.confirmationToken != null)
             return false;
         if (createdDate != null ? !createdDate.equals(that.createdDate) : that.createdDate != null) return false;
+        if (user != null ? !user.equals(that.user) : that.user != null) return false;
 
         return true;
     }
@@ -63,10 +75,11 @@ public class ConfirmationToken {
         int result = id;
         result = 31 * result + (confirmationToken != null ? confirmationToken.hashCode() : 0);
         result = 31 * result + (createdDate != null ? createdDate.hashCode() : 0);
+        result = 31 * result + (user != null ? user.hashCode() : 0);
         return result;
     }
 
-    @ManyToOne
+    @OneToOne(targetEntity = User.class, fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     public User getUsersByUserId() {
         return user;

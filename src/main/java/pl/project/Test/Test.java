@@ -3,8 +3,7 @@ package pl.project.Test;
 import pl.project.Subject.Subject;
 
 import javax.persistence.*;
-import java.sql.Time;
-import java.sql.Timestamp;
+import java.util.Date;
 
 @Entity
 @Table(name = "tests", schema = "public", catalog = "d9h3r67ca39jah")
@@ -12,9 +11,21 @@ public class Test {
     private int id;
     private String name;
     private Integer fullPoints;
-    private Timestamp date;
-    private Time time;
+    private Date date;
+    private Long time;
     private Subject subjectBySubjectId;
+
+    public Test() {
+    }
+
+    public Test(int id, String name, Integer fullPoints, Date date, Long time, Subject subjectBySubjectId) {
+        this.id = id;
+        this.name = name;
+        this.fullPoints = fullPoints;
+        this.date = date;
+        this.time = time;
+        this.subjectBySubjectId = subjectBySubjectId;
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -49,21 +60,21 @@ public class Test {
 
     @Basic
     @Column(name = "date", nullable = true)
-    public Timestamp getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(Timestamp date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
     @Basic
     @Column(name = "time", nullable = true)
-    public Time getTime() {
+    public Long getTime() {
         return time;
     }
 
-    public void setTime(Time time) {
+    public void setTime(Long time) {
         this.time = time;
     }
 

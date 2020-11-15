@@ -3,6 +3,7 @@ package pl.project.GenerateTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.project.Result.Result;
+import pl.project.Test.TestRepository;
 import pl.project.User.User;
 import pl.project.Result.ResultRepository;
 import pl.project.User.UserRepository;
@@ -21,6 +22,9 @@ public class GenerateTestService {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private TestRepository testRepository;
 
     public List<GenerateTest> getAllGenerateTest() {
         List<GenerateTest> generateTestList = new ArrayList<>();
@@ -44,12 +48,14 @@ public class GenerateTestService {
         return generateTests;
     }
 
-    public void addGenerateTest(GenerateTest generateTest) {
+    public void addGenerateTest(GenerateTestDTO generateTestDTO) {
+        GenerateTest generateTest = new GenerateTest(0, testRepository.findById(generateTestDTO.getTestId()).get());
         generateTestRepository.save(generateTest);
     }
 
 
-    public void updateGenerateTest(Integer id, GenerateTest generateTest) {
+    public void updateGenerateTest(Integer id, GenerateTestDTO generateTestDTO) {
+        GenerateTest generateTest = new GenerateTest(generateTestDTO.getId(), testRepository.findById(generateTestDTO.getTestId()).get());
         generateTestRepository.save(generateTest);
     }
 

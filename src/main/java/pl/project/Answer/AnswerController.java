@@ -20,6 +20,12 @@ public class AnswerController {
         return AnswerService.getAllAnswer();
     }
 
+    @GetMapping("/task/{taskId}")
+    @CrossOrigin(origins = "*")
+    public List<Answer> getAnswersByTask(@PathVariable int taskId) {
+        return AnswerService.getAllAnswerByTask(taskId);
+    }
+
     @GetMapping("/{id}")
     @CrossOrigin(origins = "*")
     public Answer getAnswer(@PathVariable Integer id) {
@@ -28,14 +34,14 @@ public class AnswerController {
 
     @PostMapping()
     @CrossOrigin(origins = "*")
-    public void addAnswer(@RequestBody Answer answer) {
-        AnswerService.addAnswer(answer);
+    public void addAnswer(@RequestBody AnswerDTO answerDTO) {
+        AnswerService.addAnswer(answerDTO);
     }
 
     @PutMapping(value = "/{id}")
     @CrossOrigin(origins = "*")
-    public void updateAnswer(@RequestBody Answer answer, @PathVariable Integer id) {
-        AnswerService.updateAnswer(id, answer);
+    public void updateAnswer(@RequestBody AnswerDTO answerDTO, @PathVariable Integer id) {
+        AnswerService.updateAnswer(id, answerDTO);
     }
 
     @DeleteMapping(value = "/{id}")

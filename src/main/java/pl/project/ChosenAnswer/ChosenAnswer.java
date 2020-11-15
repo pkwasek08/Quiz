@@ -13,6 +13,16 @@ public class ChosenAnswer {
     private GenerateTask generateTasksByGenerateTaskId;
     private Answer answerByAnswerId;
 
+    public ChosenAnswer() {
+    }
+
+    public ChosenAnswer(int id, String descriptedAnswer, GenerateTask generateTasksByGenerateTaskId, Answer answerByAnswerId) {
+        this.id = id;
+        this.descriptedAnswer = descriptedAnswer;
+        this.generateTasksByGenerateTaskId = generateTasksByGenerateTaskId;
+        this.answerByAnswerId = answerByAnswerId;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
