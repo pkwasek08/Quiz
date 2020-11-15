@@ -40,14 +40,14 @@ public class TestController {
 
     @PostMapping()
     @CrossOrigin(origins = "*")
-    public void addTest(@RequestBody Test test) {
-        testService.addTest(test);
+    public void addTest(@RequestBody TestDTO testDTO) {
+        testService.addTest(testDTO);
     }
 
     @PutMapping(value = "/{id}")
     @CrossOrigin(origins = "*")
-    public void updateTest(@RequestBody Test test, @PathVariable Integer id) {
-        testService.updateTest(id, test);
+    public void updateTest(@RequestBody TestDTO testDTO, @PathVariable Integer id) {
+        testService.updateTest(id, testDTO);
     }
 
     @DeleteMapping(value = "/{id}")

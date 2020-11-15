@@ -28,14 +28,14 @@ public class ChosenAnswerController {
 
     @PostMapping()
     @CrossOrigin(origins = "*")
-    public void addChosenAnswer(@RequestBody ChosenAnswer chosenAnswer) {
-        chosenAnswerService.addChosenAnswer(chosenAnswer);
+    public void addChosenAnswer(@RequestBody ChosenAnswerDTO chosenAnswerDTO) {
+        chosenAnswerService.addChosenAnswer(chosenAnswerDTO);
     }
 
     @PutMapping(value = "/{id}")
     @CrossOrigin(origins = "*")
-    public void updateChosenAnswer(@RequestBody ChosenAnswer chosenAnswer, @PathVariable Integer id) {
-        chosenAnswerService.updateChosenAnswer(id, chosenAnswer);
+    public void updateChosenAnswer(@RequestBody ChosenAnswerDTO chosenAnswerDTO, @PathVariable Integer id) {
+        chosenAnswerService.updateChosenAnswer(id, chosenAnswerDTO);
     }
 
     @DeleteMapping(value = "/{id}")

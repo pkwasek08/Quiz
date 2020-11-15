@@ -14,6 +14,18 @@ public class Task {
     private Integer points;
     private Test testByTestId;
 
+    public Task() {
+    }
+
+    public Task(int id, String question, String type, String image, Integer points, Test testByTestId) {
+        this.id = id;
+        this.question = question;
+        this.type = type;
+        this.image = image;
+        this.points = points;
+        this.testByTestId = testByTestId;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)

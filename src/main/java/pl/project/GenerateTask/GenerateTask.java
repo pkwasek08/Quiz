@@ -12,6 +12,15 @@ public class GenerateTask {
     private Task tasksByTaskId;
     private GenerateTest generateTestsByGenerateTest;
 
+    public GenerateTask() {
+    }
+
+    public GenerateTask(int id, Task tasksByTaskId, GenerateTest generateTestsByGenerateTest) {
+        this.id = id;
+        this.tasksByTaskId = tasksByTaskId;
+        this.generateTestsByGenerateTest = generateTestsByGenerateTest;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)

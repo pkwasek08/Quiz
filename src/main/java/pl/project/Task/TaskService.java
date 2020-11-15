@@ -2,6 +2,8 @@ package pl.project.Task;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pl.project.Test.TestRepository;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +11,8 @@ import java.util.List;
 public class TaskService {
     @Autowired
     private TaskRepository taskRepository;
+    @Autowired
+    private TestRepository testRepository;
 
     public List<Task> getAllTask() {
         List<Task> taskList = new ArrayList<>();
@@ -21,12 +25,14 @@ public class TaskService {
         return task;
     }
 
-    public void addTask(Task task) {
+    public void addTask(TaskDTO taskDTO) {
+        Task task = new Task(0, taskDTO.getQuestion(), taskDTO.getType(), taskDTO.getImage(), taskDTO.getPoints(), testRepository.findById(taskDTO.getTestId()).get());
         taskRepository.save(task);
     }
 
 
-    public void updateTask(Integer id, Task task) {
+    public void updateTask(Integer id, TaskDTO taskDTO) {
+        Task task = new Task(taskDTO.getId(), taskDTO.getQuestion(), taskDTO.getType(), taskDTO.getImage(), taskDTO.getPoints(), testRepository.findById(taskDTO.getTestId()).get());
         taskRepository.save(task);
     }
 

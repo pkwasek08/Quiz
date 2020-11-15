@@ -27,14 +27,14 @@ public class GenerateTaskController {
 
     @PostMapping()
     @CrossOrigin(origins = "*")
-    public void addGenerateTask(@RequestBody GenerateTask generateTask) {
-        generateTaskService.addGenerateTask(generateTask);
+    public void addGenerateTask(@RequestBody GenerateTaskDTO generateTaskDTO) {
+        generateTaskService.addGenerateTask(generateTaskDTO);
     }
 
     @PutMapping(value = "/{id}")
     @CrossOrigin(origins = "*")
-    public void updateGenerateTask(@RequestBody GenerateTask generateTask, @PathVariable Integer id) {
-        generateTaskService.updateGenerateTask(id, generateTask);
+    public void updateGenerateTask(@RequestBody GenerateTaskDTO generateTaskDTO, @PathVariable Integer id) {
+        generateTaskService.updateGenerateTask(id, generateTaskDTO);
     }
 
     @DeleteMapping(value = "/{id}")

@@ -12,6 +12,16 @@ public class Answer {
     private Boolean correct;
     private Task tasksByTaskId;
 
+    public Answer() {
+    }
+
+    public Answer(int id, String answer, Boolean correct, Task tasksByTaskId) {
+        this.id = id;
+        this.answer = answer;
+        this.correct = correct;
+        this.tasksByTaskId = tasksByTaskId;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)

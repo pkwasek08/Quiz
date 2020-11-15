@@ -28,14 +28,14 @@ public class TaskController {
 
     @PostMapping()
     @CrossOrigin(origins = "*")
-    public void addTask(@RequestBody Task task) {
-        taskService.addTask(task);
+    public void addTask(@RequestBody TaskDTO taskDTO) {
+        taskService.addTask(taskDTO);
     }
 
     @PutMapping(value = "/{id}")
     @CrossOrigin(origins = "*")
-    public void updateTask(@RequestBody Task task, @PathVariable Integer id) {
-        taskService.updateTask(id, task);
+    public void updateTask(@RequestBody TaskDTO taskDTO, @PathVariable Integer id) {
+        taskService.updateTask(id, taskDTO);
     }
 
     @DeleteMapping(value = "/{id}")

@@ -27,14 +27,14 @@ public class UserGroupSubjectController {
 
     @PostMapping()
     @CrossOrigin(origins = "*")
-    public void addUserGroupSubject(@RequestBody UserGroupSubject userGroupSubject) {
-        userGroupSubjectService.addUserGroupSubject(userGroupSubject);
+    public void addUserGroupSubject(@RequestBody UserGroupSubjectDTO userGroupSubjectDTO) {
+        userGroupSubjectService.addUserGroupSubject(userGroupSubjectDTO);
     }
 
     @PutMapping(value = "/{id}")
     @CrossOrigin(origins = "*")
-    public void updateUserGroupSubject(@RequestBody UserGroupSubject userGroupSubject, @PathVariable Integer id) {
-        userGroupSubjectService.updateUserGroupSubject(id, userGroupSubject);
+    public void updateUserGroupSubject(@RequestBody UserGroupSubjectDTO userGroupSubjectDTO, @PathVariable Integer id) {
+        userGroupSubjectService.updateUserGroupSubject(id, userGroupSubjectDTO);
     }
 
     @DeleteMapping(value = "/{id}")

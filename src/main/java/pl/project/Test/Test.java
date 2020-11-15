@@ -15,6 +15,18 @@ public class Test {
     private Long time;
     private Subject subjectBySubjectId;
 
+    public Test() {
+    }
+
+    public Test(int id, String name, Integer fullPoints, Date date, Long time, Subject subjectBySubjectId) {
+        this.id = id;
+        this.name = name;
+        this.fullPoints = fullPoints;
+        this.date = date;
+        this.time = time;
+        this.subjectBySubjectId = subjectBySubjectId;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
