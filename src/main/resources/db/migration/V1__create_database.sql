@@ -9,6 +9,7 @@ CREATE TABLE "users" (
   "major" varchar,
   "group_id" integer,
   "password" varchar,
+  "enabled" boolean,
   "login" varchar,
   "role" varchar
 );
@@ -41,7 +42,7 @@ CREATE TABLE "tests" (
   "subject_id" integer,
   "full_points" integer,
   "date" timestamp,
-  "time" time
+  "time" integer
 );
 
 DROP TABLE IF EXISTS "results" CASCADE;
