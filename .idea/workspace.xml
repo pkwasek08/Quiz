@@ -20,7 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a28979e3-85b3-4e8a-a003-ead893f2e57e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/584484bd-1ed5-4c2f-99df-621f71c09dcb.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/584484bd-1ed5-4c2f-99df-621f71c09dcb.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/project/Task/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/project/Task/TaskService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,19 +140,19 @@
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Documents\quiz_server\src\main\resources\db\migration" />
+    </key>
+    <key name="ImportMappingsDialog.RecentPackages">
+      <recent name="pl.project.entities" />
+      <recent name="" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="pl.project.dto" />
       <recent name="pl.project.controllers" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Rafal\Desktop\Nowy folder (2)\Quiz\src\main\java\pl\project" />
-    </key>
-    <key name="ImportMappingsDialog.RecentPackages">
-      <recent name="pl.project.entities" />
-      <recent name="" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Documents\quiz_server\src\main\resources\db\migration" />
     </key>
   </component>
   <component name="RunManager">
@@ -207,11 +209,12 @@
       <workItem from="1605381679588" duration="16000" />
       <workItem from="1605383262871" duration="414000" />
       <workItem from="1605430786619" duration="3321000" />
+      <workItem from="1605479339767" duration="614000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -260,12 +263,13 @@
       <screen x="3000" y="-417" width="2194" height="1194" />
     </state>
     <state x="3806" y="106" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.824/1920.-420.1080.1880/3000.-417.2194.1194@3000.-417.2194.1194" timestamp="1604783708861" />
-    <state x="3892" y="40" width="407" height="287" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1604784222445">
-      <screen x="3000" y="-417" width="2194" height="1194" />
+    <state x="624" y="315" width="403" height="287" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1605469634439">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="781" y="398" width="433" height="250" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/-1920.4.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1604330399824" />
     <state x="3892" y="40" width="407" height="287" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824/1920.-420.1080.1880/3000.-417.2194.1194@3000.-417.2194.1194" timestamp="1604784222445" />
     <state x="2813" y="-89" width="407" height="287" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824/5760.1.1920.1040/1920.-546.2194.1194@1920.-546.2194.1194" timestamp="1603926684837" />
+    <state x="624" y="315" width="403" height="287" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1605469634439" />
     <state x="2551" y="-546" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603916161877">
       <screen x="1920" y="-546" width="2194" height="1194" />
     </state>
