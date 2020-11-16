@@ -53,6 +53,9 @@ public class GenerateTestService {
         return generateTestRepository.save(generateTest);
     }
 
+    public int getFullPoints(Integer generateTestId) {
+        return generateTestRepository.getFullPoints(generateTestId);
+    }
 
     public void updateGenerateTest(Integer id, GenerateTestDTO generateTestDTO) {
         GenerateTest generateTest = new GenerateTest(generateTestDTO.getId(), testRepository.findById(generateTestDTO.getTestId()).get());
