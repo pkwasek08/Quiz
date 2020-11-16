@@ -16,8 +16,14 @@ public class TaskController {
 
     @GetMapping()
     @CrossOrigin(origins = "*")
-    public List<Task> getTask() {
+    public List<Task> getAllTask() {
         return taskService.getAllTask();
+    }
+
+    @GetMapping("/test")
+    @CrossOrigin(origins = "*")
+    public List<Task> getAllTaskByTestId(@RequestParam Integer testId) {
+        return taskService.getAllTaskByTestId(testId);
     }
 
     @GetMapping("/{id}")
