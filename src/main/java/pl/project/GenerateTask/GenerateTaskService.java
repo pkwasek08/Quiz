@@ -32,9 +32,9 @@ public class GenerateTaskService {
         return generateTask;
     }
 
-    public void addGenerateTask(GenerateTaskDTO generateTaskDTO) {
+    public GenerateTask addGenerateTask(GenerateTaskDTO generateTaskDTO) {
         GenerateTask generateTask = new GenerateTask(0, taskRepository.findById(generateTaskDTO.getTaskId()).get(), generateTestRepository.findById(generateTaskDTO.getGenerateTestId()).get());
-        generateTaskRepository.save(generateTask);
+        return generateTaskRepository.save(generateTask);
     }
 
 

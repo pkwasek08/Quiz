@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import pl.project.Answer.AnswerDTO;
 
 import java.util.List;
 
@@ -26,9 +27,20 @@ public class ResultController {
         return resultService.getResult(id);
     }
 
+    @GetMapping("/user/answerList")
+    @CrossOrigin(origins = "*")
+    public Result getResultByUserIdAndGenerateTestIdAndAnswerList(@PathVariable Integer userId, @PathVariable Integer generateTestId, @PathVariable List<AnswerDTO> answerList) {
+        return resultService.getResultByUserIdAndGenerateTestIdAndAnswerList(generateTestId, answerList, userId);
+    }
+    @GetMapping("/user/answerList/nextTerm")
+    @CrossOrigin(origins = "*")
+    public Result getNextTermResultByResultIdAndAnswerList(@PathVariable Integer resultId, @PathVariable List<AnswerDTO> answerList) {
+        return resultService.getNextTermResultByResultIdAndAnswerList(resultId, answerList);
+    }
+
     @PostMapping()
     @CrossOrigin(origins = "*")
-    public void addResult(@RequestBody Result result) {
+    public void addResult(@RequestBody ResultDTO result) {
         resultService.addResult(result);
     }
 

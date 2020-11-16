@@ -1,6 +1,5 @@
 package pl.project.Task;
 
-import pl.project.Answer.Answer;
 import pl.project.Answer.AnswerDTO;
 
 import java.util.List;

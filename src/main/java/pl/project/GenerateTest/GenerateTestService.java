@@ -48,9 +48,9 @@ public class GenerateTestService {
         return generateTests;
     }
 
-    public void addGenerateTest(GenerateTestDTO generateTestDTO) {
+    public GenerateTest addGenerateTest(GenerateTestDTO generateTestDTO) {
         GenerateTest generateTest = new GenerateTest(0, testRepository.findById(generateTestDTO.getTestId()).get());
-        generateTestRepository.save(generateTest);
+        return generateTestRepository.save(generateTest);
     }
 
 

@@ -15,6 +15,18 @@ public class Result {
     private GenerateTest generateTestsByGenerateTestId;
     private Result resultByPreviousVersion;
 
+    public Result() {
+    }
+
+    public Result(int id, Integer mark, Integer points, User userByUserId, GenerateTest generateTestsByGenerateTestId, Result resultByPreviousVersion) {
+        this.id = id;
+        this.mark = mark;
+        this.points = points;
+        this.userByUserId = userByUserId;
+        this.generateTestsByGenerateTestId = generateTestsByGenerateTestId;
+        this.resultByPreviousVersion = resultByPreviousVersion;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)

@@ -26,6 +26,12 @@ public class TaskController {
         return taskService.getTask(id);
     }
 
+    @GetMapping("/generateTest")
+    @CrossOrigin(origins = "*")
+    public List<TaskDTO> getGenerateTaskAndAnswers(@RequestParam Integer testId, @RequestParam Integer amountTasks) {
+        return taskService.getGenerateTaskAndAnswers(testId, amountTasks);
+    }
+
     @PostMapping()
     @CrossOrigin(origins = "*")
     public void addTaskAndAnswers(@RequestBody TaskDTO taskDTO) {
