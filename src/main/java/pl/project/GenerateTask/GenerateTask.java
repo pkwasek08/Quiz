@@ -1,9 +1,14 @@
 package pl.project.GenerateTask;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import pl.project.ChosenAnswer.ChosenAnswer;
 import pl.project.GenerateTest.GenerateTest;
 import pl.project.Task.Task;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "generate_tasks", schema = "public", catalog = "d9h3r67ca39jah")
@@ -11,6 +16,18 @@ public class GenerateTask {
     private int id;
     private Task tasksByTaskId;
     private GenerateTest generateTestsByGenerateTest;
+    private List<ChosenAnswer> chosenAnswers;
+
+    @JsonManagedReference(value = "generateTask-chosenAnswer")
+    @JsonIgnore
+    @OneToMany(mappedBy = "generateTasksByGenerateTaskId", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    public List<ChosenAnswer> getChosenAnswers() {
+        return chosenAnswers;
+    }
+
+    public void setChosenAnswers(List<ChosenAnswer> chosenAnswers) {
+        this.chosenAnswers = chosenAnswers;
+    }
 
     public GenerateTask() {
     }
@@ -60,6 +77,7 @@ public class GenerateTask {
     }
 
     @ManyToOne
+    @JsonBackReference(value = "generateTest-generateTask")
     @JoinColumn(name = "generate_test", referencedColumnName = "id")
     public GenerateTest getGenerateTestsByGenerateTest() {
         return generateTestsByGenerateTest;

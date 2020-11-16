@@ -1,5 +1,7 @@
 package pl.project.User;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -116,6 +118,7 @@ public class User {
     }
 
     @Basic
+    @JsonIgnore
     @Column(name = "password", nullable = true, length = -1)
     public String getPassword() {
         return password;

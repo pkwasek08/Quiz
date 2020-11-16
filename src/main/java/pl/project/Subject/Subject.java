@@ -1,12 +1,30 @@
 package pl.project.Subject;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import pl.project.Test.Test;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "subjects", schema = "public", catalog = "d9h3r67ca39jah")
 public class Subject {
     private int id;
     private String name;
+    private List<Test> tests;
+
+    @JsonManagedReference(value="subject-test")
+    @JsonIgnore
+    @OneToMany(mappedBy = "subjectBySubjectId", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    public List<Test> getTests() {
+        return tests;
+    }
+
+    public void setTests(List<Test> tests) {
+        this.tests = tests;
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
