@@ -1,7 +1,5 @@
 package pl.project.ChosenAnswer;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import pl.project.Answer.Answer;
 import pl.project.GenerateTask.GenerateTask;
 
@@ -68,7 +66,6 @@ public class ChosenAnswer {
     }
 
     @ManyToOne
-    @JsonBackReference(value = "generateTask-chosenAnswer")
     @JoinColumn(name = "generate_tasks_id", referencedColumnName = "id")
     public GenerateTask getGenerateTasksByGenerateTaskId() {
         return generateTasksByGenerateTaskId;

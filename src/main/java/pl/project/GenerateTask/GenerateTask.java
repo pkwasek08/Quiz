@@ -1,6 +1,5 @@
 package pl.project.GenerateTask;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import pl.project.ChosenAnswer.ChosenAnswer;
@@ -77,7 +76,6 @@ public class GenerateTask {
     }
 
     @ManyToOne
-    @JsonBackReference(value = "generateTest-generateTask")
     @JoinColumn(name = "generate_test", referencedColumnName = "id")
     public GenerateTest getGenerateTestsByGenerateTest() {
         return generateTestsByGenerateTest;

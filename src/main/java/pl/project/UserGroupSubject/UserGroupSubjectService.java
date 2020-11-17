@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import pl.project.Group.Group;
 import pl.project.Group.GroupRepository;
 import pl.project.Subject.Subject;
+import pl.project.Subject.SubjectDTO;
 import pl.project.Subject.SubjectRepository;
 import pl.project.User.User;
 import pl.project.User.UserRepository;
@@ -38,14 +39,14 @@ public class UserGroupSubjectService {
         return groups;
     }
 
-    public List<Subject> getAllSubjectsByUserId(int id){
-        List<Subject> subjects = new ArrayList<>();
+    public List<SubjectDTO> getAllSubjectsByUserId(int id){
+        List<SubjectDTO> subjects = new ArrayList<>();
         Optional<User> user = userRepository.findById(id);
         List<UserGroupSubject> userGroupSubjects = userGroupSubjectRepository.getAllByUserByUserId(user.get());
         if(userGroupSubjects.size() > 0)
             for (UserGroupSubject ugs:userGroupSubjects
             ) {
-                subjects.add(ugs.getSubjectBySubjectId());
+                subjects.add(new SubjectDTO(ugs.getSubjectBySubjectId()));
             }
         return subjects;
     }
@@ -62,14 +63,14 @@ public class UserGroupSubjectService {
         return groups;
     }
 
-    public List<Subject> getAllSubjectsByTeacherId(int id){
-        List<Subject> subjects = new ArrayList<>();
+    public List<SubjectDTO> getAllSubjectsByTeacherId(int id){
+        List<SubjectDTO> subjects = new ArrayList<>();
         Optional<User> user = userRepository.findById(id);
         List<UserGroupSubject> userGroupSubjects = userGroupSubjectRepository.getAllByUserByTeacherId(user.get());
         if(userGroupSubjects.size() > 0)
             for (UserGroupSubject ugs:userGroupSubjects
             ) {
-                subjects.add(ugs.getSubjectBySubjectId());
+                subjects.add(new SubjectDTO(ugs.getSubjectBySubjectId()));
             }
         return subjects;
     }

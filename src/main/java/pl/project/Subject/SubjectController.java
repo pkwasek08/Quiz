@@ -1,5 +1,6 @@
 package pl.project.Subject;
 
+import io.swagger.annotations.ApiParam;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,27 +20,28 @@ public class SubjectController {
     private UserGroupSubjectService userGroupSubjectService;
 
     @GetMapping()
+    @ApiParam(value="tests", hidden=true, required=false)
     @CrossOrigin(origins = "*")
-    public List<Subject> getSubject() {
+    public List<SubjectDTO> getSubject() {
         return subjectService.getAllSubject();
     }
 
     @GetMapping("/{id}")
     @CrossOrigin(origins = "*")
-    public Subject getSubject(@PathVariable Integer id) {
+    public SubjectDTO getSubject(@PathVariable Integer id) {
         return subjectService.getSubject(id);
     }
 
     @PostMapping()
     @CrossOrigin(origins = "*")
-    public void addSubject(@RequestBody Subject subject) {
-        subjectService.addSubject(subject);
+    public void addSubject(@RequestBody SubjectDTO subjectDTO) {
+        subjectService.addSubject(subjectDTO);
     }
 
     @PutMapping(value = "/{id}")
     @CrossOrigin(origins = "*")
-    public void updateSubject(@RequestBody Subject subject, @PathVariable Integer id) {
-        subjectService.updateSubject(id, subject);
+    public void updateSubject(@RequestBody SubjectDTO subjectDTO, @PathVariable Integer id) {
+        subjectService.updateSubject(id, subjectDTO);
     }
 
     @DeleteMapping(value = "/{id}")
@@ -50,13 +52,13 @@ public class SubjectController {
 
     @GetMapping("/teacher/{id}")
     @CrossOrigin(origins = "*")
-    public List<Subject> getTeacherSubject(@PathVariable Integer id) {
+    public List<SubjectDTO> getTeacherSubject(@PathVariable Integer id) {
         return userGroupSubjectService.getAllSubjectsByTeacherId(id);
     }
 
     @GetMapping("/student/{id}")
     @CrossOrigin(origins = "*")
-    public List<Subject> getUserSubject(@PathVariable Integer id) {
+    public List<SubjectDTO> getUserSubject(@PathVariable Integer id) {
         return userGroupSubjectService.getAllSubjectsByUserId(id);
     }
 }
