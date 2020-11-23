@@ -1,7 +1,5 @@
 package pl.project.GenerateTest;
 
-import pl.project.Test.Test;
-
 public class GenerateTestDTO {
     private int id;
     private int testId;

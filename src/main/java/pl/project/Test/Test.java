@@ -20,13 +20,12 @@ public class Test {
     private Integer fullPoints;
     private Date date;
     private Long time;
-    private Subject subjectBySubjectId;
     private List<Task> tasks;
     private List<GenerateTest> generateTests;
 
     @JsonManagedReference(value="test-generateTest")
     @JsonIgnore
-    @OneToMany(mappedBy = "testByTestId", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "test", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     public List<GenerateTest> getGenerateTests() {
         return generateTests;
     }
@@ -45,17 +44,18 @@ public class Test {
     public void setTasks(List<Task> tasks) {
         this.tasks = tasks;
     }
+    private Subject subject;
 
     public Test() {
     }
 
-    public Test(int id, String name, Integer fullPoints, Date date, Long time, Subject subjectBySubjectId) {
+    public Test(int id, String name, Integer fullPoints, Date date, Long time, Subject subject) {
         this.id = id;
         this.name = name;
         this.fullPoints = fullPoints;
         this.date = date;
         this.time = time;
-        this.subjectBySubjectId = subjectBySubjectId;
+        this.subject = subject;
     }
 
     @Id
@@ -138,11 +138,11 @@ public class Test {
     @ManyToOne
     @JsonBackReference(value="subject-test")
     @JoinColumn(name = "subject_id", referencedColumnName = "id")
-    public Subject getSubjectBySubjectId() {
-        return subjectBySubjectId;
+    public Subject getSubject() {
+        return subject;
     }
 
-    public void setSubjectBySubjectId(Subject subjectBySubjectId) {
-        this.subjectBySubjectId = subjectBySubjectId;
+    public void setSubject(Subject subject) {
+        this.subject = subject;
     }
 }

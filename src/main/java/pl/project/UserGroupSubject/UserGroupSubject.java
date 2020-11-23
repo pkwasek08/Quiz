@@ -10,10 +10,10 @@ import javax.persistence.*;
 @Table(name = "user_group_subject", schema = "public", catalog = "d9h3r67ca39jah")
 public class UserGroupSubject {
     private int id;
-    private User userByUserId;
-    private Group groupByGroupId;
-    private Subject subjectBySubjectId;
-    private User userByTeacherId;
+    private User user;
+    private Group group;
+    private Subject subject;
+    private User userTeacher;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -41,12 +41,12 @@ public class UserGroupSubject {
     public UserGroupSubject() {
     }
 
-    public UserGroupSubject(int id, User userByUserId, Group groupByGroupId, Subject subjectBySubjectId, User userByTeacherId) {
+    public UserGroupSubject(int id, User user, Group group, Subject subject, User userTeacher) {
         this.id = id;
-        this.userByUserId = userByUserId;
-        this.groupByGroupId = groupByGroupId;
-        this.subjectBySubjectId = subjectBySubjectId;
-        this.userByTeacherId = userByTeacherId;
+        this.user = user;
+        this.group = group;
+        this.subject = subject;
+        this.userTeacher = userTeacher;
     }
 
     @Override
@@ -56,41 +56,41 @@ public class UserGroupSubject {
 
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(name = "user_id", referencedColumnName = "id")
-    public User getUserByUserId() {
-        return userByUserId;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserByUserId(User userByUserId) {
-        this.userByUserId = userByUserId;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(name = "group_id", referencedColumnName = "id")
-    public Group getGroupByGroupId() {
-        return groupByGroupId;
+    public Group getGroup() {
+        return group;
     }
 
-    public void setGroupByGroupId(Group groupByGroupId) {
-        this.groupByGroupId = groupByGroupId;
+    public void setGroup(Group group) {
+        this.group = group;
     }
 
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(name = "subject_id", referencedColumnName = "id")
-    public Subject getSubjectBySubjectId() {
-        return subjectBySubjectId;
+    public Subject getSubject() {
+        return subject;
     }
 
-    public void setSubjectBySubjectId(Subject subjectBySubjectId) {
-        this.subjectBySubjectId = subjectBySubjectId;
+    public void setSubject(Subject subject) {
+        this.subject = subject;
     }
 
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(name = "teacher_id", referencedColumnName = "id")
-    public User getUserByTeacherId() {
-        return userByTeacherId;
+    public User getUserTeacher() {
+        return userTeacher;
     }
 
-    public void setUserByTeacherId(User userByTeacherId) {
-        this.userByTeacherId = userByTeacherId;
+    public void setUserTeacher(User userTeacher) {
+        this.userTeacher = userTeacher;
     }
 }

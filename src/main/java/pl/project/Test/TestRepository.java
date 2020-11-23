@@ -6,5 +6,5 @@ import java.util.List;
 
 @Repository
 public interface TestRepository extends CrudRepository<Test, Integer> {
-    List<Test> findAllBySubjectBySubjectId_Id(Integer subjectId);
+    List<Test> findAllBySubject_Id(Integer subjectId);
 }

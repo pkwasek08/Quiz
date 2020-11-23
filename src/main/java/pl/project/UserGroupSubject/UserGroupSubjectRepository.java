@@ -7,6 +7,6 @@ import java.util.List;
 
 @Repository
 public interface UserGroupSubjectRepository extends CrudRepository<UserGroupSubject, Integer> {
-    List<UserGroupSubject> getAllByUserByUserId(User user);
-    List<UserGroupSubject> getAllByUserByTeacherId(User user);
+    List<UserGroupSubject> getAllByUser(User user);
+    List<UserGroupSubject> getAllByUserTeacher(User user);
 }
