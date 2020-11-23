@@ -1,6 +1,5 @@
 package pl.project.Subject;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import pl.project.Test.Test;
@@ -17,9 +16,17 @@ public class Subject {
 
     @JsonManagedReference(value="subject-test")
     @JsonIgnore
-    @OneToMany(mappedBy = "subjectBySubjectId", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "subject", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     public List<Test> getTests() {
         return tests;
+    }
+
+    public Subject(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public Subject() {
     }
 
     public void setTests(List<Test> tests) {

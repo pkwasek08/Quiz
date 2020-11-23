@@ -1,8 +1,8 @@
 package pl.project.Task;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import io.swagger.annotations.ApiModelProperty;
 import pl.project.Answer.Answer;
 import pl.project.Test.Test;
 
@@ -22,6 +22,7 @@ public class Task {
 
     @JsonManagedReference(value="task-answer")
     @JsonIgnore
+    @ApiModelProperty(hidden = true)
     @OneToMany(mappedBy = "tasksByTaskId", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     public List<Answer> getAnswers() {
         return answers;
@@ -121,7 +122,6 @@ public class Task {
     }
 
     @ManyToOne
-    @JsonBackReference(value="test-task")
     @JoinColumn(name = "test_id", referencedColumnName = "id")
     public Test getTestByTestId() {
         return testByTestId;

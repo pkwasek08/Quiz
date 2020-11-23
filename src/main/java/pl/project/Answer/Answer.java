@@ -1,7 +1,5 @@
 package pl.project.Answer;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import pl.project.Task.Task;
 
 import javax.persistence.*;
@@ -78,7 +76,6 @@ public class Answer {
     }
 
     @ManyToOne
-    @JsonBackReference(value="task-answer")
     @JoinColumn(name = "tasks_id", referencedColumnName = "id")
     public Task getTasksByTaskId() {
         return tasksByTaskId;

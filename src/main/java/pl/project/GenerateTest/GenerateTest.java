@@ -1,6 +1,5 @@
 package pl.project.GenerateTest;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import pl.project.GenerateTask.GenerateTask;
@@ -64,7 +63,6 @@ public class GenerateTest {
     }
 
     @ManyToOne
-    @JsonBackReference(value="test-generateTest")
     @JoinColumn(name = "test_id", referencedColumnName = "id")
     public Test getTest() {
         return test;
