@@ -29,11 +29,11 @@ public class UserGroupSubjectService {
     public List<Group> getAllGroupsByUserId(int id){
         List<Group> groups = new ArrayList<>();
         Optional<User> user = userRepository.findById(id);
-        List<UserGroupSubject> userGroupSubjects = userGroupSubjectRepository.getAllByUserByUserId(user.get());
+        List<UserGroupSubject> userGroupSubjects = userGroupSubjectRepository.getAllByUser(user.get());
         if(userGroupSubjects.size() > 0)
             for (UserGroupSubject ugs:userGroupSubjects
                  ) {
-                groups.add(ugs.getGroupByGroupId());
+                groups.add(ugs.getGroup());
             }
         return groups;
     }
@@ -41,11 +41,11 @@ public class UserGroupSubjectService {
     public List<Subject> getAllSubjectsByUserId(int id){
         List<Subject> subjects = new ArrayList<>();
         Optional<User> user = userRepository.findById(id);
-        List<UserGroupSubject> userGroupSubjects = userGroupSubjectRepository.getAllByUserByUserId(user.get());
+        List<UserGroupSubject> userGroupSubjects = userGroupSubjectRepository.getAllByUser(user.get());
         if(userGroupSubjects.size() > 0)
             for (UserGroupSubject ugs:userGroupSubjects
             ) {
-                subjects.add(ugs.getSubjectBySubjectId());
+                subjects.add(ugs.getSubject());
             }
         return subjects;
     }
@@ -53,11 +53,11 @@ public class UserGroupSubjectService {
     public List<Group> getAllGroupsByTeacherId(int id){
         List<Group> groups = new ArrayList<>();
         Optional<User> user = userRepository.findById(id);
-        List<UserGroupSubject> userGroupSubjects = userGroupSubjectRepository.getAllByUserByTeacherId(user.get());
+        List<UserGroupSubject> userGroupSubjects = userGroupSubjectRepository.getAllByUserTeacher(user.get());
         if(userGroupSubjects.size() > 0)
             for (UserGroupSubject ugs:userGroupSubjects
             ) {
-                groups.add(ugs.getGroupByGroupId());
+                groups.add(ugs.getGroup());
             }
         return groups;
     }
@@ -65,11 +65,11 @@ public class UserGroupSubjectService {
     public List<Subject> getAllSubjectsByTeacherId(int id){
         List<Subject> subjects = new ArrayList<>();
         Optional<User> user = userRepository.findById(id);
-        List<UserGroupSubject> userGroupSubjects = userGroupSubjectRepository.getAllByUserByTeacherId(user.get());
+        List<UserGroupSubject> userGroupSubjects = userGroupSubjectRepository.getAllByUser(user.get());
         if(userGroupSubjects.size() > 0)
             for (UserGroupSubject ugs:userGroupSubjects
             ) {
-                subjects.add(ugs.getSubjectBySubjectId());
+                subjects.add(ugs.getSubject());
             }
         return subjects;
     }

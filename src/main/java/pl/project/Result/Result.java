@@ -11,20 +11,20 @@ public class Result {
     private int id;
     private double mark;
     private Integer points;
-    private User userByUserId;
-    private GenerateTest generateTestsByGenerateTestId;
-    private Result resultByPreviousVersion;
+    private User user;
+    private GenerateTest generateTest;
+    private Result result;
 
     public Result() {
     }
 
-    public Result(int id, double mark, Integer points, User userByUserId, GenerateTest generateTestsByGenerateTestId, Result resultByPreviousVersion) {
+    public Result(int id, double mark, Integer points, User user, GenerateTest generateTest, Result result) {
         this.id = id;
         this.mark = mark;
         this.points = points;
-        this.userByUserId = userByUserId;
-        this.generateTestsByGenerateTestId = generateTestsByGenerateTestId;
-        this.resultByPreviousVersion = resultByPreviousVersion;
+        this.user = user;
+        this.generateTest = generateTest;
+        this.result = result;
     }
 
     @Id
@@ -80,31 +80,31 @@ public class Result {
 
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
-    public User getUserByUserId() {
-        return userByUserId;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserByUserId(User userByUserId) {
-        this.userByUserId = userByUserId;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @ManyToOne
     @JoinColumn(name = "generate_test_id", referencedColumnName = "id")
-    public GenerateTest getGenerateTestsByGenerateTestId() {
-        return generateTestsByGenerateTestId;
+    public GenerateTest getGenerateTest() {
+        return generateTest;
     }
 
-    public void setGenerateTestsByGenerateTestId(GenerateTest generateTestsByGenerateTestId) {
-        this.generateTestsByGenerateTestId = generateTestsByGenerateTestId;
+    public void setGenerateTest(GenerateTest generateTest) {
+        this.generateTest = generateTest;
     }
 
     @ManyToOne
     @JoinColumn(name = "previous_version", referencedColumnName = "id")
-    public Result getResultByPreviousVersion() {
-        return resultByPreviousVersion;
+    public Result getResult() {
+        return result;
     }
 
-    public void setResultByPreviousVersion(Result resultByPreviousVersion) {
-        this.resultByPreviousVersion = resultByPreviousVersion;
+    public void setResult(Result result) {
+        this.result = result;
     }
 }

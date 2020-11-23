@@ -43,6 +43,15 @@ public class TaskService {
         return taskRepository.findAllByTestByTestId_Id(testId);
     }
 
+    public List<Task> getAllTaskByTestIdNotTextType(Integer testId, String type) {
+        return taskRepository.findAllByTestByTestId_IdAndTypeNotLike(testId, type);
+    }
+
+    public List<Task> getAllTaskByTestIdAndType(Integer testId, String type) {
+        return taskRepository.findAllByTestByTestId_IdAndType(testId, type);
+    }
+
+
     public Task getTask(Integer id) {
         Task task = taskRepository.findById(id).get();
         return task;
@@ -82,20 +91,37 @@ public class TaskService {
     public List<TaskDTO> getGenerateTasksAndAnswers(Integer testId, Integer amountTasks) {
         GenerateTest generateTest = generateTestService.addGenerateTest(new GenerateTestDTO(0, testId));
         List<TaskDTO> taskList = new ArrayList<>();
-        List<Task> taskDataList = taskService.getAllTaskByTestId(testId);
+        List<Task> taskDataList = taskService.getAllTaskByTestIdNotTextType(testId, "TextQuestion");
+        taskList.add(addTextQuestionTask(testId, generateTest.getId()));
+        taskList.addAll(taskRand(taskDataList, --amountTasks, generateTest.getId()));
+        return taskList;
+    }
+
+    private List<TaskDTO> taskRand(List<Task> taskDataList, Integer amountTasks, Integer generateTestId) {
+        List<TaskDTO> result = new ArrayList<>();
         Collections.shuffle(taskDataList);
         for (Task task : taskDataList) {
             List<AnswerDTO> answerList = new ArrayList<>();
-             GenerateTask generateTask = generateTaskService.addGenerateTask(new GenerateTaskDTO(0, task.getId(), generateTest.getId()));
+            GenerateTask generateTask = generateTaskService.addGenerateTask(new GenerateTaskDTO(0, task.getId(), generateTestId));
             answerService.getAllAnswerByTask(task.getId()).stream().forEach(answer ->
                     answerList.add(new AnswerDTO(answer.getId(), answer.getAnswer(), answer.getCorrect(), generateTask.getId()))
             );
-            taskList.add(new TaskDTO(task.getId(), task.getQuestion(), task.getType(), task.getImage(), task.getPoints(), generateTest.getId(), answerList));
+            result.add(new TaskDTO(task.getId(), task.getQuestion(), task.getType(), task.getImage(), task.getPoints(), generateTestId, answerList));
             amountTasks--;
             if (amountTasks == 0) {
                 break;
             }
         }
-        return taskList;
+        return result;
+    }
+
+    private TaskDTO addTextQuestionTask(Integer testId, Integer generateTestId) {
+        List<Task> taskTextQuestionList = getAllTaskByTestIdAndType(testId, "TextQuestion");
+        if (taskTextQuestionList.isEmpty()) {
+            return new TaskDTO();
+        }
+        Collections.shuffle(taskTextQuestionList);
+        Task textTask = taskTextQuestionList.get(0);
+        return new TaskDTO(textTask.getId(), textTask.getQuestion(), textTask.getType(), textTask.getImage(), textTask.getPoints(), generateTestId, Collections.emptyList());
     }
 }

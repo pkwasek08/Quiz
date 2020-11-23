@@ -29,13 +29,34 @@ public class ResultController {
 
     @GetMapping("/user/answerList")
     @CrossOrigin(origins = "*")
-    public Result getResultByUserIdAndGenerateTestIdAndAnswerList(@PathVariable Integer userId, @PathVariable Integer generateTestId, @PathVariable List<AnswerDTO> answerList) {
+    public Result getResultByUserIdAndGenerateTestIdAndAnswerList(@RequestParam Integer userId, @RequestParam Integer generateTestId, @RequestParam List<AnswerDTO> answerList) {
         return resultService.getResultByUserIdAndGenerateTestIdAndAnswerList(generateTestId, answerList, userId);
     }
+
     @GetMapping("/user/answerList/nextTerm")
     @CrossOrigin(origins = "*")
-    public Result getNextTermResultByResultIdAndAnswerList(@PathVariable Integer resultId, @PathVariable List<AnswerDTO> answerList) {
+    public Result getNextTermResultByResultIdAndAnswerList(@RequestParam Integer resultId, @RequestParam List<AnswerDTO> answerList) {
         return resultService.getNextTermResultByResultIdAndAnswerList(resultId, answerList);
+    }
+
+    @GetMapping("/user/subject/isMark")
+    @CrossOrigin(origins = "*")
+    public List<Result> getResultWithMarkListByUserIdAndSubjectName(@RequestParam Integer userId, @RequestParam Integer subjectId, @RequestParam Boolean isMark) {
+        if (isMark) {
+            return resultService.getResultWithMarkListByUserIdAndSubjectName(userId, subjectId);
+        } else {
+            return resultService.getResultWithoutMarkListByUserIdAndSubjectName(userId, subjectId);
+        }
+    }
+
+    @GetMapping("/teacher/subject/group/isMark")
+    @CrossOrigin(origins = "*")
+    public List<Result> getResultWithMarkListByUserIdAndSubjectName(@RequestParam Integer teacherId, @RequestParam Integer groupId, @RequestParam Integer subjectId, @PathVariable Boolean isMark) {
+        if (isMark) {
+            return resultService.getResultWithMarkListByTeacherIdAndSubjectName(teacherId, groupId, subjectId);
+        } else {
+            return resultService.getResultWithoutMarkListByTeacherIdAndSubjectName(teacherId, groupId, subjectId);
+        }
     }
 
     @PostMapping()

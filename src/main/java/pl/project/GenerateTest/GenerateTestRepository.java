@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface GenerateTestRepository extends CrudRepository<GenerateTest, Integer> {
-    @Query(value = "SELECT testByTestId.fullPoints from GenerateTest where id=:generateTestId")
+    @Query(value = "SELECT test.fullPoints from GenerateTest where id=:generateTestId")
     int getFullPoints(Integer generateTestId);
 }

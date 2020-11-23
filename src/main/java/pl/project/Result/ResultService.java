@@ -10,7 +10,6 @@ import pl.project.User.UserService;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import static java.util.Objects.nonNull;
 
@@ -24,6 +23,8 @@ public class ResultService {
     private UserService userService;
     @Autowired
     private GenerateTestService generateTestService;
+    @Autowired
+    private ResultDao resultDao;
 
     public List<Result> getAllResult() {
         List<Result> resultList = new ArrayList<>();
@@ -32,7 +33,7 @@ public class ResultService {
     }
 
     public Result getResult(Integer id) {
-        if(nonNull(id)) {
+        if (nonNull(id)) {
             return resultRepository.findById(id).get();
         }
         return null;
@@ -40,7 +41,7 @@ public class ResultService {
 
     public Result getResultByUserIdAndGenerateTestIdAndAnswerList(Integer generateTestId, List<AnswerDTO> answerList, Integer userId) {
         int points = getPointsAndAddChosenAnswer(answerList);
-        Result result = addResult(new ResultDTO(0, getMark(points, generateTestService.getFullPoints(generateTestId)), points, userId, generateTestId, null));
+        Result result = addResult(new ResultDTO(0, null, points, userId, generateTestId, null));
         return result;
     }
 
@@ -58,8 +59,8 @@ public class ResultService {
     public Result getNextTermResultByResultIdAndAnswerList(Integer resultId, List<AnswerDTO> answerList) {
         Result previousResult = getResult(resultId);
         int points = getPointsAndAddChosenAnswer(answerList);
-        Result result = addResult(new ResultDTO(0, getMark(points, generateTestService.getFullPoints(previousResult.getGenerateTestsByGenerateTestId().getId())),
-                points, previousResult.getUserByUserId().getId(), previousResult.getGenerateTestsByGenerateTestId().getId(), previousResult.getId()));
+        Result result = addResult(new ResultDTO(0, null,
+                points, previousResult.getUser().getId(), previousResult.getGenerateTest().getId(), previousResult.getId()));
         return result;
     }
 
@@ -100,5 +101,21 @@ public class ResultService {
 
     public void deleteResult(Integer id) {
         resultRepository.deleteById(id);
+    }
+
+    public List<Result> getResultWithMarkListByUserIdAndSubjectName(Integer userId, Integer subjectId) {
+        return resultRepository.findAllByUser_IdAndMarkIsNotNullAndGenerateTest_Test_Subject_Id(userId, subjectId);
+    }
+
+    public List<Result> getResultWithoutMarkListByUserIdAndSubjectName(Integer userId, Integer subjectId) {
+        return resultRepository.findAllByUser_IdAndMarkIsNullAndGenerateTest_Test_Subject_Id(userId, subjectId);
+    }
+
+    public List<Result> getResultWithMarkListByTeacherIdAndSubjectName(Integer teacherId, Integer groupId, Integer subjectId) {
+        return resultDao.getAllResultByUserIdAndGroupIdAndSubjectIdAndMarkNotNull(teacherId, groupId, subjectId);
+    }
+
+    public List<Result> getResultWithoutMarkListByTeacherIdAndSubjectName(Integer teacherId, Integer groupId, Integer subjectId) {
+        return resultDao.getAllResultByUserIdAndGroupIdAndSubjectIdAndMarkIsNull(teacherId, groupId, subjectId);
     }
 }

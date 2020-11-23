@@ -8,14 +8,14 @@ import javax.persistence.*;
 @Table(name = "generate_tests", schema = "public", catalog = "d9h3r67ca39jah")
 public class GenerateTest {
     private int id;
-    private Test testByTestId;
+    private Test test;
 
     public GenerateTest() {
     }
 
-    public GenerateTest(int id, Test testByTestId) {
+    public GenerateTest(int id, Test test) {
         this.id = id;
-        this.testByTestId = testByTestId;
+        this.test = test;
     }
 
     @Id
@@ -48,11 +48,11 @@ public class GenerateTest {
 
     @ManyToOne
     @JoinColumn(name = "test_id", referencedColumnName = "id")
-    public Test getTestByTestId() {
-        return testByTestId;
+    public Test getTest() {
+        return test;
     }
 
-    public void setTestByTestId(Test testByTestId) {
-        this.testByTestId = testByTestId;
+    public void setTest(Test test) {
+        this.test = test;
     }
 }

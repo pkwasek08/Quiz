@@ -13,18 +13,18 @@ public class Test {
     private Integer fullPoints;
     private Date date;
     private Long time;
-    private Subject subjectBySubjectId;
+    private Subject subject;
 
     public Test() {
     }
 
-    public Test(int id, String name, Integer fullPoints, Date date, Long time, Subject subjectBySubjectId) {
+    public Test(int id, String name, Integer fullPoints, Date date, Long time, Subject subject) {
         this.id = id;
         this.name = name;
         this.fullPoints = fullPoints;
         this.date = date;
         this.time = time;
-        this.subjectBySubjectId = subjectBySubjectId;
+        this.subject = subject;
     }
 
     @Id
@@ -106,11 +106,11 @@ public class Test {
 
     @ManyToOne
     @JoinColumn(name = "subject_id", referencedColumnName = "id")
-    public Subject getSubjectBySubjectId() {
-        return subjectBySubjectId;
+    public Subject getSubject() {
+        return subject;
     }
 
-    public void setSubjectBySubjectId(Subject subjectBySubjectId) {
-        this.subjectBySubjectId = subjectBySubjectId;
+    public void setSubject(Subject subject) {
+        this.subject = subject;
     }
 }

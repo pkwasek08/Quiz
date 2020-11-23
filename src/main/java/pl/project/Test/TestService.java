@@ -29,7 +29,7 @@ public class TestService {
     }
 
     public List<Test> getAllTestBySubject(Integer subject_id) {
-        return testRepository.findAllBySubjectBySubjectId_Id(subject_id);
+        return testRepository.findAllBySubject_Id(subject_id);
     }
 
     public List<Test> getAllTestBySubjectAndGroup(Integer subjectId, Integer groupId) {
