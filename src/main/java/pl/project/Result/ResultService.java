@@ -2,14 +2,19 @@ package pl.project.Result;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 import pl.project.Answer.AnswerDTO;
 import pl.project.ChosenAnswer.ChosenAnswerDTO;
 import pl.project.ChosenAnswer.ChosenAnswerService;
+import pl.project.GenerateTest.GenerateTest;
 import pl.project.GenerateTest.GenerateTestService;
+import pl.project.Test.Test;
+import pl.project.Test.TestService;
 import pl.project.User.UserService;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import static java.util.Objects.nonNull;
 
@@ -23,6 +28,8 @@ public class ResultService {
     private UserService userService;
     @Autowired
     private GenerateTestService generateTestService;
+    @Autowired
+    private TestService testService;
     @Autowired
     private ResultDao resultDao;
 
@@ -91,6 +98,16 @@ public class ResultService {
     public Result addResult(ResultDTO result) {
         return resultRepository.save(new Result(0, result.getMark(), result.getPoints(), userService.getUser(result.getUserId()),
                 generateTestService.getGenerateTest(result.getGenerateTestId()), getResult(result.getResultId())));
+    }
+
+    public double addPointsToResult(@RequestParam Integer resultId, @RequestParam Integer points) {
+        Result result = resultRepository.findById(resultId).get();
+        GenerateTest generateTest = generateTestService.getGenerateTest(result.getGenerateTest().getId());
+        Test test = testService.getTest(generateTest.getTest().getId());
+        result.setPoints(result.getPoints() + points);
+        result.setMark(getMark(result.getPoints(), test.getFullPoints()));
+        resultRepository.save(result);
+        return result.getMark();
     }
 
 

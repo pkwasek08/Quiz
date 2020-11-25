@@ -65,6 +65,12 @@ public class ResultController {
         resultService.addResult(result);
     }
 
+    @PostMapping("/points")
+    @CrossOrigin(origins = "*")
+    public double addPointsToResult(@RequestParam Integer resultId, @RequestParam Integer points) {
+        return resultService.addPointsToResult(resultId, points);
+    }
+
     @PutMapping(value = "/{id}")
     @CrossOrigin(origins = "*")
     public void updateResult(@RequestBody Result result, @PathVariable Integer id) {
