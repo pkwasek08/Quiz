@@ -8,5 +8,6 @@ import java.util.List;
 
 @Repository
 public interface AnswerRepository extends CrudRepository<Answer, Integer> {
-    List<Answer> findAllByTasksByTaskId(Task task);
+    List<Answer> findAllByTask(Task task);
+    Integer countAnswerByTask_IdAndCorrectIsTrue(Integer taskId);
 }

@@ -23,7 +23,7 @@ public class AnswerService {
 
     public List<Answer> getAllAnswerByTask(int taskId){
         Task task = taskRepository.findById(taskId).get();
-        return answerRepository.findAllByTasksByTaskId(task);
+        return answerRepository.findAllByTask(task);
     }
 
     public Answer getAnswer(Integer id) {
@@ -42,6 +42,9 @@ public class AnswerService {
         answerRepository.save(answer);
     }
 
+    public Integer getNumberCorrectAnswerByTaskId(Integer taskId){
+        return answerRepository.countAnswerByTask_IdAndCorrectIsTrue(taskId);
+    }
 
     public void deleteAnswer(Integer id) {
         answerRepository.deleteById(id);

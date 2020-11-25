@@ -30,8 +30,6 @@ public class TaskService {
     private GenerateTestService generateTestService;
     @Autowired
     private GenerateTaskService generateTaskService;
-    @Autowired
-    private TaskService taskService;
 
     public List<Task> getAllTask() {
         List<Task> taskList = new ArrayList<>();
@@ -51,6 +49,9 @@ public class TaskService {
         return taskRepository.findAllByTestByTestId_IdAndType(testId, type);
     }
 
+    public Integer getPointsByTaskId(Integer taskId){
+        return taskRepository.getPointsByTaskId(taskId);
+    }
 
     public Task getTask(Integer id) {
         Task task = taskRepository.findById(id).get();
@@ -91,7 +92,7 @@ public class TaskService {
     public List<TaskDTO> getGenerateTasksAndAnswers(Integer testId, Integer amountTasks) {
         GenerateTest generateTest = generateTestService.addGenerateTest(new GenerateTestDTO(0, testId));
         List<TaskDTO> taskList = new ArrayList<>();
-        List<Task> taskDataList = taskService.getAllTaskByTestIdNotTextType(testId, "TextQuestion");
+        List<Task> taskDataList = getAllTaskByTestIdNotTextType(testId, "TextQuestion");
         taskList.add(addTextQuestionTask(testId, generateTest.getId()));
         taskList.addAll(taskRand(taskDataList, --amountTasks, generateTest.getId()));
         return taskList;

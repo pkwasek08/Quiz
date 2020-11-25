@@ -23,7 +23,7 @@ public class Task {
     @JsonManagedReference(value="task-answer")
     @JsonIgnore
     @ApiModelProperty(hidden = true)
-    @OneToMany(mappedBy = "tasksByTaskId", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "task", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     public List<Answer> getAnswers() {
         return answers;
     }

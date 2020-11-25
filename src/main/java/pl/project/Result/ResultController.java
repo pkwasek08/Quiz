@@ -27,15 +27,15 @@ public class ResultController {
         return resultService.getResult(id);
     }
 
-    @GetMapping("/user/answerList")
+    @PostMapping("/user/answerList")
     @CrossOrigin(origins = "*")
-    public Result getResultByUserIdAndGenerateTestIdAndAnswerList(@RequestParam Integer userId, @RequestParam Integer generateTestId, @RequestParam List<AnswerDTO> answerList) {
+    public Result getResultByUserIdAndGenerateTestIdAndAnswerList(@RequestParam Integer userId, @RequestParam Integer generateTestId, @RequestBody List<AnswerDTO> answerList) {
         return resultService.getResultByUserIdAndGenerateTestIdAndAnswerList(generateTestId, answerList, userId);
     }
 
-    @GetMapping("/user/answerList/nextTerm")
+    @PostMapping("/user/answerList/nextTerm")
     @CrossOrigin(origins = "*")
-    public Result getNextTermResultByResultIdAndAnswerList(@RequestParam Integer resultId, @RequestParam List<AnswerDTO> answerList) {
+    public Result getNextTermResultByResultIdAndAnswerList(@RequestBody Integer resultId, @RequestParam List<AnswerDTO> answerList) {
         return resultService.getNextTermResultByResultIdAndAnswerList(resultId, answerList);
     }
 

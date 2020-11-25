@@ -1,29 +1,34 @@
 package pl.project.Result;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
 import pl.project.Answer.AnswerDTO;
-import pl.project.ChosenAnswer.ChosenAnswerDTO;
-import pl.project.ChosenAnswer.ChosenAnswerService;
+import pl.project.Answer.AnswerService;
 import pl.project.GenerateTest.GenerateTest;
 import pl.project.GenerateTest.GenerateTestService;
+import pl.project.Task.TaskService;
 import pl.project.Test.Test;
 import pl.project.Test.TestService;
 import pl.project.User.UserService;
-
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-import java.util.Optional;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import static java.util.Objects.nonNull;
 
 @Service
 public class ResultService {
+    Logger log = LogManager.getLogger(this.getClass());
+    @Autowired
+    private ResultDao resultDao;
     @Autowired
     private ResultRepository resultRepository;
     @Autowired
-    private ChosenAnswerService chosenAnswerService;
+    private AnswerService answerService;
     @Autowired
     private UserService userService;
     @Autowired
@@ -31,7 +36,7 @@ public class ResultService {
     @Autowired
     private TestService testService;
     @Autowired
-    private ResultDao resultDao;
+    private TaskService taskService;
 
     public List<Result> getAllResult() {
         List<Result> resultList = new ArrayList<>();
@@ -52,21 +57,42 @@ public class ResultService {
         return result;
     }
 
-    private int getPointsAndAddChosenAnswer(List<AnswerDTO> answerList) {
-        int points = 0;
-        for (AnswerDTO answer : answerList) {
-            if (answer.getCorrect()) {
-                points++;
+    private HashMap<Integer, List<AnswerDTO>> createHashMapTask(List<AnswerDTO> answerList){
+        HashMap<Integer, List<AnswerDTO>> hashMap = new HashMap<>();
+        answerList.stream().forEach(answerDTO -> {
+            if (!hashMap.containsKey(answerDTO.getTaskId())) {
+                List<AnswerDTO> list = new ArrayList<>();
+                list.add(answerDTO);
+                hashMap.put(answerDTO.getTaskId(), list);
+            } else {
+                hashMap.get(answerDTO.getTaskId()).add(answerDTO);
             }
-            chosenAnswerService.addChosenAnswer(new ChosenAnswerDTO(0, answer.getAnswer(), answer.getTaskId(), answer.getId()));
-        }
-        return points;
+        });
+        return hashMap;
+    }
+    private int getPointsAndAddChosenAnswer(List<AnswerDTO> answerList) {
+        AtomicInteger finalPoints = new AtomicInteger();
+        HashMap<Integer, List<AnswerDTO>> hashMap = createHashMapTask(answerList);
+        hashMap.forEach((taskId, answerDTOList) -> {
+            int taskPoints = 0;
+            for(AnswerDTO answer: answerDTOList){
+                if(!answer.getCorrect()){
+                    break;
+                }else {
+                    taskPoints ++;
+                }
+            }
+            if(answerService.getNumberCorrectAnswerByTaskId(taskId).equals(taskPoints)){
+                finalPoints.addAndGet(taskService.getPointsByTaskId(taskId));
+            }
+        });
+        return finalPoints.get();
     }
 
     public Result getNextTermResultByResultIdAndAnswerList(Integer resultId, List<AnswerDTO> answerList) {
         Result previousResult = getResult(resultId);
         int points = getPointsAndAddChosenAnswer(answerList);
-        Result result = addResult(new ResultDTO(0, null,
+        Result result = addResultNextTerm(new ResultDTO(0, null,
                 points, previousResult.getUser().getId(), previousResult.getGenerateTest().getId(), previousResult.getId()));
         return result;
     }
@@ -96,6 +122,12 @@ public class ResultService {
     }
 
     public Result addResult(ResultDTO result) {
+        Logger log = LogManager.getLogger(this.getClass());
+        return resultRepository.save(new Result(0, result.getMark(), result.getPoints(), userService.getUser(result.getUserId()),
+                generateTestService.getGenerateTest(result.getGenerateTestId()), null));
+    }
+
+    public Result addResultNextTerm(ResultDTO result) {
         return resultRepository.save(new Result(0, result.getMark(), result.getPoints(), userService.getUser(result.getUserId()),
                 generateTestService.getGenerateTest(result.getGenerateTestId()), getResult(result.getResultId())));
     }
