@@ -10,23 +10,28 @@ public class SubjectService {
     @Autowired
     private SubjectRepository subjectRepository;
 
-    public List<Subject> getAllSubject() {
-        List<Subject> subjectList = new ArrayList<>();
-        subjectRepository.findAll().forEach(subjectList::add);
+    public List<SubjectDTO> getAllSubject() {
+        List<SubjectDTO> subjectList = new ArrayList<>();
+        for (Subject subject: subjectRepository.findAll()
+             ) {
+            subjectList.add(new SubjectDTO(subject));
+        }
         return subjectList;
     }
 
-    public Subject getSubject(Integer id) {
+    public SubjectDTO getSubject(Integer id) {
         Subject subject = subjectRepository.findById(id).get();
-        return subject;
+        return new SubjectDTO(subject);
     }
 
-    public void addSubject(Subject subject) {
+    public void addSubject(SubjectDTO subjectDTO) {
+        Subject subject = new Subject(0, subjectDTO.getName());
         subjectRepository.save(subject);
     }
 
 
-    public void updateSubject(Integer id, Subject subject) {
+    public void updateSubject(Integer id, SubjectDTO subjectDTO) {
+        Subject subject = new Subject(subjectDTO.getId(), subjectDTO.getName());
         subjectRepository.save(subject);
     }
 

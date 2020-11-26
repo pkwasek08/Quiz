@@ -10,16 +10,16 @@ public class Answer {
     private int id;
     private String answer;
     private Boolean correct;
-    private Task tasksByTaskId;
+    private Task task;
 
     public Answer() {
     }
 
-    public Answer(int id, String answer, Boolean correct, Task tasksByTaskId) {
+    public Answer(int id, String answer, Boolean correct, Task task) {
         this.id = id;
         this.answer = answer;
         this.correct = correct;
-        this.tasksByTaskId = tasksByTaskId;
+        this.task = task;
     }
 
     @Id
@@ -77,11 +77,11 @@ public class Answer {
 
     @ManyToOne
     @JoinColumn(name = "tasks_id", referencedColumnName = "id")
-    public Task getTasksByTaskId() {
-        return tasksByTaskId;
+    public Task getTask() {
+        return task;
     }
 
-    public void setTasksByTaskId(Task tasksByTaskId) {
-        this.tasksByTaskId = tasksByTaskId;
+    public void setTask(Task task) {
+        this.task = task;
     }
 }

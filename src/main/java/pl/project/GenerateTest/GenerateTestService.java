@@ -40,8 +40,7 @@ public class GenerateTestService {
     public List<GenerateTest> getGenerateTestsByUserId(Integer id) {
         List<Result> results = resultRepository.findAllByUser_Id(id);
         List<GenerateTest> generateTests = new ArrayList<>();
-        for (Result result: results
-             ) {
+        for (Result result: results) {
             generateTests.add(result.getGenerateTest());
         }
         return generateTests;

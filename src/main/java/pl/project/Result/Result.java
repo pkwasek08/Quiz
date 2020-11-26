@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Table(name = "results", schema = "public", catalog = "d9h3r67ca39jah")
 public class Result {
     private int id;
-    private double mark;
+    private Double mark;
     private Integer points;
     private User user;
     private GenerateTest generateTest;
@@ -18,7 +18,7 @@ public class Result {
     public Result() {
     }
 
-    public Result(int id, double mark, Integer points, User user, GenerateTest generateTest, Result result) {
+    public Result(int id, Double mark, Integer points, User user, GenerateTest generateTest, Result result) {
         this.id = id;
         this.mark = mark;
         this.points = points;
@@ -40,11 +40,11 @@ public class Result {
 
     @Basic
     @Column(name = "mark", nullable = true)
-    public double getMark() {
+    public Double getMark() {
         return mark;
     }
 
-    public void setMark(double mark) {
+    public void setMark(Double mark) {
         this.mark = mark;
     }
 
@@ -67,6 +67,7 @@ public class Result {
 
         if (id != that.id) return false;
         if (points != null ? !points.equals(that.points) : that.points != null) return false;
+        if (mark != null ? !mark.equals(that.mark) : that.mark != null) return false;
 
         return true;
     }
@@ -74,6 +75,7 @@ public class Result {
     @Override
     public int hashCode() {
         int result = id;
+        result = 31 * result + (mark != null ? mark.hashCode() : 0);
         result = 31 * result + (points != null ? points.hashCode() : 0);
         return result;
     }

@@ -1,8 +1,13 @@
 package pl.project.Task;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import io.swagger.annotations.ApiModelProperty;
+import pl.project.Answer.Answer;
 import pl.project.Test.Test;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "tasks", schema = "public", catalog = "d9h3r67ca39jah")
@@ -13,6 +18,19 @@ public class Task {
     private String image;
     private Integer points;
     private Test testByTestId;
+    private List<Answer> answers;
+
+    @JsonManagedReference(value="task-answer")
+    @JsonIgnore
+    @ApiModelProperty(hidden = true)
+    @OneToMany(mappedBy = "task", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    public List<Answer> getAnswers() {
+        return answers;
+    }
+
+    public void setAnswers(List<Answer> answers) {
+        this.answers = answers;
+    }
 
     public Task() {
     }

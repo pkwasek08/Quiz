@@ -1,9 +1,15 @@
 package pl.project.Test;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import io.swagger.annotations.ApiModelProperty;
+import pl.project.GenerateTest.GenerateTest;
 import pl.project.Subject.Subject;
+import pl.project.Task.Task;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "tests", schema = "public", catalog = "d9h3r67ca39jah")
@@ -13,7 +19,33 @@ public class Test {
     private Integer fullPoints;
     private Date date;
     private Long time;
+    private List<Task> tasks;
+    private List<GenerateTest> generateTests;
     private Subject subject;
+
+    @JsonManagedReference(value="test-generateTest")
+    @JsonIgnore
+    @OneToMany(mappedBy = "test", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+
+    public List<GenerateTest> getGenerateTests() {
+        return generateTests;
+    }
+
+    public void setGenerateTests(List<GenerateTest> generateTests) {
+        this.generateTests = generateTests;
+    }
+
+    @JsonManagedReference(value="test-task")
+    @JsonIgnore
+    @ApiModelProperty(hidden = true)
+    @OneToMany(mappedBy = "testByTestId", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    public List<Task> getTasks() {
+        return tasks;
+    }
+
+    public void setTasks(List<Task> tasks) {
+        this.tasks = tasks;
+    }
 
     public Test() {
     }
