@@ -11,6 +11,15 @@ public class Group {
     private String name;
     private User founder;
 
+    public Group() {
+    }
+
+    public Group(int id, String name, User founder) {
+        this.id = id;
+        this.name = name;
+        this.founder = founder;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)

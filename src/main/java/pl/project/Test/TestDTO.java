@@ -23,6 +23,15 @@ public class TestDTO {
         this.subjectId = subjectId;
     }
 
+    public TestDTO(Test test) {
+        this.id = test.getId();
+        this.name = test.getName();
+        this.fullPoints = test.getFullPoints();
+        this.date = test.getDate();
+        this.time = test.getTime();
+        this.subjectId = test.getSubject().getId();
+    }
+
     public int getId() {
         return id;
     }

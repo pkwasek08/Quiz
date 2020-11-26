@@ -32,8 +32,8 @@ public class GroupController {
 
     @PostMapping()
     @CrossOrigin(origins = "*")
-    public void addGroup(@RequestBody Group group) {
-        groupService.addGroup(group);
+    public void addGroup(@RequestBody GroupDTO groupDTO) {
+        groupService.addGroup(groupDTO);
     }
 
     @PutMapping(value = "/{id}")
@@ -52,6 +52,12 @@ public class GroupController {
     @CrossOrigin(origins = "*")
     public List<Group> getTeacherGroup(@PathVariable Integer id) {
         return userGroupSubjectService.getAllGroupsByTeacherId(id);
+    }
+
+    @GetMapping("/founder/{id}")
+    @CrossOrigin(origins = "*")
+    public List<Group> getFounderGroup(@PathVariable Integer id) {
+        return groupService.getGroupByFounderId(id);
     }
 
     @GetMapping("/student/{id}")

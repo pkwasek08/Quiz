@@ -57,13 +57,13 @@ public class TestService {
         testRepository.save(test);
     }
 
-    public List<Test> getTestsByUserIdAndSubjectId(Integer userId, Integer subjectId){
+    public List<TestDTO> getTestsByUserIdAndSubjectId(Integer userId, Integer subjectId){
         List<GenerateTest> generateTests = generateTestService.getGenerateTestsByUserId(userId);
-        List<Test> tests = new ArrayList<>();
+        List<TestDTO> tests = new ArrayList<>();
         for (GenerateTest generateTest: generateTests) {
             Test test = generateTest.getTest();
             if(test.getSubject().getId() == subjectId){
-                tests.add(test);
+                tests.add(new TestDTO(test));
             }
         }
         return tests;

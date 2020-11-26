@@ -41,7 +41,7 @@ public class TestController {
 
     @GetMapping("/userAndSubject")
     @CrossOrigin(origins = "*")
-    public List<Test> getTestsByUserIdAndSubjectId(@RequestParam Integer userId, @RequestParam Integer subjectId) {
+    public List<TestDTO> getTestsByUserIdAndSubjectId(@RequestParam Integer userId, @RequestParam Integer subjectId) {
         return testService.getTestsByUserIdAndSubjectId(userId, subjectId);
     }
 
