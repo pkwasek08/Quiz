@@ -1,5 +1,7 @@
 package pl.project.Group;
 
+import pl.project.User.User;
+
 import javax.persistence.*;
 
 @Entity
@@ -7,6 +9,7 @@ import javax.persistence.*;
 public class Group {
     private int id;
     private String name;
+    private User founder;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -47,5 +50,15 @@ public class Group {
         int result = id;
         result = 31 * result + (name != null ? name.hashCode() : 0);
         return result;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "founder_id", referencedColumnName = "id")
+    public User getFounder() {
+        return founder;
+    }
+
+    public void setFounder(User founder) {
+        this.founder = founder;
     }
 }

@@ -1,5 +1,7 @@
 package pl.project.Task;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.project.Answer.AnswerDTO;
@@ -20,6 +22,8 @@ import static java.util.Objects.nonNull;
 
 @Service
 public class TaskService {
+    Logger log = LogManager.getLogger(this.getClass());
+
     @Autowired
     private TaskRepository taskRepository;
     @Autowired
@@ -49,7 +53,7 @@ public class TaskService {
         return taskRepository.findAllByTestByTestId_IdAndType(testId, type);
     }
 
-    public Integer getPointsByTaskId(Integer taskId){
+    public Integer getPointsByTaskId(Integer taskId) {
         return taskRepository.getPointsByTaskId(taskId);
     }
 
@@ -94,7 +98,9 @@ public class TaskService {
         List<TaskDTO> taskList = new ArrayList<>();
         List<Task> taskDataList = getAllTaskByTestIdNotTextType(testId, "TextQuestion");
         taskList.add(addTextQuestionTask(testId, generateTest.getId()));
-        taskList.addAll(taskRand(taskDataList, --amountTasks, generateTest.getId()));
+        if (--amountTasks > 0) {
+            taskList.addAll(taskRand(taskDataList, amountTasks, generateTest.getId()));
+        }
         return taskList;
     }
 

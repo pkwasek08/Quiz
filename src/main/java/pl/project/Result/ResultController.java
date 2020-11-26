@@ -36,7 +36,7 @@ public class ResultController {
 
     @PostMapping("/user/answerList/nextTerm")
     @CrossOrigin(origins = "*")
-    public Result getNextTermResultByResultIdAndAnswerList(@RequestBody Integer resultId, @RequestParam List<AnswerDTO> answerList) {
+    public Result getNextTermResultByResultIdAndAnswerList(@RequestParam  Integer resultId, @RequestBody List<AnswerDTO> answerList) {
         return resultService.getNextTermResultByResultIdAndAnswerList(resultId, answerList);
     }
 
