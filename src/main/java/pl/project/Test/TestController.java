@@ -1,5 +1,6 @@
 package pl.project.Test;
 
+import io.swagger.models.auth.In;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +37,12 @@ public class TestController {
     @CrossOrigin(origins = "*")
     public Test getTest(@PathVariable Integer id) {
         return testService.getTest(id);
+    }
+
+    @GetMapping("/userAndSubject")
+    @CrossOrigin(origins = "*")
+    public List<Test> getTestsByUserIdAndSubjectId(@RequestParam Integer userId, @RequestParam Integer subjectId) {
+        return testService.getTestsByUserIdAndSubjectId(userId, subjectId);
     }
 
     @PostMapping()

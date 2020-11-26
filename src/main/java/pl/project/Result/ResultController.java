@@ -29,7 +29,8 @@ public class ResultController {
 
     @PostMapping("/user/answerList")
     @CrossOrigin(origins = "*")
-    public Result getResultByUserIdAndGenerateTestIdAndAnswerList(@RequestParam Integer userId, @RequestParam Integer generateTestId, @RequestBody List<AnswerDTO> answerList) {
+    public Result getResultByUserIdAndGenerateTestIdAndAnswerList(@RequestParam Integer userId,
+                                                                  @RequestParam Integer generateTestId, @RequestBody List<AnswerDTO> answerList) {
         return resultService.getResultByUserIdAndGenerateTestIdAndAnswerList(generateTestId, answerList, userId);
     }
 
