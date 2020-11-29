@@ -47,7 +47,7 @@ public class GenerateTaskService {
     }
 
     public List<GenerateTaskAndAnswerDTO> getGenerateTasksByGenerateTestId(Integer id){
-        List<GenerateTask> generateTasks = generateTaskRepository.findAllByGenerateTestsByGenerateTest(id);
+        List<GenerateTask> generateTasks = generateTaskRepository.findAllByGenerateTestsByGenerateTest_Id(id);
         List<GenerateTaskAndAnswerDTO> generateTaskAndAnswerDTO = new ArrayList<>();
         for(GenerateTask generateTask: generateTasks){
             generateTaskAndAnswerDTO.add(new GenerateTaskAndAnswerDTO(generateTask.getChosenAnswers(), new TaskDTO(generateTask.getTasksByTaskId())));

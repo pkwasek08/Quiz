@@ -7,5 +7,5 @@ import java.util.List;
 
 @Repository
 public interface GenerateTaskRepository extends CrudRepository<GenerateTask, Integer> {
-    List<GenerateTask> findAllByGenerateTestsByGenerateTest(Integer id);
+    List<GenerateTask> findAllByGenerateTestsByGenerateTest_Id(Integer id);
 }
