@@ -4,6 +4,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
 import java.util.List;
 
 @RestController
@@ -29,6 +31,11 @@ public class GenerateTaskController {
     @CrossOrigin(origins = "*")
     public void addGenerateTask(@RequestBody GenerateTaskDTO generateTaskDTO) {
         generateTaskService.addGenerateTask(generateTaskDTO);
+    }
+
+    @GetMapping("/generateTest/{id}")
+    public List<GenerateTaskAndAnswerDTO> getGenerateTasksByGenerateTestId(@PathVariable Integer id){
+        return generateTaskService.getGenerateTasksByGenerateTestId(id);
     }
 
     @PutMapping(value = "/{id}")
