@@ -1,7 +1,9 @@
 package pl.project.Task;
 
+import pl.project.Answer.Answer;
 import pl.project.Answer.AnswerDTO;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class TaskDTO {
@@ -14,6 +16,19 @@ public class TaskDTO {
     private List<AnswerDTO> answerList;
 
     public TaskDTO() {
+    }
+
+    public TaskDTO(Task task) {
+        this.id = task.getId();
+        this.question = task.getQuestion();
+        this.type = task.getType();
+        this.image = task.getImage();
+        this.points = task.getPoints();
+        this.testId = task.getTestByTestId().getId();
+        this.answerList = new ArrayList<>();
+        for(Answer answer: task.getAnswers()){
+            this.answerList.add(new AnswerDTO(answer));
+        }
     }
 
     public TaskDTO(int id, String question, String type, String image, Integer points, int testId, List<AnswerDTO> answerList) {

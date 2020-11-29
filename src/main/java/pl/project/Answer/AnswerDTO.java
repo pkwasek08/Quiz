@@ -9,6 +9,13 @@ public class AnswerDTO {
     public AnswerDTO() {
     }
 
+    public AnswerDTO(Answer answer) {
+        this.id = answer.getId();
+        this.answer = answer.getAnswer();
+        this.correct = answer.getCorrect();
+        this.taskId = answer.getTask().getId();
+    }
+
     public AnswerDTO(int id, String answer, Boolean correct, int taskId) {
         this.id = id;
         this.answer = answer;

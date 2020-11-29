@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import pl.project.ChosenAnswer.ChosenAnswer;
 import pl.project.GenerateTest.GenerateTest;
 import pl.project.GenerateTest.GenerateTestRepository;
+import pl.project.Task.TaskDTO;
 import pl.project.Task.TaskRepository;
 import pl.project.Test.TestRepository;
 
@@ -49,7 +50,7 @@ public class GenerateTaskService {
         List<GenerateTask> generateTasks = generateTaskRepository.findAllByGenerateTestsByGenerateTest(id);
         List<GenerateTaskAndAnswerDTO> generateTaskAndAnswerDTO = new ArrayList<>();
         for(GenerateTask generateTask: generateTasks){
-            generateTaskAndAnswerDTO.add(new GenerateTaskAndAnswerDTO(generateTask.getChosenAnswers(), generateTask.getTasksByTaskId()));
+            generateTaskAndAnswerDTO.add(new GenerateTaskAndAnswerDTO(generateTask.getChosenAnswers(), new TaskDTO(generateTask.getTasksByTaskId())));
         }
         return  generateTaskAndAnswerDTO;
     }
