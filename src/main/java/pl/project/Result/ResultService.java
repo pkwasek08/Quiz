@@ -8,12 +8,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import pl.project.Answer.AnswerDTO;
 import pl.project.Answer.AnswerService;
 import pl.project.ChosenAnswer.ChosenAnswerService;
+import pl.project.GenerateTask.GenerateTaskService;
 import pl.project.GenerateTest.GenerateTest;
 import pl.project.GenerateTest.GenerateTestService;
 import pl.project.Task.Task;
 import pl.project.Task.TaskService;
-import pl.project.Test.Test;
-import pl.project.Test.TestService;
 import pl.project.User.UserService;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -36,11 +35,11 @@ public class ResultService {
     @Autowired
     private GenerateTestService generateTestService;
     @Autowired
-    private TestService testService;
-    @Autowired
     private TaskService taskService;
     @Autowired
     private ChosenAnswerService chosenAnswerService;
+    @Autowired
+    private GenerateTaskService generateTaskService;
 
     public List<Result> getAllResult() {
         List<Result> resultList = new ArrayList<>();
@@ -64,7 +63,7 @@ public class ResultService {
 
     private HashMap<Integer, List<AnswerDTO>> createHashMapTaskWithoutTextQuestion(List<AnswerDTO> answerList){
         HashMap<Integer, List<AnswerDTO>> hashMap = new HashMap<>();
-        answerList.stream().filter(answerDTO -> !taskService.getTask(answerDTO.getTaskId()).getType().equals("TextQuestion")).forEach(answerDTO -> {
+        answerList.stream().filter(answerDTO -> !generateTaskService.getGenerateTask(answerDTO.getTaskId()).getTasksByTaskId().getType().equals("TextQuestion")).forEach(answerDTO -> {
             if (!hashMap.containsKey(answerDTO.getTaskId())) {
                 List<AnswerDTO> list = new ArrayList<>();
                 list.add(answerDTO);
@@ -77,6 +76,7 @@ public class ResultService {
     }
     private int getPointsAndAddChosenAnswer(List<AnswerDTO> answerList) {
         AtomicInteger finalPoints = new AtomicInteger();
+        finalPoints.set(0);
         HashMap<Integer, List<AnswerDTO>> hashMap = createHashMapTaskWithoutTextQuestion(answerList);
         hashMap.forEach((taskId, answerDTOList) -> {
             int taskPoints = 0;
@@ -87,8 +87,8 @@ public class ResultService {
                     taskPoints ++;
                 }
             }
-            if(answerService.getNumberCorrectAnswerByTaskId(taskId).equals(taskPoints)){
-                finalPoints.addAndGet(taskService.getPointsByTaskId(taskId));
+            if(answerService.getNumberCorrectAnswerByGenerateTaskId(taskId).equals(taskPoints)){
+                finalPoints.addAndGet(generateTaskService.getPointsByGenerateTaskId(taskId));
             }
         });
         return finalPoints.get();

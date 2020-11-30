@@ -2,6 +2,7 @@ package pl.project.Answer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pl.project.GenerateTask.GenerateTaskService;
 import pl.project.Task.Task;
 import pl.project.Task.TaskRepository;
 
@@ -14,6 +15,8 @@ public class AnswerService {
     private AnswerRepository answerRepository;
     @Autowired
     private TaskRepository taskRepository;
+    @Autowired
+    private GenerateTaskService generateTaskService;
 
     public List<Answer> getAllAnswer() {
         List<Answer> answerList = new ArrayList<>();
@@ -42,8 +45,9 @@ public class AnswerService {
         answerRepository.save(answer);
     }
 
-    public Integer getNumberCorrectAnswerByTaskId(Integer taskId){
-        return answerRepository.countAnswerByTask_IdAndCorrectIsTrue(taskId);
+    public Integer getNumberCorrectAnswerByGenerateTaskId(Integer taskId){
+        Task task = generateTaskService.getGenerateTask(taskId).getTasksByTaskId();
+        return answerRepository.countAnswerByTask_IdAndCorrectIsTrue(task.getId());
     }
 
     public void deleteAnswer(Integer id) {
