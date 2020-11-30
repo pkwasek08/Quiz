@@ -16,6 +16,12 @@ public class ChosenAnswerDTO {
         this.answerId = answerId;
     }
 
+    public ChosenAnswerDTO(int id, String descriptedAnswer, int generateTaskId) {
+        this.id = id;
+        this.descriptedAnswer = descriptedAnswer;
+        this.generateTaskId = generateTaskId;
+    }
+
     public int getId() {
         return id;
     }
