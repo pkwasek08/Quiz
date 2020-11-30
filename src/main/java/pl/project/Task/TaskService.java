@@ -113,7 +113,7 @@ public class TaskService {
             answerService.getAllAnswerByTask(task.getId()).stream().forEach(answer ->
                     answerList.add(new AnswerDTO(answer.getId(), answer.getAnswer(), answer.getCorrect(), generateTask.getId()))
             );
-            result.add(new TaskDTO(task.getId(), task.getQuestion(), task.getType(), task.getImage(), task.getPoints(), generateTestId, answerList));
+            result.add(new TaskDTO(generateTask.getId(), task.getQuestion(), task.getType(), task.getImage(), task.getPoints(), generateTestId, answerList));
             amountTasks--;
             if (amountTasks == 0) {
                 break;
@@ -129,6 +129,7 @@ public class TaskService {
         }
         Collections.shuffle(taskTextQuestionList);
         Task textTask = taskTextQuestionList.get(0);
-        return new TaskDTO(textTask.getId(), textTask.getQuestion(), textTask.getType(), textTask.getImage(), textTask.getPoints(), generateTestId, Collections.emptyList());
+        GenerateTask generateTask = generateTaskService.addGenerateTask(new GenerateTaskDTO(0, textTask.getId(), generateTestId));
+        return new TaskDTO(generateTask.getId(), textTask.getQuestion(), textTask.getType(), textTask.getImage(), textTask.getPoints(), generateTestId, Collections.emptyList());
     }
 }
