@@ -26,7 +26,6 @@ public class Test {
     @JsonManagedReference(value="test-generateTest")
     @JsonIgnore
     @OneToMany(mappedBy = "test", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-
     public List<GenerateTest> getGenerateTests() {
         return generateTests;
     }

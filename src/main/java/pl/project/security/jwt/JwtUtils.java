@@ -21,8 +21,8 @@ public class JwtUtils {
 
     private String jwtSecret = "ultraHiddenSecretKey";
 
-    private int jwtExpirationMs = 600000;
-    private int refreshExpirationTime = 900000;
+    private int jwtExpirationMs = 60000000;
+    private int refreshExpirationTime = 90000000;
 
     public String generateJwtToken(Authentication authentication){
         MyUserDetails userPrincipal = (MyUserDetails) authentication.getPrincipal();

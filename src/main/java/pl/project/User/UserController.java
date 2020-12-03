@@ -4,6 +4,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import pl.project.Test.Test;
+
 import java.util.List;
 
 @RestController
@@ -23,6 +25,12 @@ public class UserController {
     @CrossOrigin(origins = "*")
     public User getUser(@PathVariable Integer id) {
         return userService.getUser(id);
+    }
+
+    @GetMapping("/subject/{id}")
+    @CrossOrigin(origins = "*")
+    public List<User> getTest(@PathVariable Integer id) {
+        return userService.getUsersBySubjectId(id);
     }
 
     @PostMapping()

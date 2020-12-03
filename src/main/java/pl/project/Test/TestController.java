@@ -3,7 +3,9 @@ package pl.project.Test;
 import io.swagger.models.auth.In;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.quartz.SchedulerException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -39,6 +41,7 @@ public class TestController {
         return testService.getTest(id);
     }
 
+
     @GetMapping("/userAndSubject")
     @CrossOrigin(origins = "*")
     public List<TestDTO> getTestsByUserIdAndSubjectId(@RequestParam Integer userId, @RequestParam Integer subjectId) {
@@ -47,8 +50,8 @@ public class TestController {
 
     @PostMapping()
     @CrossOrigin(origins = "*")
-    public void addTest(@RequestBody TestDTO testDTO) {
-        testService.addTest(testDTO);
+    public ResponseEntity addTest(@RequestBody TestDTO testDTO) throws SchedulerException {
+        return testService.addTest(testDTO);
     }
 
     @PutMapping(value = "/{id}")

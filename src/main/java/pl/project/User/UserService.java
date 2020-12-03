@@ -9,6 +9,8 @@ import java.util.List;
 public class UserService {
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private UserDao userDao;
 
     public List<User> getAllUser() {
         List<User> users = new ArrayList<>();
@@ -19,6 +21,11 @@ public class UserService {
     public User getUser(Integer id) {
         User user = userRepository.findById(id).get();
         return user;
+    }
+
+    public List<User> getUsersBySubjectId(Integer id){
+        List<User> users = userDao.findAllUsersBySubjectId(id);
+        return users;
     }
 
     public void addUser(User user) {
