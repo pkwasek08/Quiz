@@ -73,7 +73,7 @@ public class TestService {
     private boolean sendEmail(Test test) throws SchedulerException {
         List<User> users = userDao.findAllUsersBySubjectId(test.getSubject().getId());
         ZoneId poland = ZoneId.of("Poland");
-        int hours = 25;
+        int hours = 24;
         Date emailDate = new Date(test.getDate().getTime() - hours * 60 * 60 * 1000);
         ZonedDateTime dateTime = ZonedDateTime.of(emailDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime(), poland);
         if(dateTime.isBefore(ZonedDateTime.now())){
@@ -97,7 +97,7 @@ public class TestService {
         String emails = stringBuilder.toString();
 
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-        String dateString = format.format(new Date(test.getDate().getTime() - 60 * 60 * 1000));
+        String dateString = format.format(new Date(test.getDate().getTime()));
 
         jobDataMap.put("email", emails);
         jobDataMap.put("subject", test.getSubject().getName());
