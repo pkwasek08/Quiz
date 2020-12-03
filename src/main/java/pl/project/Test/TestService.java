@@ -72,6 +72,7 @@ public class TestService {
 
     private boolean sendEmail(Test test) throws SchedulerException {
         List<User> users = userDao.findAllUsersBySubjectId(test.getSubject().getId());
+        users = new ArrayList<>(new HashSet<>(users));
         ZoneId poland = ZoneId.of("Poland");
         int hours = 24;
         Date emailDate = new Date(test.getDate().getTime() - hours * 60 * 60 * 1000);
