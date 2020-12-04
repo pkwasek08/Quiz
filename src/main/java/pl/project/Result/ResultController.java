@@ -3,11 +3,13 @@ package pl.project.Result;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pl.project.Answer.AnswerDTO;
 import pl.project.Helper.PolishStringHelper;
 import pl.project.Test.Test;
 import pl.project.Test.TestService;
+import pl.project.payload.response.MessageResponse;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -102,21 +104,14 @@ public class ResultController {
         List<Result> resultList = resultService.getAllResultByTeacherIdTestIdAndGroupId(teacherId, testId, groupId);
 
         String headerKey = "Content-Disposition";
-        String testName = "";
         if (!resultList.isEmpty()) {
-            testName = resultList.get(0).getGenerateTest().getTest().getName().replaceAll("\\s+", "_");
-        } else {
-            Test test = testService.getTest(testId);
-            if (test != null) {
-                testName = test.getName().replaceAll("\\s+", "_");
-            }
+            String testName = resultList.get(0).getGenerateTest().getTest().getName().replaceAll("\\s+", "_") + "_" + currentDateTime + ".xlsx";
+            String headerValue = "attachment; filename=Wyniki_" + PolishStringHelper.replacePolishCharacters(testName);
+            response.setHeader(headerKey, headerValue);
+
+            ResultExcelGenerator excelExporter = new ResultExcelGenerator(resultList);
+
+            excelExporter.export(response);
         }
-        testName += "_" + currentDateTime + ".xlsx";
-        String headerValue = "attachment; filename=Wyniki_" + PolishStringHelper.replacePolishCharacters(testName);
-        response.setHeader(headerKey, headerValue);
-
-        ResultExcelGenerator excelExporter = new ResultExcelGenerator(resultList);
-
-        excelExporter.export(response);
     }
 }
