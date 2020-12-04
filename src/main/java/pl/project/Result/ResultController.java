@@ -5,7 +5,15 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pl.project.Answer.AnswerDTO;
+import pl.project.Helper.PolishStringHelper;
+import pl.project.Test.Test;
+import pl.project.Test.TestService;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -14,6 +22,8 @@ public class ResultController {
     Logger log = LogManager.getLogger(this.getClass());
     @Autowired
     private ResultService resultService;
+    @Autowired
+    private TestService testService;
 
     @GetMapping()
     @CrossOrigin(origins = "*")
@@ -36,27 +46,27 @@ public class ResultController {
 
     @PostMapping("/user/answerList/nextTerm")
     @CrossOrigin(origins = "*")
-    public Result getNextTermResultByResultIdAndAnswerList(@RequestParam  Integer resultId, @RequestBody List<AnswerDTO> answerList) {
+    public Result getNextTermResultByResultIdAndAnswerList(@RequestParam Integer resultId, @RequestBody List<AnswerDTO> answerList) {
         return resultService.getNextTermResultByResultIdAndAnswerList(resultId, answerList);
     }
 
     @GetMapping("/user/subject/isMark")
     @CrossOrigin(origins = "*")
-    public List<Result> getResultWithMarkListByUserIdAndSubjectName(@RequestParam Integer userId, @RequestParam Integer subjectId, @RequestParam Boolean isMark) {
+    public List<Result> getResultWithMarkListByUserIdAndSubjectId(@RequestParam Integer userId, @RequestParam Integer subjectId, @RequestParam Boolean isMark) {
         if (isMark) {
-            return resultService.getResultWithMarkListByUserIdAndSubjectName(userId, subjectId);
+            return resultService.getResultWithMarkListByUserIdAndSubjectId(userId, subjectId);
         } else {
-            return resultService.getResultWithoutMarkListByUserIdAndSubjectName(userId, subjectId);
+            return resultService.getResultWithoutMarkListByUserIdAndSubjectId(userId, subjectId);
         }
     }
 
     @GetMapping("/teacher/subject/group/isMark")
     @CrossOrigin(origins = "*")
-    public List<Result> getResultWithMarkListByUserIdAndSubjectName(@RequestParam Integer teacherId, @RequestParam Integer groupId, @RequestParam Integer subjectId, @PathVariable Boolean isMark) {
+    public List<Result> getResultWithMarkListByUserIdAndSubjectId(@RequestParam Integer teacherId, @RequestParam Integer groupId, @RequestParam Integer subjectId, @PathVariable Boolean isMark) {
         if (isMark) {
-            return resultService.getResultWithMarkListByTeacherIdAndSubjectName(teacherId, groupId, subjectId);
+            return resultService.getResultWithMarkListByTeacherIdAndSubjectId(teacherId, groupId, subjectId);
         } else {
-            return resultService.getResultWithoutMarkListByTeacherIdAndSubjectName(teacherId, groupId, subjectId);
+            return resultService.getResultWithoutMarkListByTeacherIdAndSubjectId(teacherId, groupId, subjectId);
         }
     }
 
@@ -82,5 +92,31 @@ public class ResultController {
     @CrossOrigin(origins = "*")
     public void deleteResult(@PathVariable Integer id) {
         resultService.deleteResult(id);
+    }
+
+    @GetMapping("/export/excel")
+    public void exportToExcelByTestIdAndGroupId(HttpServletResponse response, @RequestParam Integer teacherId, @RequestParam Integer testId, @RequestParam Integer groupId) throws IOException {
+        response.setContentType("application/vnd.ms-excel");
+        DateFormat dateFormatter = new SimpleDateFormat("dd-MM-yyyy");
+        String currentDateTime = dateFormatter.format(new Date());
+        List<Result> resultList = resultService.getAllResultByTeacherIdTestIdAndGroupId(teacherId, testId, groupId);
+
+        String headerKey = "Content-Disposition";
+        String testName = "";
+        if (!resultList.isEmpty()) {
+            testName = resultList.get(0).getGenerateTest().getTest().getName().replaceAll("\\s+", "_");
+        } else {
+            Test test = testService.getTest(testId);
+            if (test != null) {
+                testName = test.getName().replaceAll("\\s+", "_");
+            }
+        }
+        testName += "_" + currentDateTime + ".xlsx";
+        String headerValue = "attachment; filename=Wyniki_" + PolishStringHelper.replacePolishCharacters(testName);
+        response.setHeader(headerKey, headerValue);
+
+        ResultExcelGenerator excelExporter = new ResultExcelGenerator(resultList);
+
+        excelExporter.export(response);
     }
 }
