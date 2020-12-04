@@ -61,7 +61,7 @@ public class ResultService {
         return result;
     }
 
-    private HashMap<Integer, List<AnswerDTO>> createHashMapTaskWithoutTextQuestion(List<AnswerDTO> answerList){
+    private HashMap<Integer, List<AnswerDTO>> createHashMapTaskWithoutTextQuestion(List<AnswerDTO> answerList) {
         HashMap<Integer, List<AnswerDTO>> hashMap = new HashMap<>();
         answerList.stream().filter(answerDTO -> !generateTaskService.getGenerateTask(answerDTO.getTaskId()).getTasksByTaskId().getType().equals("TextQuestion")).forEach(answerDTO -> {
             if (!hashMap.containsKey(answerDTO.getTaskId())) {
@@ -74,20 +74,21 @@ public class ResultService {
         });
         return hashMap;
     }
+
     private int getPointsAndAddChosenAnswer(List<AnswerDTO> answerList) {
         AtomicInteger finalPoints = new AtomicInteger();
         finalPoints.set(0);
         HashMap<Integer, List<AnswerDTO>> hashMap = createHashMapTaskWithoutTextQuestion(answerList);
         hashMap.forEach((taskId, answerDTOList) -> {
             int taskPoints = 0;
-            for(AnswerDTO answer: answerDTOList){
-                if(!answer.getCorrect()){
+            for (AnswerDTO answer : answerDTOList) {
+                if (!answer.getCorrect()) {
                     break;
-                }else {
-                    taskPoints ++;
+                } else {
+                    taskPoints++;
                 }
             }
-            if(answerService.getNumberCorrectAnswerByGenerateTaskId(taskId).equals(taskPoints)){
+            if (answerService.getNumberCorrectAnswerByGenerateTaskId(taskId).equals(taskPoints)) {
                 finalPoints.addAndGet(generateTaskService.getPointsByGenerateTaskId(taskId));
             }
         });
@@ -157,19 +158,23 @@ public class ResultService {
         resultRepository.deleteById(id);
     }
 
-    public List<Result> getResultWithMarkListByUserIdAndSubjectName(Integer userId, Integer subjectId) {
+    public List<Result> getAllResultByTeacherIdTestIdAndGroupId(Integer teacherId, Integer testId, Integer groupId) {
+        return resultDao.getAllResultByTeacherIdTestIdAndGroupId(teacherId, testId, groupId);
+    }
+
+    public List<Result> getResultWithMarkListByUserIdAndSubjectId(Integer userId, Integer subjectId) {
         return resultRepository.findAllByUser_IdAndMarkIsNotNullAndGenerateTest_Test_Subject_Id(userId, subjectId);
     }
 
-    public List<Result> getResultWithoutMarkListByUserIdAndSubjectName(Integer userId, Integer subjectId) {
+    public List<Result> getResultWithoutMarkListByUserIdAndSubjectId(Integer userId, Integer subjectId) {
         return resultRepository.findAllByUser_IdAndMarkIsNullAndGenerateTest_Test_Subject_Id(userId, subjectId);
     }
 
-    public List<Result> getResultWithMarkListByTeacherIdAndSubjectName(Integer teacherId, Integer groupId, Integer subjectId) {
-        return resultDao.getAllResultByUserIdAndGroupIdAndSubjectIdAndMarkNotNull(teacherId, groupId, subjectId);
+    public List<Result> getResultWithMarkListByTeacherIdAndSubjectId(Integer teacherId, Integer groupId, Integer subjectId) {
+        return resultDao.getAllResultByTeacherIdAndGroupIdAndSubjectIdAndMarkNotNull(teacherId, groupId, subjectId);
     }
 
-    public List<Result> getResultWithoutMarkListByTeacherIdAndSubjectName(Integer teacherId, Integer groupId, Integer subjectId) {
-        return resultDao.getAllResultByUserIdAndGroupIdAndSubjectIdAndMarkIsNull(teacherId, groupId, subjectId);
+    public List<Result> getResultWithoutMarkListByTeacherIdAndSubjectId(Integer teacherId, Integer groupId, Integer subjectId) {
+        return resultDao.getAllResultByTeacherIdAndGroupIdAndSubjectIdAndMarkIsNull(teacherId, groupId, subjectId);
     }
 }
