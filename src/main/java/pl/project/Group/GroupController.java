@@ -38,8 +38,8 @@ public class GroupController {
 
     @PutMapping(value = "/{id}")
     @CrossOrigin(origins = "*")
-    public void updateGroup(@RequestBody Group group, @PathVariable Integer id) {
-        groupService.updateGroup(id, group);
+    public void updateGroup(@RequestBody GroupDTO groupDTO, @PathVariable Integer id) {
+        groupService.updateGroup(id, groupDTO);
     }
 
     @DeleteMapping(value = "/{id}")

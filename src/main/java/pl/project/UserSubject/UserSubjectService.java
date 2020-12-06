@@ -2,6 +2,10 @@ package pl.project.UserSubject;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pl.project.Subject.Subject;
+import pl.project.Subject.SubjectRepository;
+import pl.project.User.User;
+import pl.project.User.UserRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +14,10 @@ import java.util.List;
 public class UserSubjectService {
     @Autowired
     private UserSubjectRepository userSubjectRepository;
+    @Autowired
+    private UserRepository userRepository;
+    @Autowired
+    private SubjectRepository subjectRepository;
 
     public List<UserSubject> getAllUserSubject() {
         List<UserSubject> userSubjectList = new ArrayList<>();
@@ -22,7 +30,10 @@ public class UserSubjectService {
         return userSubject;
     }
 
-    public void addUserSubject(UserSubject userSubject) {
+    public void addUserSubject(UserSubjectDTO userSubjectDTO) {
+        User user = userRepository.findById(userSubjectDTO.getUserId()).get();
+        Subject subject = subjectRepository.findById(userSubjectDTO.getSubjectId()).get();
+        UserSubject userSubject = new UserSubject(0, subject, user);
         userSubjectRepository.save(userSubject);
     }
 

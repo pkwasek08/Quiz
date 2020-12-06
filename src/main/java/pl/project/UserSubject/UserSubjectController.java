@@ -28,8 +28,8 @@ public class UserSubjectController {
 
     @PostMapping()
     @CrossOrigin(origins = "*")
-    public void addUser(@RequestBody UserSubject userSubject) {
-        userSubjectService.addUserSubject(userSubject);
+    public void addUser(@RequestBody UserSubjectDTO userSubjectDTO) {
+        userSubjectService.addUserSubject(userSubjectDTO);
     }
 
     @PutMapping(value = "/{id}")

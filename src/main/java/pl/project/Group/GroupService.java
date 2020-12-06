@@ -37,7 +37,8 @@ public class GroupService {
         groupRepository.save(group);
     }
 
-    public void updateGroup(Integer id, Group group) {
+    public void updateGroup(Integer id, GroupDTO groupDTO) {
+        Group group = new Group(id, groupDTO.getName(), userRepository.findById(groupDTO.getFounderId()).get());
         groupRepository.save(group);
     }
 

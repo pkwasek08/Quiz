@@ -21,13 +21,9 @@ import java.util.Date;
 
 @Component
 public class EmailJob extends QuartzJobBean {
-    ;
-    @Autowired
-    private MailProperties mailProperties;
+
     @Autowired
     EmailSenderService emailSenderService;
-
-    private static final Logger logger = LoggerFactory.getLogger(EmailJob.class);
 
     @Override
     protected void executeInternal(JobExecutionContext jobExecutionContext) {
@@ -54,20 +50,5 @@ public class EmailJob extends QuartzJobBean {
 
         }
 
-//    private void sendMail(String fromEmail, String toEmail, String subject, String body) {
-//        try {
-//            MimeMessage message = mailSender.createMimeMessage();
-//
-//            MimeMessageHelper messageHelper = new MimeMessageHelper(message, StandardCharsets.UTF_8.toString());
-//            messageHelper.setSubject(subject);
-//            messageHelper.setText(body, true);
-//            messageHelper.setFrom(fromEmail);
-//            messageHelper.setTo(toEmail);
-//
-//            mailSender.send(message);
-//        } catch (MessagingException ex) {
-//            ex.printStackTrace();
-//        }
-//    }
     }
 }

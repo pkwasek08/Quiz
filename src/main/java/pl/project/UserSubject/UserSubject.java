@@ -12,6 +12,15 @@ public class UserSubject {
     private Subject subjectBySubjectId;
     private User userByUserId;
 
+    public UserSubject() {
+    }
+
+    public UserSubject(int id, Subject subjectBySubjectId, User userByUserId) {
+        this.id = id;
+        this.subjectBySubjectId = subjectBySubjectId;
+        this.userByUserId = userByUserId;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
