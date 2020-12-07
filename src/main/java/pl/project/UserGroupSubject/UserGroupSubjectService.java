@@ -9,6 +9,9 @@ import pl.project.Subject.SubjectDTO;
 import pl.project.Subject.SubjectRepository;
 import pl.project.User.User;
 import pl.project.User.UserRepository;
+import pl.project.UserSubject.UserSubject;
+import pl.project.UserSubject.UserSubjectRepository;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -17,6 +20,9 @@ import java.util.Optional;
 public class UserGroupSubjectService {
     @Autowired
     private UserGroupSubjectRepository userGroupSubjectRepository;
+
+    @Autowired
+    private UserSubjectRepository userSubjectRepository;
 
     @Autowired
     private UserRepository userRepository;
@@ -66,11 +72,11 @@ public class UserGroupSubjectService {
     public List<SubjectDTO> getAllSubjectsByTeacherId(int id){
         List<SubjectDTO> subjects = new ArrayList<>();
         Optional<User> user = userRepository.findById(id);
-        List<UserGroupSubject> userGroupSubjects = userGroupSubjectRepository.getAllByUser(user.get());
-        if(userGroupSubjects.size() > 0)
-            for (UserGroupSubject ugs:userGroupSubjects
+        List<UserSubject> userSubjects = userSubjectRepository.findAllByUserByUserId(user.get());
+        if(userSubjects.size() > 0)
+            for (UserSubject us:userSubjects
             ) {
-                subjects.add(new SubjectDTO(ugs.getSubject()));
+                subjects.add(new SubjectDTO(us.getSubjectBySubjectId()));
             }
         return subjects;
     }
