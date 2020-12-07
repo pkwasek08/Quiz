@@ -158,16 +158,16 @@ public class ResultService {
         resultRepository.deleteById(id);
     }
 
-    public List<Result> getAllResultByTeacherIdTestIdAndGroupId(Integer teacherId, Integer testId, Integer groupId) {
-        return resultDao.getAllResultByTeacherIdTestIdAndGroupId(teacherId, testId, groupId);
+    public List<Result> getAllResultBySubjectId(Integer subjectId) {
+        return resultRepository.findAllByGenerateTest_Test_Subject_Id(subjectId);
     }
 
     public List<Result> getResultWithMarkListByUserIdAndSubjectId(Integer userId, Integer subjectId) {
-        return resultRepository.findAllByUser_IdAndMarkIsNotNullAndGenerateTest_Test_Subject_Id(userId, subjectId);
+        return resultRepository.findAllByUser_IdAndPointsIsNotNullAndGenerateTest_Test_Subject_Id(userId, subjectId);
     }
 
     public List<Result> getResultWithoutMarkListByUserIdAndSubjectId(Integer userId, Integer subjectId) {
-        return resultRepository.findAllByUser_IdAndMarkIsNullAndGenerateTest_Test_Subject_Id(userId, subjectId);
+        return resultRepository.findAllByUser_IdAndPointsIsNullAndGenerateTest_Test_Subject_Id(userId, subjectId);
     }
 
     public List<Result> getResultWithMarkListByTeacherIdAndSubjectId(Integer teacherId, Integer groupId, Integer subjectId) {

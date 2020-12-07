@@ -13,8 +13,6 @@ import pl.project.Answer.AnswerDTO;
 import pl.project.Helper.PolishStringHelper;
 import pl.project.Result.Export.ResultExcelGenerator;
 import pl.project.Result.Export.ResultPdfGenerator;
-import pl.project.Test.TestService;
-
 import javax.servlet.http.HttpServletResponse;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -22,7 +20,6 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.LinkedList;
 import java.util.List;
 
 @RestController
@@ -31,8 +28,6 @@ public class ResultController {
     Logger log = LogManager.getLogger(this.getClass());
     @Autowired
     private ResultService resultService;
-    @Autowired
-    private TestService testService;
 
     @GetMapping()
     @CrossOrigin(origins = "*")
@@ -103,16 +98,16 @@ public class ResultController {
         resultService.deleteResult(id);
     }
 
-    @GetMapping("/export/excel")
-    public void exportToExcelByTestIdAndGroupId(HttpServletResponse response, @RequestParam Integer teacherId, @RequestParam Integer testId, @RequestParam Integer groupId) throws IOException {
+    @GetMapping("/export/excel/subject/{subjectId}")
+    public void exportToExcelByTestIdAndGroupId(HttpServletResponse response, @PathVariable Integer subjectId) throws IOException {
         response.setContentType("application/vnd.ms-excel");
         DateFormat dateFormatter = new SimpleDateFormat("dd-MM-yyyy");
         String currentDateTime = dateFormatter.format(new Date());
-        List<Result> resultList = resultService.getAllResultByTeacherIdTestIdAndGroupId(teacherId, testId, groupId);
+        List<Result> resultList = resultService.getAllResultBySubjectId(subjectId);
 
         String headerKey = "Content-Disposition";
         if (!resultList.isEmpty()) {
-            String testName = resultList.get(0).getGenerateTest().getTest().getName().replaceAll("\\s+", "_") + "_" + currentDateTime + ".xlsx";
+            String testName = resultList.get(0).getGenerateTest().getTest().getSubject().getName().replaceAll("\\s+", "_") + "_" + currentDateTime + ".xlsx";
             String headerValue = "attachment; filename=Wyniki_" + PolishStringHelper.replacePolishCharacters(testName);
             response.setHeader(headerKey, headerValue);
 
@@ -122,15 +117,15 @@ public class ResultController {
         }
     }
 
-    @GetMapping(value = "/export/pdf")
-    public ResponseEntity<Object> resultsReport(@RequestParam Integer teacherId, @RequestParam Integer testId, @RequestParam Integer groupId) {
+    @GetMapping(value = "/export/pdf/subject/{subjectId}")
+    public ResponseEntity<Object> resultsReport(@PathVariable Integer subjectId) {
         ArrayList<Result> resultList =  new ArrayList<>();
-        resultList.addAll(resultService.getAllResultByTeacherIdTestIdAndGroupId(teacherId, testId, groupId));
+        resultList.addAll(resultService.getAllResultBySubjectId(subjectId));
         if (!resultList.isEmpty()) {
             DateFormat dateFormatter = new SimpleDateFormat("dd-MM-yyyy");
             String currentDateTime = dateFormatter.format(new Date());
             ByteArrayInputStream bis = ResultPdfGenerator.resultsReport(resultList);
-            String testName = resultList.get(0).getGenerateTest().getTest().getName().replaceAll("\\s+", "_") + "_" + currentDateTime + ".pdf";
+            String testName = resultList.get(0).getGenerateTest().getTest().getSubject().getName().replaceAll("\\s+", "_") + "_" + currentDateTime + ".pdf";
             HttpHeaders headers = new HttpHeaders();
             headers.add("Content-Disposition", "inline; filename=Wyniki_" + PolishStringHelper.replacePolishCharacters(testName));
 

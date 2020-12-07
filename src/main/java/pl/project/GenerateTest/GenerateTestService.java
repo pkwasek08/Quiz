@@ -46,6 +46,15 @@ public class GenerateTestService {
         return generateTests;
     }
 
+    public List<GenerateTest> getUnFieldGenerateTestsByUserId(Integer id) {
+        List<Result> results = resultRepository.findAllByUser_IdAndAndPointsIsNull(id);
+        List<GenerateTest> generateTests = new ArrayList<>();
+        for (Result result: results) {
+            generateTests.add(result.getGenerateTest());
+        }
+        return generateTests;
+    }
+
     public GenerateTest addGenerateTest(GenerateTestDTO generateTestDTO) {
         GenerateTest generateTest = new GenerateTest(0, testRepository.findById(generateTestDTO.getTestId()).get());
         return generateTestRepository.save(generateTest);

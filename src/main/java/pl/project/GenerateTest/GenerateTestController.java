@@ -32,6 +32,12 @@ public class GenerateTestController {
         return generateTestService.getGenerateTestsByUserId(id);
     }
 
+    @GetMapping("/unFilled/user/{id}")
+    @CrossOrigin(origins = "*")
+    public List<GenerateTest> getUnFilledGenerateTestByUserId(@PathVariable Integer id) {
+        return generateTestService.getUnFieldGenerateTestsByUserId(id);
+    }
+
     @PostMapping()
     @CrossOrigin(origins = "*")
     public void addGenerateTest(@RequestBody GenerateTestDTO generateTestDTO) {

@@ -14,7 +14,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import pl.project.Result.Result;
 import pl.project.User.User;
 
-import static java.util.Objects.isNull;
+import static java.util.Objects.nonNull;
 
 public class ResultExcelGenerator {
     private XSSFWorkbook workbook;
@@ -26,9 +26,9 @@ public class ResultExcelGenerator {
         workbook = new XSSFWorkbook();
     }
 
-    private void writeTitleLine(){
-        sheet = workbook.createSheet("Wyniki testu");
-        sheet.addMergedRegion(CellRangeAddress.valueOf("A1:E1"));
+    private void writeTitleLine() {
+        sheet = workbook.createSheet("Wyniki");
+        sheet.addMergedRegion(CellRangeAddress.valueOf("A1:F1"));
         CellStyle style = initCellStyle();
         XSSFFont font = workbook.createFont();
         font.setBold(true);
@@ -36,7 +36,7 @@ public class ResultExcelGenerator {
         style.setFont(font);
         style.setAlignment(HorizontalAlignment.CENTER);
         Row rowTitle = sheet.createRow(0);
-        createCell(rowTitle, 0, listResult.get(0).getGenerateTest().getTest().getName(), style);
+        createCell(rowTitle, 0, listResult.get(0).getGenerateTest().getTest().getSubject().getName(), style);
     }
 
     private void writeHeaderLine() {
@@ -49,8 +49,9 @@ public class ResultExcelGenerator {
         createCell(row, 0, "#", style);
         createCell(row, 1, "Imię", style);
         createCell(row, 2, "Nazwisko", style);
-        createCell(row, 3, "Punkty", style);
-        createCell(row, 4, "Ocena", style);
+        createCell(row, 3, "Test", style);
+        createCell(row, 4, "Punkty", style);
+        createCell(row, 5, "Ocena", style);
     }
 
     private void createCell(Row row, int columnCount, Object value, CellStyle style) {
@@ -80,6 +81,7 @@ public class ResultExcelGenerator {
             createCell(row, columnCount++, rowCount - 2, style);
             createCell(row, columnCount++, user.getName(), style);
             createCell(row, columnCount++, user.getLastname(), style);
+            createCell(row, columnCount++, result.getGenerateTest().getTest().getName(), style);
             createCell(row, columnCount++, result.getPoints().toString(), style);
             createMarkCell(row, columnCount++, result.getMark(), style);
 
@@ -102,11 +104,13 @@ public class ResultExcelGenerator {
         CellStyle styleCellMark = initCellStyle();
         sheet.autoSizeColumn(columnCount);
         Cell cell = row.createCell(columnCount);
-        styleCellMark.setFillForegroundColor(IndexedColors.GREEN.getIndex());
-        if (isNull(value) || (Double) value < 3) {
-            styleCellMark.setFillForegroundColor(IndexedColors.RED.getIndex());
+        if (nonNull(value)) {
+            styleCellMark.setFillForegroundColor(IndexedColors.GREEN.getIndex());
+            if ((Double) value < 3) {
+                styleCellMark.setFillForegroundColor(IndexedColors.RED.getIndex());
+            }
+            styleCellMark.setFillPattern(FillPatternType.SOLID_FOREGROUND);
         }
-        styleCellMark.setFillPattern(FillPatternType.SOLID_FOREGROUND);
         if (value instanceof Double) {
             cell.setCellValue((Double) value);
         }

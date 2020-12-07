@@ -23,9 +23,9 @@ public class ResultPdfGenerator {
 
         try {
 
-            PdfPTable table = new PdfPTable(5);
-            table.setWidthPercentage(60);
-            table.setWidths(new int[]{1, 3, 3, 3, 3});
+            PdfPTable table = new PdfPTable(6);
+            table.setWidthPercentage(100);
+            table.setWidths(new int[]{2, 8, 8, 8, 3, 3});
 
             Font headFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD);
 
@@ -41,6 +41,11 @@ public class ResultPdfGenerator {
             hcell = new PdfPCell(new Phrase("Nazwisko", headFont));
             hcell.setHorizontalAlignment(Element.ALIGN_CENTER);
             table.addCell(hcell);
+
+            hcell = new PdfPCell(new Phrase("Test", headFont));
+            hcell.setHorizontalAlignment(Element.ALIGN_CENTER);
+            table.addCell(hcell);
+
 
             hcell = new PdfPCell(new Phrase("Punkty", headFont));
             hcell.setHorizontalAlignment(Element.ALIGN_CENTER);
@@ -66,6 +71,12 @@ public class ResultPdfGenerator {
                 table.addCell(cell);
 
                 cell = new PdfPCell(new Phrase(result.getUser().getLastname()));
+                cell.setPaddingLeft(5);
+                cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
+                cell.setHorizontalAlignment(Element.ALIGN_LEFT);
+                table.addCell(cell);
+
+                cell = new PdfPCell(new Phrase(result.getGenerateTest().getTest().getName()));
                 cell.setPaddingLeft(5);
                 cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
                 cell.setHorizontalAlignment(Element.ALIGN_LEFT);
