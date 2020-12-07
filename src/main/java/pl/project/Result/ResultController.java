@@ -11,11 +11,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pl.project.Answer.AnswerDTO;
 import pl.project.Helper.PolishStringHelper;
+import pl.project.Result.Export.ResultDocGenerator;
 import pl.project.Result.Export.ResultExcelGenerator;
 import pl.project.Result.Export.ResultPdfGenerator;
+
 import javax.servlet.http.HttpServletResponse;
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
+import java.io.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -99,7 +100,7 @@ public class ResultController {
     }
 
     @GetMapping("/export/excel/subject/{subjectId}")
-    public void exportToExcelByTestIdAndGroupId(HttpServletResponse response, @PathVariable Integer subjectId) throws IOException {
+    public void resultsReportExcel(HttpServletResponse response, @PathVariable Integer subjectId) throws IOException {
         response.setContentType("application/vnd.ms-excel");
         DateFormat dateFormatter = new SimpleDateFormat("dd-MM-yyyy");
         String currentDateTime = dateFormatter.format(new Date());
@@ -118,14 +119,37 @@ public class ResultController {
     }
 
     @GetMapping(value = "/export/pdf/subject/{subjectId}")
-    public ResponseEntity<Object> resultsReport(@PathVariable Integer subjectId) {
-        ArrayList<Result> resultList =  new ArrayList<>();
+    public ResponseEntity<Object> resultsReportPdf(@PathVariable Integer subjectId) {
+        ArrayList<Result> resultList = new ArrayList<>();
         resultList.addAll(resultService.getAllResultBySubjectId(subjectId));
         if (!resultList.isEmpty()) {
             DateFormat dateFormatter = new SimpleDateFormat("dd-MM-yyyy");
             String currentDateTime = dateFormatter.format(new Date());
             ByteArrayInputStream bis = ResultPdfGenerator.resultsReport(resultList);
             String testName = resultList.get(0).getGenerateTest().getTest().getSubject().getName().replaceAll("\\s+", "_") + "_" + currentDateTime + ".pdf";
+            HttpHeaders headers = new HttpHeaders();
+            headers.add("Content-Disposition", "inline; filename=Wyniki_" + PolishStringHelper.replacePolishCharacters(testName));
+
+            return ResponseEntity
+                    .ok()
+                    .headers(headers)
+                    .contentType(MediaType.APPLICATION_PDF)
+                    .body(new InputStreamResource(bis));
+        } else {
+            return ResponseEntity
+                    .status(HttpStatus.EXPECTATION_FAILED).body("No results");
+        }
+    }
+
+    @GetMapping(value = "/export/docx/subject/{subjectId}")
+    public ResponseEntity<Object> resultsReportDocx(@PathVariable Integer subjectId) throws IOException {
+        ArrayList<Result> resultList = new ArrayList<>();
+        resultList.addAll(resultService.getAllResultBySubjectId(subjectId));
+        if (!resultList.isEmpty()) {
+            DateFormat dateFormatter = new SimpleDateFormat("dd-MM-yyyy");
+            String currentDateTime = dateFormatter.format(new Date());
+            ByteArrayInputStream bis = ResultDocGenerator.docxGenerator(resultList);
+            String testName = resultList.get(0).getGenerateTest().getTest().getSubject().getName().replaceAll("\\s+", "_") + "_" + currentDateTime + ".docx";
             HttpHeaders headers = new HttpHeaders();
             headers.add("Content-Disposition", "inline; filename=Wyniki_" + PolishStringHelper.replacePolishCharacters(testName));
 
