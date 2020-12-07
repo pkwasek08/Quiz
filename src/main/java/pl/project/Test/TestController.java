@@ -1,6 +1,5 @@
 package pl.project.Test;
 
-import io.swagger.models.auth.In;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.quartz.SchedulerException;

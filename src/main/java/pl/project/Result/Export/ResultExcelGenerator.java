@@ -1,4 +1,4 @@
-package pl.project.Result;
+package pl.project.Result.Export;
 
 import java.io.IOException;
 import java.util.List;
@@ -11,6 +11,7 @@ import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.xssf.usermodel.XSSFFont;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import pl.project.Result.Result;
 import pl.project.User.User;
 
 import static java.util.Objects.isNull;

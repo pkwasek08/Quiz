@@ -3,19 +3,26 @@ package pl.project.Result;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pl.project.Answer.AnswerDTO;
 import pl.project.Helper.PolishStringHelper;
-import pl.project.Test.Test;
+import pl.project.Result.Export.ResultExcelGenerator;
+import pl.project.Result.Export.ResultPdfGenerator;
 import pl.project.Test.TestService;
-import pl.project.payload.response.MessageResponse;
 
 import javax.servlet.http.HttpServletResponse;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 
 @RestController
@@ -112,6 +119,29 @@ public class ResultController {
             ResultExcelGenerator excelExporter = new ResultExcelGenerator(resultList);
 
             excelExporter.export(response);
+        }
+    }
+
+    @GetMapping(value = "/export/pdf")
+    public ResponseEntity<Object> resultsReport(@RequestParam Integer teacherId, @RequestParam Integer testId, @RequestParam Integer groupId) {
+        ArrayList<Result> resultList =  new ArrayList<>();
+        resultList.addAll(resultService.getAllResultByTeacherIdTestIdAndGroupId(teacherId, testId, groupId));
+        if (!resultList.isEmpty()) {
+            DateFormat dateFormatter = new SimpleDateFormat("dd-MM-yyyy");
+            String currentDateTime = dateFormatter.format(new Date());
+            ByteArrayInputStream bis = ResultPdfGenerator.resultsReport(resultList);
+            String testName = resultList.get(0).getGenerateTest().getTest().getName().replaceAll("\\s+", "_") + "_" + currentDateTime + ".pdf";
+            HttpHeaders headers = new HttpHeaders();
+            headers.add("Content-Disposition", "inline; filename=Wyniki_" + PolishStringHelper.replacePolishCharacters(testName));
+
+            return ResponseEntity
+                    .ok()
+                    .headers(headers)
+                    .contentType(MediaType.APPLICATION_PDF)
+                    .body(new InputStreamResource(bis));
+        } else {
+            return ResponseEntity
+                    .status(HttpStatus.EXPECTATION_FAILED).body("No results");
         }
     }
 }
