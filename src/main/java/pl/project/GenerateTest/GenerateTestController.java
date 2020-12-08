@@ -26,16 +26,16 @@ public class GenerateTestController {
         return generateTestService.getGenerateTest(id);
     }
 
-    @GetMapping("/user/{id}")
+    @GetMapping("/user/{userId}")
     @CrossOrigin(origins = "*")
-    public List<GenerateTest> getGenerateTestByUserId(@PathVariable Integer id) {
-        return generateTestService.getGenerateTestsByUserId(id);
+    public List<GenerateTest> getGenerateTestByUserId(@PathVariable Integer userId) {
+        return generateTestService.getGenerateTestsByUserId(userId);
     }
 
-    @GetMapping("/unFilled/user/{id}")
+    @GetMapping("/unFilled/user/{userId}")
     @CrossOrigin(origins = "*")
-    public List<GenerateTest> getUnFilledGenerateTestByUserId(@PathVariable Integer id) {
-        return generateTestService.getUnFieldGenerateTestsByUserId(id);
+    public List<GenerateTest> getUnFilledGenerateTestByUserId(@PathVariable Integer userId) {
+        return generateTestService.getUnFieldGenerateTestsByUserId(userId);
     }
 
     @PostMapping()

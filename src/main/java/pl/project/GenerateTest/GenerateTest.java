@@ -13,17 +13,6 @@ import java.util.List;
 public class GenerateTest {
     private int id;
     private List<GenerateTask> generateTasks;
-
-    @JsonManagedReference(value = "generateTest-generateTask")
-    @JsonIgnore
-    @OneToMany(mappedBy = "generateTestsByGenerateTest", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    public List<GenerateTask> getGenerateTasks() {
-        return generateTasks;
-    }
-
-    public void setGenerateTasks(List<GenerateTask> generateTasks) {
-        this.generateTasks = generateTasks;
-    }
     private Test test;
 
     public GenerateTest() {
@@ -70,5 +59,16 @@ public class GenerateTest {
 
     public void setTest(Test test) {
         this.test = test;
+    }
+
+    @JsonManagedReference(value = "generateTest-generateTask")
+    @JsonIgnore
+    @OneToMany(mappedBy = "generateTestsByGenerateTest", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    public List<GenerateTask> getGenerateTasks() {
+        return generateTasks;
+    }
+
+    public void setGenerateTasks(List<GenerateTask> generateTasks) {
+        this.generateTasks = generateTasks;
     }
 }

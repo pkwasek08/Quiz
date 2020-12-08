@@ -4,13 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.project.Result.Result;
 import pl.project.Test.TestRepository;
-import pl.project.User.User;
 import pl.project.Result.ResultRepository;
-import pl.project.User.UserRepository;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class GenerateTestService {
@@ -19,9 +15,6 @@ public class GenerateTestService {
 
     @Autowired
     private ResultRepository resultRepository;
-
-    @Autowired
-    private UserRepository userRepository;
 
     @Autowired
     private TestRepository testRepository;
@@ -46,8 +39,8 @@ public class GenerateTestService {
         return generateTests;
     }
 
-    public List<GenerateTest> getUnFieldGenerateTestsByUserId(Integer id) {
-        List<Result> results = resultRepository.findAllByUser_IdAndAndPointsIsNull(id);
+    public List<GenerateTest> getUnFieldGenerateTestsByUserId(Integer userId) {
+        List<Result> results = resultRepository.findAllByUser_IdAndPointsIsNull(userId);
         List<GenerateTest> generateTests = new ArrayList<>();
         for (Result result: results) {
             generateTests.add(result.getGenerateTest());

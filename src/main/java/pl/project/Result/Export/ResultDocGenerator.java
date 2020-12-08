@@ -33,7 +33,9 @@ public class ResultDocGenerator {
             row.getCell(1).setText(result.getUser().getName());
             row.getCell(2).setText(result.getUser().getLastname());
             row.getCell(3).setText(result.getGenerateTest().getTest().getName());
-            row.getCell(4).setText(result.getPoints().toString());
+            if (nonNull(result.getPoints())) {
+                row.getCell(4).setText(result.getPoints().toString());
+            }
             Double mark = result.getMark();
             if (nonNull(mark)) {
                 row.getCell(5).setText(result.getMark().toString());

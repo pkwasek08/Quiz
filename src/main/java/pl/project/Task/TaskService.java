@@ -12,6 +12,9 @@ import pl.project.GenerateTask.GenerateTaskService;
 import pl.project.GenerateTest.GenerateTest;
 import pl.project.GenerateTest.GenerateTestDTO;
 import pl.project.GenerateTest.GenerateTestService;
+import pl.project.Result.Result;
+import pl.project.Result.ResultDTO;
+import pl.project.Result.ResultService;
 import pl.project.Test.TestRepository;
 
 import java.util.ArrayList;
@@ -30,6 +33,8 @@ public class TaskService {
     private TestRepository testRepository;
     @Autowired
     private AnswerService answerService;
+    @Autowired
+    private ResultService resultService;
     @Autowired
     private GenerateTestService generateTestService;
     @Autowired
@@ -62,9 +67,15 @@ public class TaskService {
         return task;
     }
 
-    public List<TaskDTO> getGenerateTaskAndAnswers(Integer testId, Integer amountTasks) {
+    public List<TaskDTO> getGenerateTaskAndAnswers(Integer testId, Integer amountTasks, Integer userId) {
+        List<Result> result = resultService.getResultByUserIdAndTestId(userId, testId);
+        if(!result.isEmpty()){
+            return Collections.emptyList();
+        }
         if (nonNull(testId) && amountTasks > 0) {
-            return getGenerateTasksAndAnswers(testId, amountTasks);
+            List<TaskDTO> listTask = getGenerateTasksAndAnswers(testId, amountTasks);
+            resultService.addResult(new ResultDTO(0,null, null, userId, listTask.get(0).getTestId(), null));
+            return listTask;
         } else {
             return Collections.emptyList();
         }

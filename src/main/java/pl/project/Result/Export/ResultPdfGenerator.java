@@ -13,6 +13,8 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
+import static java.util.Objects.nonNull;
+
 public class ResultPdfGenerator {
 
     public static ByteArrayInputStream resultsReport(ArrayList<Result> resultsList) {
@@ -82,7 +84,9 @@ public class ResultPdfGenerator {
                 cell.setHorizontalAlignment(Element.ALIGN_LEFT);
                 table.addCell(cell);
 
-                cell = new PdfPCell(new Phrase(result.getPoints().toString()));
+                if (nonNull(result.getPoints())) {
+                    cell = new PdfPCell(new Phrase(result.getPoints()));
+                }
                 cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
                 cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
                 cell.setPaddingRight(5);
@@ -90,7 +94,7 @@ public class ResultPdfGenerator {
 
                 Double mark = result.getMark();
                 cell = new PdfPCell();
-                if(mark != null) {
+                if(nonNull(mark)) {
                     cell.setPhrase(new Phrase(mark.toString()));
                     cell.setBackgroundColor(BaseColor.GREEN);
                     if(mark < 3){

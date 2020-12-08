@@ -57,8 +57,12 @@ public class ResultService {
     public Result getResultByUserIdAndGenerateTestIdAndAnswerList(Integer generateTestId, List<AnswerDTO> answerList, Integer userId) {
         chosenAnswerService.addChooseAnswerList(answerList);
         int points = getPointsAndAddChosenAnswer(answerList);
-        Result result = addResult(new ResultDTO(0, null, points, userId, generateTestId, null));
-        return result;
+        List<Result> result = getResultByUserIdAndGenerateTestId(userId, generateTestId);
+        if(!result.isEmpty()){
+            return addResult(new ResultDTO(0, null, points, userId, generateTestId, null));
+        } else {
+            return updateResult(result.get(0).getId(), getResult(0));
+        }
     }
 
     private HashMap<Integer, List<AnswerDTO>> createHashMapTaskWithoutTextQuestion(List<AnswerDTO> answerList) {
@@ -149,8 +153,8 @@ public class ResultService {
     }
 
 
-    public void updateResult(Integer id, Result result) {
-        resultRepository.save(result);
+    public Result updateResult(Integer id, Result result) {
+        return resultRepository.save(result);
     }
 
 
@@ -161,6 +165,15 @@ public class ResultService {
     public List<Result> getAllResultBySubjectId(Integer subjectId) {
         return resultRepository.findAllByGenerateTest_Test_Subject_Id(subjectId);
     }
+
+    public List<Result> getResultByUserIdAndTestId(Integer userId, Integer testId) {
+        return resultRepository.findAllByUser_IdAndGenerateTest_Test_Id(userId, testId);
+    }
+
+    public List<Result> getResultByUserIdAndGenerateTestId(Integer userId, Integer generateTestId) {
+        return resultRepository.findAllByUser_IdAndGenerateTest_Id(userId, generateTestId);
+    }
+
 
     public List<Result> getResultWithMarkListByUserIdAndSubjectId(Integer userId, Integer subjectId) {
         return resultRepository.findAllByUser_IdAndPointsIsNotNullAndGenerateTest_Test_Subject_Id(userId, subjectId);

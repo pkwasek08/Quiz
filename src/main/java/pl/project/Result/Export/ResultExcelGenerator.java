@@ -82,7 +82,7 @@ public class ResultExcelGenerator {
             createCell(row, columnCount++, user.getName(), style);
             createCell(row, columnCount++, user.getLastname(), style);
             createCell(row, columnCount++, result.getGenerateTest().getTest().getName(), style);
-            createCell(row, columnCount++, result.getPoints().toString(), style);
+            createCell(row, columnCount++, result.getPoints(), style);
             createMarkCell(row, columnCount++, result.getMark(), style);
 
         }

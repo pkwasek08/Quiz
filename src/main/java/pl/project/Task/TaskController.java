@@ -3,6 +3,8 @@ package pl.project.Task;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -34,8 +36,16 @@ public class TaskController {
 
     @GetMapping("/generateTest")
     @CrossOrigin(origins = "*")
-    public List<TaskDTO> getGenerateTaskAndAnswers(@RequestParam Integer testId, @RequestParam Integer amountTasks) {
-        return taskService.getGenerateTaskAndAnswers(testId, amountTasks);
+    public ResponseEntity<Object> getGenerateTaskAndAnswersAndUserId(@RequestParam Integer testId, @RequestParam Integer amountTasks, Integer userId) {
+        List<TaskDTO> listTask = taskService.getGenerateTaskAndAnswers(testId, amountTasks, userId);
+        if (!listTask.isEmpty()) {
+            return ResponseEntity
+                    .ok()
+                    .body(listTask);
+        } else {
+           return ResponseEntity
+                    .status(HttpStatus.EXPECTATION_FAILED).body("The user has already completed the test.");
+        }
     }
 
     @PostMapping()
