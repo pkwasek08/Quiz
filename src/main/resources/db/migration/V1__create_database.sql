@@ -7,7 +7,6 @@ CREATE TABLE "users" (
   "email" varchar,
   "department" varchar,
   "major" varchar,
-  "group_id" integer,
   "password" varchar,
   "enabled" boolean,
   "login" varchar,
