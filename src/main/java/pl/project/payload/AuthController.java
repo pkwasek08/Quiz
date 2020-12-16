@@ -14,6 +14,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import pl.project.ConfirmationToken.ConfirmationToken;
 import pl.project.ConfirmationToken.ConfirmationTokenRepository;
+import pl.project.payload.dto.Email;
 import pl.project.payload.dto.ExpirationTimeDTO;
 import pl.project.User.User;
 import pl.project.payload.request.LoginRequest;
@@ -206,8 +207,8 @@ public class AuthController {
     }
 
     @PostMapping("/resendConfirmation")
-    public ResponseEntity<?> resendConfirmation(@RequestBody String email) throws MessagingException {
-        User user = userRepository.findByEmailIgnoreCase(email);
+    public ResponseEntity<?> resendConfirmation(@RequestBody Email email) throws MessagingException {
+        User user = userRepository.findByEmailIgnoreCase(email.getEmail());
         if(user == null) return ResponseEntity.badRequest().body(new MessageResponse("Error - User with email " + email + " doesn't exist"));
         if(user.getEnabled()) return ResponseEntity.badRequest().body(new MessageResponse("Error - User with email " + email + " is enabled"));
         ConfirmationToken confirmationToken = confirmationTokenRepository.getByUsersByUserId(user);
